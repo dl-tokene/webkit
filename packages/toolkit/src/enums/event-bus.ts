@@ -3,4 +3,7 @@ export enum DEFAULT_BUS_EVENTS {
   warning = 'warning',
   success = 'success',
   info = 'info',
+
+  refreshToken = 'refreshToken',
+  logout = 'logout',
 }

@@ -42,10 +42,12 @@
     "access": "public"
   },
   "dependencies": {
-    "@distributedlab/fetcher": "^0.2.0-rc.5",
-    "@distributedlab/jac": "^0.2.0-rc.5",
-    "@distributedlab/tools": "^0.2.0-rc.5",
-    "@distributedlab/w3p": "^0.2.0-rc.5",
+    "@distributedlab/fetcher": "*",
+    "@distributedlab/jac": "*",
+    "@distributedlab/tools": "*",
+    "@distributedlab/w3p": "*",
+    "axios": "^1.3.6",
+    "ipfs-http-client": "^60.0.0",
     "lodash-es": "^4.17.21",
     "loglevel": "^1.8.1",
     "vue-i18n": "^9.2.2"

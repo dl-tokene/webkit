@@ -2,8 +2,9 @@ import type { EthProviderRpcError } from '@distributedlab/w3p'
 import { get } from 'lodash-es'
 import log from 'loglevel'
 
+import { DEFAULT_BUS_EVENTS } from '@/enums'
 import { errors } from '@/errors'
-import { bus } from '@/globals'
+import { toolkitBus } from '@/globals'
 import { handleEthereumProviderInternalError } from '@/helpers'
 import { i18n } from '@/localization'
 
@@ -12,7 +13,7 @@ export class ErrorHandler {
     const msgTranslation = errorMessage || ErrorHandler._getErrorMessage(error)
 
     if (msgTranslation) {
-      bus.emitError(msgTranslation)
+      toolkitBus.emit(DEFAULT_BUS_EVENTS.error, msgTranslation)
     }
 
     ErrorHandler.processWithoutFeedback(error)

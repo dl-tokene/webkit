@@ -1,11 +1,11 @@
-import { api } from '@/api'
+import { api } from '@/globals'
 
 export class BlobUtil<T> {
   #id?: string
   #rawData?: T
   #owner?: string
 
-  constructor(opts: { id?: string; rawData?: T, owner?: string }) {
+  constructor(opts: { id?: string; rawData?: T; owner?: string }) {
     this.#id = opts.id
     this.#rawData = opts.rawData
     this.#owner = opts.owner

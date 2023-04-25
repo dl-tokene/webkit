@@ -1,4 +1,4 @@
-import { api } from '@/api'
+import { api } from '@/globals'
 
 enum KEY_VALUES {
   extensions = 'extensions',

@@ -1,7 +1,8 @@
-import { create, IPFSHTTPClient } from 'ipfs-http-client'
-import { ImportCandidate } from 'ipfs-core-types/src/utils'
-import { config } from '@config'
 import axios from 'axios'
+import type { ImportCandidate } from 'ipfs-core-types/src/utils'
+import { create, IPFSHTTPClient } from 'ipfs-http-client'
+
+import { config } from '@/globals'
 
 const PREFIX = 'ipfs://'
 

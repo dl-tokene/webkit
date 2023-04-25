@@ -1,18 +1,15 @@
 import { BN, BnFormatCfg, BnLike } from '@distributedlab/tools'
 import { BigNumber } from '@ethersproject/bignumber'
 
-import { DECIMALS } from '@/enums'
-
-export const formatNumber = (
+export function formatNumber(
   value: BigNumber | BnLike,
   decimals: number,
   cfg: BnFormatCfg,
-) => {
+): string {
   if (!value || (value instanceof BigNumber && value.isZero()) || isNaN(+value))
-    return BN.fromRaw(0, DECIMALS.TOKEN).toString()
+    throw new TypeError('Invalid value')
 
-  const finalDecimals =
-    value instanceof BN ? value.decimals : decimals || DECIMALS.TOKEN
+  const finalDecimals = value instanceof BN ? value.decimals : decimals
   const finalAmount =
     value instanceof BN
       ? value
@@ -21,12 +18,14 @@ export const formatNumber = (
   return finalAmount.fromFraction(finalDecimals).format(cfg)
 }
 
-export const formatTokenAmount = (
+export function formatTokenAmount(
   value: BigNumber | BnLike,
-  decimals = DECIMALS.TOKEN,
-) => {
-  const finalDecimals =
-    value instanceof BN ? value.decimals : decimals || DECIMALS.TOKEN
+  decimals?: number,
+): string {
+  const finalDecimals = value instanceof BN ? value.decimals : decimals
+
+  if (!finalDecimals) throw new TypeError('Invalid decimals')
+
   const finalAmount =
     value instanceof BN
       ? value
@@ -53,10 +52,12 @@ export const formatTokenAmount = (
 
 export const formatTokenBalance = (
   value: BigNumber | BnLike,
-  decimals = DECIMALS.TOKEN,
+  decimals?: number,
 ) => {
-  const finalDecimals =
-    value instanceof BN ? value.decimals : decimals || DECIMALS.TOKEN
+  const finalDecimals = value instanceof BN ? value.decimals : decimals
+
+  if (!finalDecimals) throw new TypeError('Invalid decimals')
+
   const finalAmount =
     value instanceof BN
       ? value
@@ -83,10 +84,12 @@ export const formatTokenBalance = (
 
 export const formatPercentageAmount = (
   value: BigNumber | BnLike,
-  decimals = DECIMALS.PERCENTAGE,
+  decimals: number,
 ) => {
-  const finalDecimals =
-    value instanceof BN ? value.decimals : decimals || DECIMALS.PERCENTAGE
+  const finalDecimals = value instanceof BN ? value.decimals : decimals
+
+  if (!finalDecimals) throw new TypeError('Invalid decimals')
+
   const finalAmount =
     value instanceof BN
       ? value
