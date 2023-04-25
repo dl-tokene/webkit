@@ -1,5 +1,5 @@
-import en from './resources/en.json'
+// import en from '@/localization/resources/en.json'
 
 export default {
-  messages: { en },
+  messages: {},
 }

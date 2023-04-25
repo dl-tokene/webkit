@@ -6,8 +6,8 @@ import babel from '@rollup/plugin-babel'
 import resolve from '@rollup/plugin-node-resolve'
 import terser from '@rollup/plugin-terser'
 import json from '@rollup/plugin-json'
-import alias from "@rollup/plugin-alias";
-import nodePolyfills from 'rollup-plugin-polyfill-node';
+import alias from "@rollup/plugin-alias"
+import nodePolyfills from 'rollup-plugin-polyfill-node'
 
 const packages = fs.readdirSync(path.resolve(__dirname, './packages'))
 
@@ -16,7 +16,7 @@ export default packages.map((pkg) => ({
   output: {
     sourcemap: true,
     file: `./packages/${pkg}/dist/index.js`,
-    name: `DL_${pkg}`,
+    name: `tokene_${pkg}`,
     format: 'iife'
   },
   plugins: [
@@ -26,9 +26,10 @@ export default packages.map((pkg) => ({
       preferBuiltins: false,
     }),
     nodePolyfills(),
-    ...(pkg === "w3p" ? [
+    ...(pkg === "toolkit" ? [
       alias({
         entries: [
+          {find: 'ipfs-http-client', replacement: 'node_modules/ipfs-http-client/dist/index.min.js'},
           {find: 'ethers', replacement: 'node_modules/ethers/dist/ethers.esm.js'},
           {find: 'near-api-js', replacement: 'node_modules/near-api-js/dist/near-api-js.js'},
         ]
