@@ -3,5 +3,5 @@
   "out": "doc",
   "entryPointStrategy": "packages",
   "entryPoints": ["./packages/*"],
-  "name": "Distributed Lab | Web-Kit"
+  "name": "TokenE | Webkit"
 }

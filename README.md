@@ -1,10 +1,10 @@
-<h1><p align="center"><img alt="TokenE | Webkit" src="https://raw.githubusercontent.com/distributed-lab/web-kit/main/assets/logo.png" width="876" /></p></h1>
+<h1><p align="center"><img alt="TokenE | Webkit" src="https://raw.githubusercontent.com/dl-tokene/webkit/main/assets/logo.png" width="876" /></p></h1>
 
-<p align="center">TypeScript-based various types of solutions for <a target="_blank" rel="noopener" href="https://distributedlab.com/">Distributed Lab</a> projects and not only.</p>
+<p align="center">TypeScript-based various types of solutions for <a target="_blank" rel="noopener" href="https://tokene.io">TokenE</a> projects.</p>
 
 <div align="center">
-  <a href="https://github.com/distributed-lab/web-kit/blob/main/LICENSE">
-    <img alt="License: MIT" src="https://img.shields.io/github/license/distributed-lab/web-kit.svg" />
+  <a href="https://github.com/dl-tokene/webkit/blob/main/LICENSE">
+    <img alt="License: MIT" src="https://img.shields.io/github/license/dl-tokene/webkit.svg" />
   </a>
 </div>
 
@@ -33,21 +33,19 @@
 
 ## Changelog
 
-For the change log, see [CHANGELOG.md](https://github.com/distributed-lab/web-kit/blob/main/CHANGELOG.md).
+For the change log, see [CHANGELOG.md](https://github.com/dl-tokene/webkit/blob/main/CHANGELOG.md).
 
 
 ## Packages
 
-The Distributed Lab Web-Kit is a library that consists of many smaller NPM packages within the
-[@distributedlab namespace](https://www.npmjs.com/org/distributedlab), a so-called monorepo.
+The TokenE Webkit is a library that consists of many smaller NPM packages within the
+[@tokene namespace](https://www.npmjs.com/org/tokene), a so-called monorepo.
 
 Here are the packages in the namespace:
 
-| Package                                                                                                   | Description                                                            | Latest                                                                                                                            |
-|-----------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------|
-| [@distributedlab/jac](https://distributed-lab.github.io/web-kit/modules/_distributedlab_jac.html)         | A library for constructing JSON-API compliant requests and responses   | [![npm version](https://img.shields.io/npm/v/@distributedlab/jac.svg)](https://www.npmjs.com/package/@distributedlab/jac)         |
-| [@distributedlab/tools](https://distributed-lab.github.io/web-kit/modules/_distributedlab_tools.html)     | Collection of common utility functions and classes                     | [![npm version](https://img.shields.io/npm/v/@distributedlab/tools.svg)](https://www.npmjs.com/package/@distributedlab/tools)     |
-| [@distributedlab/fetcher](https://distributed-lab.github.io/web-kit/modules/_distributedlab_fetcher.html) | Fetch API wrapper with the extended functionality and simple interface | [![npm version](https://img.shields.io/npm/v/@distributedlab/fetcher.svg)](https://www.npmjs.com/package/@distributedlab/fetcher) |
+| Package                                                                            | Description                                                            | Latest                                                                                                            |
+|------------------------------------------------------------------------------------|------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------|
+| [@tokene/toolkit](https://dl-tokene.github.io/webkit/modules/_tokene_toolkit.html) | A library for constructing JSON-API compliant requests and responses   | [![npm version](https://img.shields.io/npm/v/@tokene/toolkit.svg)](https://www.npmjs.com/package/@tokene/toolkit) |
 
 ## Using in the projects made by create-react-app
 
@@ -139,12 +137,12 @@ yarn install
 
 If you are implementing a new package which needs to depend on the local package, you can use the following command to install it:
 ```bash
-yarn workspace @distributedlab/target-package add @distributedlab/package-to-add
+yarn workspace @tokene/target-package add @tokene/package-to-add
 ```
 
 To install a dependency to all packages, use the following command:
 ```bash
-yarn workspaces foreach -pt run add @distributedlab/package-to-add
+yarn workspaces foreach -pt run add @tokene/package-to-add
 ```
 
 #### Testing dependencies
@@ -176,7 +174,7 @@ To test the packages, you need:
     ```json
     {
       "dependencies": {
-        "@distributedlab/jac": "*"
+        "@tokene/jac": "toolkit"
       }
     }
     ```
@@ -244,10 +242,10 @@ Pull requests are the greatest contributions, so be sure they are focused in sco
 
 ## License
 
-[MIT License](https://opensource.org/licenses/MIT) © [Distributed Lab](https://distributedlab.com)
+[MIT License](https://opensource.org/licenses/MIT) © [TokenE](https://tokene.io)
 
 ## Resources
 - [Yarn Berry](https://yarnpkg.com/cli/install)
 - [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 - [Semantic Versioning](https://semver.org/spec/v2.0.0.html)
-- [Web-Kit TypeDoc](https://distributed-lab.github.io/web-kit)
+- [Webkit TypeDoc](https://dl-tokene.github.io/webkit)

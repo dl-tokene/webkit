@@ -4,9 +4,9 @@
   "description": "Collection of common utility functions and classes in tokenE frontend modules",
   "repository": {
     "type": "git",
-    "url": "https://github.com/tokene/webkit/tree/main/packages/toolkit"
+    "url": "https://github.com/dl-tokene/webkit/tree/main/packages/toolkit"
   },
-  "homepage": "https://tokene.github.io/webkit/modules/_tokene_toolkit.html",
+  "homepage": "https://dl-tokene.github.io/webkit/modules/_tokene_toolkit.html",
   "license": "MIT",
   "sideEffects": false,
   "typesVersions": {

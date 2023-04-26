@@ -1,9 +1,9 @@
 # @distributedlab/tools
 These packages aim to provide developers with a set of commonly used functions and features for building web applications, such as handling big numbers, date manipulation, subscribing to and receiving notifications when certain events occur with EventEmitter, and more.
 
-![version (scoped package)](https://badgen.net/npm/v/@distributedlab/tools)
-![types](https://badgen.net/npm/types/@distributedlab/tools)
-![tree-shaking](https://badgen.net/bundlephobia/tree-shaking/@distributedlab/tools)
+![version (scoped package)](https://badgen.net/npm/v/@tokene/toolkit)
+![types](https://badgen.net/npm/types/@tokene/toolkit)
+![tree-shaking](https://badgen.net/bundlephobia/tree-shaking/@tokene/toolkit)
 ![checks](https://badgen.net/github/checks/distributed-lab/web-kit/main)
 
 ## Getting Started
