@@ -64,7 +64,7 @@ function validateChangelogHasVersionOnTop () {
 }
 
 function validateChangelogAnchorsLegend () {
-  const baseRepoUrl = 'github.com:dl-tokene/webkit.git'
+  const baseRepoUrl = 'https://github.com/dl-tokene/webkit.git'
   const anyReleaseTagRe =
     /## \[\d+\.\d+\.\d+((-rc|-x)\.\d+)?\] - \d{4}-\d{2}-\d{2}/gi
 
