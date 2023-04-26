@@ -10,7 +10,7 @@ import {
 
 import { DEFAULT_BUS_EVENTS } from '@/enums'
 import { toolkitBus } from '@/globals'
-import { i18n } from '@/localization'
+import { i18next } from '@/localization'
 
 export const bearerAttachInterceptor: FetcherRequestInterceptor = async (
   request: FetcherRequest,
@@ -44,9 +44,6 @@ export const refreshTokenInterceptor: FetcherErrorResponseInterceptor = async (
   )
     return Promise.reject(response)
 
-  // Some authentication store in the client app
-  const { t } = i18n.global
-
   try {
     const accessToken = localStorage.getItem('accessToken')
 
@@ -76,8 +73,8 @@ export const refreshTokenInterceptor: FetcherErrorResponseInterceptor = async (
 
     toolkitBus.emit(DEFAULT_BUS_EVENTS.logout)
     toolkitBus.emit(DEFAULT_BUS_EVENTS.error, {
-      title: t('api-errors.session-expired-title'),
-      message: t('api-errors.session-expired-desc'),
+      title: i18next.t('api-errors.session-expired-title')!,
+      message: i18next.t('api-errors.session-expired-desc'),
     })
     return Promise.reject(error)
   }
