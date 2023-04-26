@@ -1,9 +1,9 @@
-# @tokene/toolkit
-These packages aim to provide developers with a set of commonly used functions and features for building TokenE web applications, such as handling big numbers, date manipulation, subscribing to and receiving notifications when certain events occur with EventEmitter, and more.
+# @tokene/vue-web3-provider
+The Vue reactive wrapper of [@distributedlab/w3p](https://github.com/distributed-lab/web-kit/tree/main/packages/w3p)
 
-![version (scoped package)](https://badgen.net/npm/v/@tokene/toolkit)
-![types](https://badgen.net/npm/types/@tokene/toolkit)
-![tree-shaking](https://badgen.net/bundlephobia/tree-shaking/@tokene/toolkit)
+![version (scoped package)](https://badgen.net/npm/v/@tokene/vue-web3-provider)
+![types](https://badgen.net/npm/types/@tokene/vue-web3-provider)
+![tree-shaking](https://badgen.net/bundlephobia/tree-shaking/@tokene/vue-web3-provider)
 ![checks](https://badgen.net/github/checks/dl-tokene/webkit/main)
 
 ## Getting Started
@@ -11,20 +11,26 @@ These packages aim to provide developers with a set of commonly used functions a
 ### Installing
 
 ```
-yarn add @tokene/toolkit
+yarn add @tokene/vue-web3-provider
 ```
 
-#### Work with big numbers
+#### Default example
 ```ts
-import { IpfsUtil } from '@tokene/toolkit'
+import { useProvider } from '@tokene/vue-web3-provider'
+import { ProviderDetector, MetamaskProvider } from '@distributedlab/w3p'
 
-const ipfsEntity = new IpfsUtil({
-  rawData: JSON.stringify({
-    someData: 'lorem ipsum dolor sit amet concestetur!',
-  }),
-})
+const providerDetector = new ProviderDetector()
+const provider = useProvider()
 
-await ipfsEntity.uploadSelf()
+const init = async () => {
+  await providerDetector.init()
+  await provider.init(MetamaskProvider, {
+    providerDetector: ProviderDetector,
+    listeners: {},
+  })
+}
+
+init()
 ```
 
 ## Running the tests
@@ -32,6 +38,10 @@ await ipfsEntity.uploadSelf()
 ```
 yarn test
 ```
+
+## More examples
+Check out more examples and use-cases:
+- [Multiple providers with the current selected one](https://github.com/distributed-lab/web-kit/blob/main/packages/w3p/examples/multiple-providers.ts)
 
 ## License
 

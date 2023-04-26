@@ -43,9 +43,10 @@ The TokenE Webkit is a library that consists of many smaller NPM packages within
 
 Here are the packages in the namespace:
 
-| Package                                                                            | Description                                                            | Latest                                                                                                            |
-|------------------------------------------------------------------------------------|------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------|
-| [@tokene/toolkit](https://dl-tokene.github.io/webkit/modules/_tokene_toolkit.html) | A library for constructing JSON-API compliant requests and responses   | [![npm version](https://img.shields.io/npm/v/@tokene/toolkit.svg)](https://www.npmjs.com/package/@tokene/toolkit) |
+| Package                                                                                                | Description                                                                                                          | Latest                                                                                                                      |
+|--------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------|
+| [@tokene/toolkit](https://dl-tokene.github.io/webkit/modules/_tokene_toolkit.html)                     | Collection of common utilities, functions, enums, errors and helpers                                                 | [![npm version](https://img.shields.io/npm/v/@tokene/toolkit.svg)](https://www.npmjs.com/package/@tokene/toolkit)           |
+| [@tokene/vue-web3-provider](https://dl-tokene.github.io/webkit/modules/_tokene_vue_web3_provider.html) | The Vue reactive wrapper of [@distributedlab/w3p](https://github.com/distributed-lab/web-kit/tree/main/packages/w3p) | [![npm version](https://img.shields.io/npm/v/@tokene/toolkit.svg)](https://www.npmjs.com/package/@tokene/vue-web3-provider) |
 
 ## Using in the projects made by create-react-app
 

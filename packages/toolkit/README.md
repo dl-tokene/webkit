@@ -14,7 +14,7 @@ These packages aim to provide developers with a set of commonly used functions a
 yarn add @tokene/toolkit
 ```
 
-#### Work with big numbers
+#### Work with IPFS
 ```ts
 import { IpfsUtil } from '@tokene/toolkit'
 
