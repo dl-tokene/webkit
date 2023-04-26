@@ -3,7 +3,7 @@
   "private": true,
   "description": "TypeScript-based various types of solutions for TokenE projects only.",
   "license": "MIT",
-  "homepage": "https://dl-tokene.github.io/web-kit",
+  "homepage": "https://dl-tokene.github.io/webkit",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/dl-tokene/webkit.git"
