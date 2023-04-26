@@ -16,16 +16,16 @@
 <li><a href="_tokene_vue_web3_provider.html">@tokene/vue-web3-provider</a></li></ul>
 <h1>Module @tokene/vue-web3-provider</h1></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/dl-tokene/webkit/blob/5ddfb8e/packages/vue-web3-provider/src/index.ts#L1">packages/vue-web3-provider/src/index.ts:1</a></li></ul></aside>
+<li>Defined in <a href="https://github.com/dl-tokene/webkit/blob/0cc4aa9/packages/vue-web3-provider/src/index.ts#L1">packages/vue-web3-provider/src/index.ts:1</a></li></ul></aside>
 <section class="tsd-panel-group">
 <section class="tsd-panel tsd-typography">
-<a href="#tokenetoolkit" id="tokenetoolkit" style="color: inherit; text-decoration: none;">
-  <h1>@tokene/toolkit</h1>
+<a href="#tokenevue-web3-provider" id="tokenevue-web3-provider" style="color: inherit; text-decoration: none;">
+  <h1>@tokene/vue-web3-provider</h1>
 </a>
-<p>These packages aim to provide developers with a set of commonly used functions and features for building TokenE web applications, such as handling big numbers, date manipulation, subscribing to and receiving notifications when certain events occur with EventEmitter, and more.</p>
-<p><img src="https://badgen.net/npm/v/@tokene/toolkit" alt="version (scoped package)">
-<img src="https://badgen.net/npm/types/@tokene/toolkit" alt="types">
-<img src="https://badgen.net/bundlephobia/tree-shaking/@tokene/toolkit" alt="tree-shaking">
+<p>The Vue reactive wrapper of <a href="https://github.com/distributed-lab/web-kit/tree/main/packages/w3p">@distributedlab/w3p</a></p>
+<p><img src="https://badgen.net/npm/v/@tokene/vue-web3-provider" alt="version (scoped package)">
+<img src="https://badgen.net/npm/types/@tokene/vue-web3-provider" alt="types">
+<img src="https://badgen.net/bundlephobia/tree-shaking/@tokene/vue-web3-provider" alt="tree-shaking">
 <img src="https://badgen.net/github/checks/dl-tokene/webkit/main" alt="checks"></p>
 
 <a href="#getting-started" id="getting-started" style="color: inherit; text-decoration: none;">
@@ -35,13 +35,13 @@
 <a href="#installing" id="installing" style="color: inherit; text-decoration: none;">
   <h3>Installing</h3>
 </a>
-<pre><code><span class="hl-3">yarn</span><span class="hl-0"> </span><span class="hl-3">add</span><span class="hl-0"> @</span><span class="hl-3">tokene</span><span class="hl-0">/</span><span class="hl-3">toolkit</span>
+<pre><code><span class="hl-3">yarn</span><span class="hl-0"> </span><span class="hl-3">add</span><span class="hl-0"> @</span><span class="hl-3">tokene</span><span class="hl-0">/</span><span class="hl-3">vue</span><span class="hl-0">-</span><span class="hl-3">web3</span><span class="hl-0">-</span><span class="hl-3">provider</span>
 </code></pre>
 
-<a href="#work-with-big-numbers" id="work-with-big-numbers" style="color: inherit; text-decoration: none;">
-  <h4>Work with big numbers</h4>
+<a href="#default-example" id="default-example" style="color: inherit; text-decoration: none;">
+  <h4>Default example</h4>
 </a>
-<pre><code class="language-ts"><span class="hl-12">import</span><span class="hl-0"> { </span><span class="hl-3">IpfsUtil</span><span class="hl-0"> } </span><span class="hl-12">from</span><span class="hl-0"> </span><span class="hl-1">&#39;@tokene/toolkit&#39;</span><br/><br/><span class="hl-8">const</span><span class="hl-0"> </span><span class="hl-13">ipfsEntity</span><span class="hl-0"> = </span><span class="hl-8">new</span><span class="hl-0"> </span><span class="hl-14">IpfsUtil</span><span class="hl-0">({</span><br/><span class="hl-0">  </span><span class="hl-3">rawData:</span><span class="hl-0"> </span><span class="hl-13">JSON</span><span class="hl-0">.</span><span class="hl-14">stringify</span><span class="hl-0">({</span><br/><span class="hl-0">    </span><span class="hl-3">someData:</span><span class="hl-0"> </span><span class="hl-1">&#39;lorem ipsum dolor sit amet concestetur!&#39;</span><span class="hl-0">,</span><br/><span class="hl-0">  }),</span><br/><span class="hl-0">})</span><br/><br/><span class="hl-12">await</span><span class="hl-0"> </span><span class="hl-3">ipfsEntity</span><span class="hl-0">.</span><span class="hl-14">uploadSelf</span><span class="hl-0">()</span>
+<pre><code class="language-ts"><span class="hl-12">import</span><span class="hl-0"> { </span><span class="hl-3">useProvider</span><span class="hl-0"> } </span><span class="hl-12">from</span><span class="hl-0"> </span><span class="hl-1">&#39;@tokene/vue-web3-provider&#39;</span><br/><span class="hl-12">import</span><span class="hl-0"> { </span><span class="hl-3">ProviderDetector</span><span class="hl-0">, </span><span class="hl-3">MetamaskProvider</span><span class="hl-0"> } </span><span class="hl-12">from</span><span class="hl-0"> </span><span class="hl-1">&#39;@distributedlab/w3p&#39;</span><br/><br/><span class="hl-8">const</span><span class="hl-0"> </span><span class="hl-13">providerDetector</span><span class="hl-0"> = </span><span class="hl-8">new</span><span class="hl-0"> </span><span class="hl-14">ProviderDetector</span><span class="hl-0">()</span><br/><span class="hl-8">const</span><span class="hl-0"> </span><span class="hl-13">provider</span><span class="hl-0"> = </span><span class="hl-14">useProvider</span><span class="hl-0">()</span><br/><br/><span class="hl-8">const</span><span class="hl-0"> </span><span class="hl-14">init</span><span class="hl-0"> = </span><span class="hl-8">async</span><span class="hl-0"> () </span><span class="hl-8">=&gt;</span><span class="hl-0"> {</span><br/><span class="hl-0">  </span><span class="hl-12">await</span><span class="hl-0"> </span><span class="hl-3">providerDetector</span><span class="hl-0">.</span><span class="hl-14">init</span><span class="hl-0">()</span><br/><span class="hl-0">  </span><span class="hl-12">await</span><span class="hl-0"> </span><span class="hl-3">provider</span><span class="hl-0">.</span><span class="hl-14">init</span><span class="hl-0">(</span><span class="hl-3">MetamaskProvider</span><span class="hl-0">, {</span><br/><span class="hl-0">    </span><span class="hl-3">providerDetector:</span><span class="hl-0"> </span><span class="hl-3">ProviderDetector</span><span class="hl-0">,</span><br/><span class="hl-0">    </span><span class="hl-3">listeners:</span><span class="hl-0"> {},</span><br/><span class="hl-0">  })</span><br/><span class="hl-0">}</span><br/><br/><span class="hl-14">init</span><span class="hl-0">()</span>
 </code></pre>
 
 <a href="#running-the-tests" id="running-the-tests" style="color: inherit; text-decoration: none;">
@@ -49,6 +49,14 @@
 </a>
 <pre><code><span class="hl-3">yarn</span><span class="hl-0"> </span><span class="hl-3">test</span>
 </code></pre>
+
+<a href="#more-examples" id="more-examples" style="color: inherit; text-decoration: none;">
+  <h2>More examples</h2>
+</a>
+<p>Check out more examples and use-cases:</p>
+<ul>
+<li><a href="https://github.com/distributed-lab/web-kit/blob/main/packages/w3p/examples/multiple-providers.ts">Multiple providers with the current selected one</a></li>
+</ul>
 
 <a href="#license" id="license" style="color: inherit; text-decoration: none;">
   <h2>License</h2>

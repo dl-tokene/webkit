@@ -16,7 +16,7 @@
 <li><a href="_tokene_toolkit.html">@tokene/toolkit</a></li></ul>
 <h1>Module @tokene/toolkit</h1></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/dl-tokene/webkit/blob/5ddfb8e/packages/toolkit/src/index.ts#L1">packages/toolkit/src/index.ts:1</a></li></ul></aside>
+<li>Defined in <a href="https://github.com/dl-tokene/webkit/blob/0cc4aa9/packages/toolkit/src/index.ts#L1">packages/toolkit/src/index.ts:1</a></li></ul></aside>
 <section class="tsd-panel-group">
 <section class="tsd-panel tsd-typography">
 <a href="#tokenetoolkit" id="tokenetoolkit" style="color: inherit; text-decoration: none;">
@@ -38,8 +38,8 @@
 <pre><code><span class="hl-3">yarn</span><span class="hl-0"> </span><span class="hl-3">add</span><span class="hl-0"> @</span><span class="hl-3">tokene</span><span class="hl-0">/</span><span class="hl-3">toolkit</span>
 </code></pre>
 
-<a href="#work-with-big-numbers" id="work-with-big-numbers" style="color: inherit; text-decoration: none;">
-  <h4>Work with big numbers</h4>
+<a href="#work-with-ipfs" id="work-with-ipfs" style="color: inherit; text-decoration: none;">
+  <h4>Work with IPFS</h4>
 </a>
 <pre><code class="language-ts"><span class="hl-12">import</span><span class="hl-0"> { </span><span class="hl-3">IpfsUtil</span><span class="hl-0"> } </span><span class="hl-12">from</span><span class="hl-0"> </span><span class="hl-1">&#39;@tokene/toolkit&#39;</span><br/><br/><span class="hl-8">const</span><span class="hl-0"> </span><span class="hl-13">ipfsEntity</span><span class="hl-0"> = </span><span class="hl-8">new</span><span class="hl-0"> </span><span class="hl-14">IpfsUtil</span><span class="hl-0">({</span><br/><span class="hl-0">  </span><span class="hl-3">rawData:</span><span class="hl-0"> </span><span class="hl-13">JSON</span><span class="hl-0">.</span><span class="hl-14">stringify</span><span class="hl-0">({</span><br/><span class="hl-0">    </span><span class="hl-3">someData:</span><span class="hl-0"> </span><span class="hl-1">&#39;lorem ipsum dolor sit amet concestetur!&#39;</span><span class="hl-0">,</span><br/><span class="hl-0">  }),</span><br/><span class="hl-0">})</span><br/><br/><span class="hl-12">await</span><span class="hl-0"> </span><span class="hl-3">ipfsEntity</span><span class="hl-0">.</span><span class="hl-14">uploadSelf</span><span class="hl-0">()</span>
 </code></pre>
