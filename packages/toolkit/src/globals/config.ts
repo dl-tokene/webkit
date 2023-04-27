@@ -1,7 +1,7 @@
-export const config = {
+export const toolkitConfig = {
   API_IPFS_URL: '',
 }
 
-export const initConfig = (externalConfig: typeof config) => {
-  Object.assign(config, externalConfig)
+export const initToolkitConfig = (config: typeof toolkitConfig) => {
+  Object.assign(toolkitConfig, config)
 }

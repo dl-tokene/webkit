@@ -1,14 +1,8 @@
+import { isObject } from 'lodash-es'
+
 import { api } from '@/globals'
 
-enum KEY_VALUES {
-  extensions = 'extensions',
-}
-
 export class KeyValueUtil {
-  public static get kvList(): Readonly<typeof KEY_VALUES> {
-    return KEY_VALUES
-  }
-
   async create(key: string, rawData: unknown) {
     const { data } = await api.post<{
       type: 'key-value'
@@ -21,13 +15,17 @@ export class KeyValueUtil {
     return data
   }
 
-  async get(key: string) {
+  async get<T>(key: string) {
     const { data } = await api.get<{
       type: 'key-value'
       id: string
       key: string
       value: string
     }>(`/integrations/key-value-svc/values/${key}`)
-    return data
+
+    return {
+      ...data,
+      value: (isObject(data.value) ? JSON.parse(data.value) : data.value) as T,
+    }
   }
 }
