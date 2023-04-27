@@ -6,7 +6,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Added
-- `toolkit` - parsing config helpers
+- `toolkit` - parsing config helpers, composables, eth helpers, localization for validators
 
 ### Changed
 - `toolkit` - README, api and config initialization, enums

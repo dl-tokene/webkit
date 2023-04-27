@@ -1,5 +1,11 @@
+import { utils } from 'ethers'
+
 import { EthereumProviderInternalErrors } from '@/enums'
 import { i18next } from '@/localization'
+
+export function verifyEthAddress(address: string) {
+  return utils.isAddress(address)
+}
 
 export function handleEthereumProviderInternalError(errorMsg: string) {
   const errorValue = errorMsg.split(':')[2]?.trim()
