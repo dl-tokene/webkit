@@ -11,7 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - `toolkit` - localization
 
-## [0.0.0-rc.0] 2023-04-26
+## [0.0.0-rc.0] - 2023-04-26
 ### Added
 - Initial release
 - `root` - `toolkit` package
