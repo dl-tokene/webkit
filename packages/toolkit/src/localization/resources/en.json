@@ -1,8 +1,12 @@
 {
   "validations": {
     "field-error_required": "Please fill out this field",
+    "field-error_requiredIf": "Please fill out this field",
     "field-error_email": "Field must be a valid email",
-    "field-error_ethAddress": "Field must be a valid ethereum address"
+    "field-error_ethAddress": "Field must be a valid ethereum address",
+    "field-error_minLength": "Field must be at least {length} characters long",
+    "field-error_maxLength": "Field must be at most {length} characters long",
+    "field-error_sameAs": "Field must be the same as {field}"
   },
   "errors": {
     "default": "Oops... Something went wrong",
