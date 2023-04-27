@@ -17,11 +17,13 @@ yarn add @tokene/toolkit
 First of all, you need to initialize globals in the highest level of your application:
 
 ```ts
-import { initApi, fetchAndParseConfig, initToolkitConfig } from '@tokene/toolkit'
+import { initApi, fetchAndParseConfig, initToolkitConfig, getConfigFromEnv } from '@tokene/toolkit'
 import { clientConfig } from '@config'
 
 const init = async () => {
-  await initApi(import.meta.env.API_URL)
+  getConfigFromEnv<typeof clientConfig>(clientConfig, import.meta.env, document.ENV)
+
+  await initApi(clientConfig.API_URL)
 
   await fetchAndParseConfig<typeof clientConfig>(clientConfig, import.meta.env, document.ENV)
 
@@ -34,6 +36,7 @@ init()
 ```
 
 This will make package works properly with your environment.
+- `getConfigFromEnv` - get some required config from .env or env.js, if you ain't hardcoded it in your code
 - `initApi` is need to initialize API fetcher for utils
 - `fetchAndParseConfig` is need to fetch and parse config from API | process.env | document.ENV (mostly it's a helper for client side to fetch env variables from API or .env or env.js, you can skip this step if you just get variables from env or custom places)
 - `initToolkitConfig` is need to initialize global variables which utils use
