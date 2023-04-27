@@ -2,7 +2,7 @@ import axios from 'axios'
 import type { ImportCandidate } from 'ipfs-core-types/src/utils'
 import { create, IPFSHTTPClient } from 'ipfs-http-client'
 
-import { config } from '@/globals'
+import { toolkitConfig } from '@/globals'
 
 const PREFIX = 'ipfs://'
 
@@ -18,7 +18,7 @@ export class IpfsUtil<T> {
     this._rawData = rawData
     this._path = path
     this._ipfsApi = create({
-      url: `${config.API_IPFS_URL}/api/api/v0`,
+      url: `${toolkitConfig.API_IPFS_URL}/api/api/v0`,
     })
   }
 
@@ -47,7 +47,10 @@ export class IpfsUtil<T> {
 
   get publicUrl() {
     return this._path
-      ? `${config.API_IPFS_URL}/ipfs/ipfs/${this._path.replace(PREFIX, '')}`
+      ? `${toolkitConfig.API_IPFS_URL}/ipfs/ipfs/${this._path.replace(
+          PREFIX,
+          '',
+        )}`
       : ''
   }
 

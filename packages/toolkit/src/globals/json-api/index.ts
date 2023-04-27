@@ -1,4 +1,4 @@
-import { JsonApiClient } from '@distributedlab/jac'
+import { JsonApiClient, JsonApiClientConfig } from '@distributedlab/jac'
 
 import {
   bearerAttachInterceptor,
@@ -7,11 +7,20 @@ import {
 
 export let api: JsonApiClient
 
-export const initApi = (baseUrl: string) => {
+export const initApi = (
+  baseUrl: string,
+  isWithAuthInterceptors = true,
+  config?: JsonApiClientConfig,
+) => {
   api = new JsonApiClient(
     {
       baseUrl: baseUrl,
+      ...(config ? { config } : {}),
     },
-    [{ request: bearerAttachInterceptor, error: refreshTokenInterceptor }],
+    [
+      ...(isWithAuthInterceptors
+        ? [{ request: bearerAttachInterceptor, error: refreshTokenInterceptor }]
+        : []),
+    ],
   )
 }

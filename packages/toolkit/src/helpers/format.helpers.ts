@@ -84,7 +84,7 @@ export const formatTokenBalance = (
 
 export const formatPercentageAmount = (
   value: BigNumber | BnLike,
-  decimals: number,
+  decimals?: number,
 ) => {
   const finalDecimals = value instanceof BN ? value.decimals : decimals
 
