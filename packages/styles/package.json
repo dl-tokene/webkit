@@ -1,0 +1,38 @@
+{
+  "name": "@tokene/styles",
+  "version": "0.0.0-rc.2",
+  "description": "Default styles for every single frontend module of TokenE",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dl-tokene/webkit/tree/main/packages/styles"
+  },
+  "homepage": "https://dl-tokene.github.io/webkit/modules/_tokene_styles.html",
+  "license": "MIT",
+  "sideEffects": false,
+  "sass": "src/index.scss",
+  "style": "dist/styles.css",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "build": "yarn clean && rollup -c --bundleConfigAsCjs && node ./postbuild.js",
+    "clean": "rm -rf dist"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@types/node": "^18.14.2",
+    "clean-css": "^5.3.2",
+    "rollup": "^3.18.0",
+    "rollup-plugin-polyfill-node": "^0.12.0",
+    "rollup-plugin-sass": "^1.12.19",
+    "sass": "^1.62.1"
+  },
+  "typedoc": {
+    "entryPoint": "./src/index.ts",
+    "readmeFile": "./README.md",
+    "displayName": "@tokene/styles"
+  }
+}
