@@ -1,5 +1,5 @@
 # @tokene/vue-web3-provider
-The Vue reactive wrapper of [@distributedlab/w3p](https://github.com/distributed-lab/web-kit/tree/main/packages/w3p)
+The Vue reactive wrapper for [@distributedlab/w3p](https://github.com/distributed-lab/web-kit/tree/main/packages/w3p)
 
 ![version (scoped package)](https://badgen.net/npm/v/@tokene/vue-web3-provider)
 ![types](https://badgen.net/npm/types/@tokene/vue-web3-provider)

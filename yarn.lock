@@ -435,12 +435,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@distributedlab/fetcher@npm:0.2.0-rc.6, @distributedlab/fetcher@npm:^0.2.0-rc.6":
+"@distributedlab/fetcher@npm:0.2.0-rc.6":
   version: 0.2.0-rc.6
   resolution: "@distributedlab/fetcher@npm:0.2.0-rc.6"
   dependencies:
     uuid: ^9.0.0
   checksum: d33fe8fdf5ce163269a8f63da8224e6d5f961f21ff4a9dea24de26abda0dbac2cab6bdb497d93f43467a6253ee4c3de2edec6b7df5beea3c7fba000da64df83a
+  languageName: node
+  linkType: hard
+
+"@distributedlab/fetcher@npm:^0.2.0-rc.6":
+  version: 0.2.0-rc.7
+  resolution: "@distributedlab/fetcher@npm:0.2.0-rc.7"
+  dependencies:
+    uuid: ^9.0.0
+  checksum: d5007a3b1ddb194af76e09a9a01732e171c2f9ba740b831476b74b08a968a562582a0a8ffb196ccb75bdd1b1e98adc366196708482c68c2cbc898f3afaf1c10d
   languageName: node
   linkType: hard
 
@@ -454,7 +463,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@distributedlab/tools@npm:0.2.0-rc.6, @distributedlab/tools@npm:^0.2.0-rc.6":
+"@distributedlab/tools@npm:0.2.0-rc.6":
   version: 0.2.0-rc.6
   resolution: "@distributedlab/tools@npm:0.2.0-rc.6"
   dependencies:
@@ -462,6 +471,17 @@ __metadata:
     dayjs: ^1.11.7
     tslib: ^2.5.0
   checksum: b0fc1844ff4cc39cda0b7d90e47857e9d71589460d3365abe3c360fa3e79baaacc0194e3385ebd0b4bbd3252c761f72aa1da4a666fe414c84b0363ddb4a628ae
+  languageName: node
+  linkType: hard
+
+"@distributedlab/tools@npm:^0.2.0-rc.6":
+  version: 0.2.0-rc.7
+  resolution: "@distributedlab/tools@npm:0.2.0-rc.7"
+  dependencies:
+    bignumber.js: ^9.1.1
+    dayjs: ^1.11.7
+    tslib: ^2.5.0
+  checksum: 2fce4b5723219670a0fcfbf5b87ff46bbaa57abf2c840723fbb409308b42b329370df7643eba39a7d529588c883e901cc7b2d3d904fb2085903be45b8f1946f4
   languageName: node
   linkType: hard
 
@@ -1770,7 +1790,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rollup/pluginutils@npm:^5.0.1":
+"@rollup/pluginutils@npm:^3 || ^4 || ^5, @rollup/pluginutils@npm:^5.0.1":
   version: 5.0.2
   resolution: "@rollup/pluginutils@npm:5.0.2"
   dependencies:
@@ -2009,6 +2029,19 @@ __metadata:
   checksum: c29df3bcec6fc3bdec2b17981d89d9c9fc9bd7d0c9bcfe92821dc533f4440bc890ccde79971838b4ceed1921d456973c4180d7175ee1d0023ad0562240a58d95
   languageName: node
   linkType: hard
+
+"@tokene/styles@workspace:packages/styles":
+  version: 0.0.0-use.local
+  resolution: "@tokene/styles@workspace:packages/styles"
+  dependencies:
+    "@types/node": ^18.14.2
+    clean-css: ^5.3.2
+    rollup: ^3.18.0
+    rollup-plugin-polyfill-node: ^0.12.0
+    rollup-plugin-sass: ^1.12.19
+    sass: ^1.62.1
+  languageName: unknown
+  linkType: soft
 
 "@tokene/toolkit@workspace:packages/toolkit":
   version: 0.0.0-use.local
@@ -2273,9 +2306,9 @@ __metadata:
   linkType: hard
 
 "@types/node@npm:*, @types/node@npm:>=13.7.0, @types/node@npm:^18.0.0, @types/node@npm:^18.14.2":
-  version: 18.16.1
-  resolution: "@types/node@npm:18.16.1"
-  checksum: 799026b949a48993cba7c9b81b2eabfdfb34c880744cb44c1c990fbedc9e315f3634d126eb2cf9a6e0795577c01016e2326d98565bef695ada9d363fadeb6946
+  version: 18.16.2
+  resolution: "@types/node@npm:18.16.2"
+  checksum: 7ad66d23b3b93885a9f879bff98e0196790ad35589b47a3d81b52db969ad17ee298082020296df5166c2d72d3cd6a4b9ab34d254483637d967944a4b3e6febdb
   languageName: node
   linkType: hard
 
@@ -2915,13 +2948,13 @@ __metadata:
   linkType: hard
 
 "axios@npm:^1.3.6":
-  version: 1.3.6
-  resolution: "axios@npm:1.3.6"
+  version: 1.4.0
+  resolution: "axios@npm:1.4.0"
   dependencies:
     follow-redirects: ^1.15.0
     form-data: ^4.0.0
     proxy-from-env: ^1.1.0
-  checksum: c90497ebf738723654a6e80147dc294186ad9d7b08f95f5a22fd48f826c7e06a576229b8dff3137195ca627349a4312e00fa78e4f1c499250b9860596adef44a
+  checksum: 7fb6a4313bae7f45e89d62c70a800913c303df653f19eafec88e56cea2e3821066b8409bc68be1930ecca80e861c52aa787659df0ffec6ad4d451c7816b9386b
   languageName: node
   linkType: hard
 
@@ -3399,7 +3432,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"chokidar@npm:^3.5.3":
+"chokidar@npm:>=3.0.0 <4.0.0, chokidar@npm:^3.5.3":
   version: 3.5.3
   resolution: "chokidar@npm:3.5.3"
   dependencies:
@@ -3443,6 +3476,15 @@ __metadata:
   version: 1.2.2
   resolution: "cjs-module-lexer@npm:1.2.2"
   checksum: 977f3f042bd4f08e368c890d91eecfbc4f91da0bc009a3c557bc4dfbf32022ad1141244ac1178d44de70fc9f3dea7add7cd9a658a34b9fae98a55d8f92331ce5
+  languageName: node
+  linkType: hard
+
+"clean-css@npm:^5.3.2":
+  version: 5.3.2
+  resolution: "clean-css@npm:5.3.2"
+  dependencies:
+    source-map: ~0.6.0
+  checksum: 8787b281acc9878f309b5f835d410085deedfd4e126472666773040a6a8a72f472a1d24185947d23b87b1c419bf2c5ed429395d5c5ff8279c98b05d8011e9758
   languageName: node
   linkType: hard
 
@@ -3814,9 +3856,9 @@ __metadata:
   linkType: hard
 
 "electron-to-chromium@npm:^1.4.284":
-  version: 1.4.372
-  resolution: "electron-to-chromium@npm:1.4.372"
-  checksum: 946c50f1ec5df2408fc90164ab3814081dacd20cad7c440b829da391f864fefcda202e9e5a7016ce9d06d3c8746a505ffad820dfc51aa269dd13a6fdbf71d15d
+  version: 1.4.376
+  resolution: "electron-to-chromium@npm:1.4.376"
+  checksum: 881351d25e0e983432c10844540bb664ee4c54f781b81b7247c36d6e617dc85305fd87ffb5de6d9630c6a54f4432afd8e97565a11c62bb77b63051e43cb8a942
   languageName: node
   linkType: hard
 
@@ -5077,6 +5119,13 @@ __metadata:
   version: 5.2.4
   resolution: "ignore@npm:5.2.4"
   checksum: 3d4c309c6006e2621659311783eaea7ebcd41fe4ca1d78c91c473157ad6666a57a2df790fe0d07a12300d9aac2888204d7be8d59f9aaf665b1c7fcdb432517ef
+  languageName: node
+  linkType: hard
+
+"immutable@npm:^4.0.0":
+  version: 4.3.0
+  resolution: "immutable@npm:4.3.0"
+  checksum: bbd7ea99e2752e053323543d6ff1cc71a4b4614fa6121f321ca766db2bd2092f3f1e0a90784c5431350b7344a4f792fa002eac227062d59b9377b6c09063b58b
   languageName: node
   linkType: hard
 
@@ -7538,7 +7587,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"resolve@npm:^1.20.0, resolve@npm:^1.22.1":
+"resolve@npm:^1.20.0, resolve@npm:^1.22.1, resolve@npm:^1.5.0":
   version: 1.22.3
   resolution: "resolve@npm:1.22.3"
   dependencies:
@@ -7551,7 +7600,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"resolve@patch:resolve@^1.20.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.22.1#~builtin<compat/resolve>":
+"resolve@patch:resolve@^1.20.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.22.1#~builtin<compat/resolve>, resolve@patch:resolve@^1.5.0#~builtin<compat/resolve>":
   version: 1.22.3
   resolution: "resolve@patch:resolve@npm%3A1.22.3#~builtin<compat/resolve>::version=1.22.3&hash=c3c19d"
   dependencies:
@@ -7616,6 +7665,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"rollup-plugin-sass@npm:^1.12.19":
+  version: 1.12.19
+  resolution: "rollup-plugin-sass@npm:1.12.19"
+  dependencies:
+    "@rollup/pluginutils": ^3 || ^4 || ^5
+    resolve: ^1.5.0
+    sass: ^1.7.2
+  checksum: 91c466f75867910c1da47dff4c4f47d6177e5988b570dce6eb388aeedcd48d8bab809f29a05311ee8b8cd2ff9ac7c28f1673f03c4473e0930f6a9a246e4c549b
+  languageName: node
+  linkType: hard
+
 "rollup@npm:^3.18.0":
   version: 3.21.0
   resolution: "rollup@npm:3.21.0"
@@ -7659,11 +7719,11 @@ __metadata:
   linkType: hard
 
 "rxjs@npm:^7.8.0":
-  version: 7.8.0
-  resolution: "rxjs@npm:7.8.0"
+  version: 7.8.1
+  resolution: "rxjs@npm:7.8.1"
   dependencies:
     tslib: ^2.1.0
-  checksum: 61b4d4fd323c1043d8d6ceb91f24183b28bcf5def4f01ca111511d5c6b66755bc5578587fe714ef5d67cf4c9f2e26f4490d4e1d8cabf9bd5967687835e9866a2
+  checksum: de4b53db1063e618ec2eca0f7965d9137cabe98cf6be9272efe6c86b47c17b987383df8574861bcced18ebd590764125a901d5506082be84a8b8e364bf05f119
   languageName: node
   linkType: hard
 
@@ -7689,6 +7749,19 @@ __metadata:
   version: 2.1.2
   resolution: "safer-buffer@npm:2.1.2"
   checksum: cab8f25ae6f1434abee8d80023d7e72b598cf1327164ddab31003c51215526801e40b66c5e65d658a0af1e9d6478cadcb4c745f4bd6751f97d8644786c0978b0
+  languageName: node
+  linkType: hard
+
+"sass@npm:^1.62.1, sass@npm:^1.7.2":
+  version: 1.62.1
+  resolution: "sass@npm:1.62.1"
+  dependencies:
+    chokidar: ">=3.0.0 <4.0.0"
+    immutable: ^4.0.0
+    source-map-js: ">=0.6.2 <2.0.0"
+  bin:
+    sass: sass.js
+  checksum: 1b1b3584b38a63dd94156b65f13b90e3f84b170a38c3d5e3fa578b7a32a37aeb349b4926b0eaf9448d48e955e86b1ee01b13993f19611dad8068af07a607c13b
   languageName: node
   linkType: hard
 
@@ -7894,7 +7967,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"source-map-js@npm:^1.0.2":
+"source-map-js@npm:>=0.6.2 <2.0.0, source-map-js@npm:^1.0.2":
   version: 1.0.2
   resolution: "source-map-js@npm:1.0.2"
   checksum: c049a7fc4deb9a7e9b481ae3d424cc793cb4845daa690bc5a05d428bf41bf231ced49b4cf0c9e77f9d42fdb3d20d6187619fc586605f5eabe995a316da8d377c
@@ -7921,7 +7994,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"source-map@npm:^0.6.0, source-map@npm:^0.6.1":
+"source-map@npm:^0.6.0, source-map@npm:^0.6.1, source-map@npm:~0.6.0":
   version: 0.6.1
   resolution: "source-map@npm:0.6.1"
   checksum: 59ce8640cf3f3124f64ac289012c2b8bd377c238e316fb323ea22fbfe83da07d81e000071d7242cad7a23cd91c7de98e4df8830ec3f133cb6133a5f6e9f67bc2
@@ -8288,8 +8361,8 @@ __metadata:
   linkType: hard
 
 "tsc-alias@npm:^1.8.2":
-  version: 1.8.5
-  resolution: "tsc-alias@npm:1.8.5"
+  version: 1.8.6
+  resolution: "tsc-alias@npm:1.8.6"
   dependencies:
     chokidar: ^3.5.3
     commander: ^9.0.0
@@ -8299,7 +8372,7 @@ __metadata:
     plimit-lit: ^1.2.6
   bin:
     tsc-alias: dist/bin/index.js
-  checksum: 9b92f4141e2d388bd248d3bb362fa48e1bab7a350004ec000016375ca779632d6c6eac53f2a2d92284152cc42dabdf1d9e70162da5a5eb691d93e161d5ed65d2
+  checksum: e177c155e1501a1021cec8b201be582afabb3e2651b2e44883bf18efdce7f49fe0132497ab1df1d9f3bddd6e972db15d4de148b9514c6847e05f0ddd53896286
   languageName: node
   linkType: hard
 
@@ -8848,8 +8921,8 @@ __metadata:
   linkType: hard
 
 "yargs@npm:^17.3.1":
-  version: 17.7.1
-  resolution: "yargs@npm:17.7.1"
+  version: 17.7.2
+  resolution: "yargs@npm:17.7.2"
   dependencies:
     cliui: ^8.0.1
     escalade: ^3.1.1
@@ -8858,7 +8931,7 @@ __metadata:
     string-width: ^4.2.3
     y18n: ^5.0.5
     yargs-parser: ^21.1.1
-  checksum: 3d8a43c336a4942bc68080768664aca85c7bd406f018bad362fd255c41c8f4e650277f42fd65d543fce99e084124ddafee7bbfc1a5c6a8fda4cec78609dcf8d4
+  checksum: 73b572e863aa4a8cbef323dd911d79d193b772defd5a51aab0aca2d446655216f5002c42c5306033968193bdbf892a7a4c110b0d77954a7fdf563e653967b56a
   languageName: node
   linkType: hard
 

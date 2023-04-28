@@ -47,6 +47,7 @@ Here are the packages in the namespace:
 |--------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------|
 | [@tokene/toolkit](https://dl-tokene.github.io/webkit/modules/_tokene_toolkit.html)                     | Collection of common utilities, functions, enums, errors and helpers                                                 | [![npm version](https://img.shields.io/npm/v/@tokene/toolkit.svg)](https://www.npmjs.com/package/@tokene/toolkit)           |
 | [@tokene/vue-web3-provider](https://dl-tokene.github.io/webkit/modules/_tokene_vue_web3_provider.html) | The Vue reactive wrapper of [@distributedlab/w3p](https://github.com/distributed-lab/web-kit/tree/main/packages/w3p) | [![npm version](https://img.shields.io/npm/v/@tokene/toolkit.svg)](https://www.npmjs.com/package/@tokene/vue-web3-provider) |
+| [@tokene/styles](https://dl-tokene.github.io/webkit/modules/_tokene_styles.html)                       | The global styles for every TokenE project and common function, mixins and variables                                 | [![npm version](https://img.shields.io/npm/v/@tokene/styles.svg)](https://www.npmjs.com/package/@tokene/styles)             |
 
 ## Using in the projects made by create-react-app
 

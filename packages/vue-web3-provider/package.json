@@ -1,7 +1,7 @@
 {
   "name": "@tokene/vue-web3-provider",
   "version": "0.0.0-rc.2",
-  "description": "Collection of common utility functions and classes in tokenE frontend modules",
+  "description": "The Vue reactive wrapper for @distributedlab/w3p",
   "repository": {
     "type": "git",
     "url": "https://github.com/dl-tokene/webkit/tree/main/packages/vue-web3-provider"
