@@ -1,0 +1,11 @@
+{
+  "framework": "vue",
+  "name": "@tokene/ui-kit",
+  "version": "0.0.0-rc.2",
+  "contributions": {
+    "html": {
+      "description-markup": "markdown",
+      "types-syntax": "typescript"
+    }
+  }
+}

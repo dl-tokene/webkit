@@ -1,0 +1,4 @@
+{
+  "componentsRoot": "./src",
+  "components": "./src/**/*.vue"
+}
