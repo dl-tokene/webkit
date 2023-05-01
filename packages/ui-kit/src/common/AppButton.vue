@@ -2,7 +2,7 @@
 import { computed, useAttrs, useSlots } from 'vue'
 import type { LocationAsRelativeRaw } from 'vue-router'
 
-import { Icon } from '@/common/index'
+import { Icon } from '@/common'
 import type { ICON_NAMES } from '@/enums'
 
 const props = withDefaults(
@@ -126,10 +126,9 @@ const buttonClasses = computed(() =>
   cursor: pointer;
   user-select: none;
   overflow: hidden;
-  display: grid;
-  width: min-content;
-  grid: auto / auto-flow max-content;
+  display: flex;
   align-items: center;
+  width: min-content;
   justify-content: center;
   transition: var(--button-transition-duration) ease-in;
   transition-property: background-color, color;
@@ -274,7 +273,7 @@ const buttonClasses = computed(() =>
     --button-icon-size: #{toRem(18)};
 
     padding: toRem(18) toRem(36);
-    grid-gap: toRem(8);
+    gap: toRem(8);
     font-size: toRem(14);
     line-height: 1.45;
     font-weight: 500;
@@ -295,7 +294,7 @@ const buttonClasses = computed(() =>
     font-size: toRem(12);
     line-height: 1.3;
     font-weight: 500;
-    grid-gap: toRem(8);
+    gap: toRem(8);
     height: toRem(40);
 
     &.app-button--icon-only {
@@ -313,7 +312,7 @@ const buttonClasses = computed(() =>
     font-size: toRem(12);
     line-height: 1.45;
     font-weight: 500;
-    grid-gap: toRem(8);
+    gap: toRem(8);
     height: toRem(32);
 
     &.app-button--icon-only {

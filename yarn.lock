@@ -15,13 +15,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@antfu/utils@npm:^0.7.2":
-  version: 0.7.2
-  resolution: "@antfu/utils@npm:0.7.2"
-  checksum: ada98dde0a06bc10129ad7bc9d0007c1cf7e36eeb9e8ca93ea5173bc1e1d351afee8511c9e8e182b3105b787ce0ce813afc4ab283b511374f1e56a085f60a2c6
-  languageName: node
-  linkType: hard
-
 "@babel/code-frame@npm:^7.0.0, @babel/code-frame@npm:^7.12.13, @babel/code-frame@npm:^7.18.6, @babel/code-frame@npm:^7.21.4":
   version: 7.21.4
   resolution: "@babel/code-frame@npm:7.21.4"
@@ -2354,11 +2347,6 @@ __metadata:
     "@distributedlab/tools": 0.2.0-rc.6
     "@distributedlab/w3p": 0.2.0-rc.6
     "@rollup/plugin-alias": ^5.0.0
-    "@rollup/plugin-babel": ^6.0.3
-    "@rollup/plugin-commonjs": ^24.0.1
-    "@rollup/plugin-json": ^6.0.0
-    "@rollup/plugin-node-resolve": ^15.0.2
-    "@rollup/plugin-terser": ^0.4.0
     "@rollup/plugin-typescript": ^11.0.0
     "@rushstack/eslint-patch": ^1.2.0
     "@swc/cli": ^0.1.62
@@ -2385,11 +2373,7 @@ __metadata:
     jest: ^29.5.0
     lodash-es: ^4.17.21
     loglevel: ^1.8.1
-    rollup: ^3.18.0
-    rollup-plugin-polyfill-node: ^0.12.0
-    rollup-plugin-vue: ^6.0.0
     tsc-alias: ^1.8.2
-    unplugin-vue-components: ^0.24.1
     vite: ^4.3.3
     vite-plugin-dts: ^2.3.0
     vue-docgen-web-types: ^0.1.8
@@ -3176,7 +3160,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"acorn@npm:^8.5.0, acorn@npm:^8.8.0, acorn@npm:^8.8.2":
+"acorn@npm:^8.5.0, acorn@npm:^8.8.0":
   version: 8.8.2
   resolution: "acorn@npm:8.8.2"
   bin:
@@ -5021,13 +5005,6 @@ __metadata:
   version: 5.3.0
   resolution: "estraverse@npm:5.3.0"
   checksum: 072780882dc8416ad144f8fe199628d2b3e7bbc9989d9ed43795d2c90309a2047e6bc5979d7e2322a341163d22cfad9e21f4110597fe487519697389497e4e2b
-  languageName: node
-  linkType: hard
-
-"estree-walker@npm:^0.6.1":
-  version: 0.6.1
-  resolution: "estree-walker@npm:0.6.1"
-  checksum: 9d6f82a4921f11eec18f8089fb3cce6e53bcf45a8e545c42a2674d02d055fb30f25f90495f8be60803df6c39680c80dcee7f944526867eb7aa1fc9254883b23d
   languageName: node
   linkType: hard
 
@@ -7338,13 +7315,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"local-pkg@npm:^0.4.3":
-  version: 0.4.3
-  resolution: "local-pkg@npm:0.4.3"
-  checksum: 7825aca531dd6afa3a3712a0208697aa4a5cd009065f32e3fb732aafcc42ed11f277b5ac67229222e96f4def55197171cdf3d5522d0381b489d2e5547b407d55
-  languageName: node
-  linkType: hard
-
 "locate-path@npm:^5.0.0":
   version: 5.0.0
   resolution: "locate-path@npm:5.0.0"
@@ -7492,15 +7462,6 @@ __metadata:
   dependencies:
     "@jridgewell/sourcemap-codec": ^1.4.13
   checksum: 19e5398fcfc44804917127c72ad622c68a19a0a10cbdb8d4f9f9417584a087fe9e117140bfb2463d86743cf1ed9cf4182ae0b0ad1a7536f7fdda257ee4449ffb
-  languageName: node
-  linkType: hard
-
-"magic-string@npm:^0.30.0":
-  version: 0.30.0
-  resolution: "magic-string@npm:0.30.0"
-  dependencies:
-    "@jridgewell/sourcemap-codec": ^1.4.13
-  checksum: 7bdf22e27334d8a393858a16f5f840af63a7c05848c000fd714da5aa5eefa09a1bc01d8469362f25cc5c4a14ec01b46557b7fff8751365522acddf21e57c488d
   languageName: node
   linkType: hard
 
@@ -7657,7 +7618,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"minimatch@npm:^7.1.3, minimatch@npm:^7.4.2, minimatch@npm:^7.4.3":
+"minimatch@npm:^7.1.3, minimatch@npm:^7.4.3":
   version: 7.4.6
   resolution: "minimatch@npm:7.4.6"
   dependencies:
@@ -8897,28 +8858,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rollup-plugin-vue@npm:^6.0.0":
-  version: 6.0.0
-  resolution: "rollup-plugin-vue@npm:6.0.0"
-  dependencies:
-    debug: ^4.1.1
-    hash-sum: ^2.0.0
-    rollup-pluginutils: ^2.8.2
-  peerDependencies:
-    "@vue/compiler-sfc": "*"
-  checksum: daadad653e3a056a9596bfa63381e24e45ca3779eeac9db4a4ade7d16a53181da1086f66a89b6aab8488aa71ca10fe73454b6c4c6c20129c8a33adfd444c006f
-  languageName: node
-  linkType: hard
-
-"rollup-pluginutils@npm:^2.8.2":
-  version: 2.8.2
-  resolution: "rollup-pluginutils@npm:2.8.2"
-  dependencies:
-    estree-walker: ^0.6.1
-  checksum: 339fdf866d8f4ff6e408fa274c0525412f7edb01dc46b5ccda51f575b7e0d20ad72965773376fb5db95a77a7fcfcab97bf841ec08dbadf5d6b08af02b7a2cf5e
-  languageName: node
-  linkType: hard
-
 "rollup@npm:^3.18.0, rollup@npm:^3.21.0":
   version: 3.21.1
   resolution: "rollup@npm:3.21.1"
@@ -9880,45 +9819,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"unplugin-vue-components@npm:^0.24.1":
-  version: 0.24.1
-  resolution: "unplugin-vue-components@npm:0.24.1"
-  dependencies:
-    "@antfu/utils": ^0.7.2
-    "@rollup/pluginutils": ^5.0.2
-    chokidar: ^3.5.3
-    debug: ^4.3.4
-    fast-glob: ^3.2.12
-    local-pkg: ^0.4.3
-    magic-string: ^0.30.0
-    minimatch: ^7.4.2
-    resolve: ^1.22.1
-    unplugin: ^1.1.0
-  peerDependencies:
-    "@babel/parser": ^7.15.8
-    "@nuxt/kit": ^3.2.2
-    vue: 2 || 3
-  peerDependenciesMeta:
-    "@babel/parser":
-      optional: true
-    "@nuxt/kit":
-      optional: true
-  checksum: 9efe6c9cda94c2ecb1a15e832cf5a569a09d0cf17b766567ec5f261d96db203f1b727c90fd406ea7ecc4d3c3210ee8064ec4917552ce563ebadcb95de187216c
-  languageName: node
-  linkType: hard
-
-"unplugin@npm:^1.1.0":
-  version: 1.3.1
-  resolution: "unplugin@npm:1.3.1"
-  dependencies:
-    acorn: ^8.8.2
-    chokidar: ^3.5.3
-    webpack-sources: ^3.2.3
-    webpack-virtual-modules: ^0.5.0
-  checksum: 511187a927aa988907fa84ffbb968b665605ef0127331a26fdbea55674e52e85ea5da37d0f7773e0f190ceb7252b73f281ab0d25beeeeb4b2595b200a995e867
-  languageName: node
-  linkType: hard
-
 "update-browserslist-db@npm:^1.0.10":
   version: 1.0.11
   resolution: "update-browserslist-db@npm:1.0.11"
@@ -10292,20 +10192,6 @@ __metadata:
     yorkie: ^2.0.0
   languageName: unknown
   linkType: soft
-
-"webpack-sources@npm:^3.2.3":
-  version: 3.2.3
-  resolution: "webpack-sources@npm:3.2.3"
-  checksum: 989e401b9fe3536529e2a99dac8c1bdc50e3a0a2c8669cbafad31271eadd994bc9405f88a3039cd2e29db5e6d9d0926ceb7a1a4e7409ece021fe79c37d9c4607
-  languageName: node
-  linkType: hard
-
-"webpack-virtual-modules@npm:^0.5.0":
-  version: 0.5.0
-  resolution: "webpack-virtual-modules@npm:0.5.0"
-  checksum: 22b59257b55c89d11ae295b588b683ee9fdf3aeb591bc7b6f88ac1d69cb63f4fcb507666ea986866dfae161a1fa534ad6fb4e2ea91bbcd0a6d454368d7d4c64b
-  languageName: node
-  linkType: hard
 
 "whatwg-url@npm:^5.0.0":
   version: 5.0.0
