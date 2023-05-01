@@ -6,6 +6,7 @@
 
 <script lang="ts">
 import { defineComponent, PropType } from 'vue'
+
 import type { ICON_NAMES } from '@/enums'
 
 export default defineComponent({

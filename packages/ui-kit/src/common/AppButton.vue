@@ -1,32 +1,24 @@
 <script lang="ts" setup>
-import { Icon } from '@/common/index'
-
 import { computed, useAttrs, useSlots } from 'vue'
 import type { LocationAsRelativeRaw } from 'vue-router'
+
+import { Icon } from '@/common/index'
 import type { ICON_NAMES } from '@/enums'
-
-type SCHEMES = 'filled' | 'flat' | 'default'
-
-type MODIFICATIONS = 'border-circle' | 'border-rounded' | 'default'
-
-type COLORS =
-  | 'primary'
-  | 'secondary'
-  | 'success'
-  | 'error'
-  | 'warning'
-  | 'info'
-  | 'default'
-
-type SIZES = 'large' | 'medium' | 'small' | 'x-small' | 'default'
 
 const props = withDefaults(
   defineProps<{
     text?: string
-    scheme?: SCHEMES
-    modification?: MODIFICATIONS
-    color?: COLORS
-    size?: SIZES
+    scheme?: 'filled' | 'flat' | 'default'
+    modification?: 'border-circle' | 'border-rounded' | 'default'
+    color?:
+      | 'primary'
+      | 'secondary'
+      | 'success'
+      | 'error'
+      | 'warning'
+      | 'info'
+      | 'default'
+    size?: 'large' | 'medium' | 'small' | 'x-small' | 'default'
     route?: LocationAsRelativeRaw
     href?: string
     iconLeft?: ICON_NAMES
