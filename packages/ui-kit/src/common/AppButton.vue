@@ -1,9 +1,67 @@
+<template>
+  <template v-if="route">
+    <router-link
+      class="app-button"
+      :class="buttonClasses"
+      v-bind="$attrs"
+      :to="route"
+    >
+      <icon v-if="iconLeft" class="app-button__icon-left" :name="iconLeft" />
+      <template v-if="$slots.default">
+        <slot />
+      </template>
+      <template v-else>
+        <span v-if="text" class="app-button__text">
+          {{ text }}
+        </span>
+      </template>
+      <icon v-if="iconRight" class="app-button__icon-right" :name="iconRight" />
+    </router-link>
+  </template>
+  <template v-else-if="href">
+    <a class="app-button" :class="buttonClasses" v-bind="$attrs" :href="href">
+      <icon v-if="iconLeft" class="app-button__icon-left" :name="iconLeft" />
+      <template v-if="$slots.default">
+        <slot />
+      </template>
+      <template v-else>
+        <span v-if="text" class="app-button__text">
+          {{ text }}
+        </span>
+      </template>
+      <icon v-if="iconRight" class="app-button__icon-right" :name="iconRight" />
+    </a>
+  </template>
+  <template v-else>
+    <button
+      class="app-button"
+      :class="buttonClasses"
+      v-bind="$attrs"
+      :disabled="isDisabled"
+      :type="buttonType"
+    >
+      <icon v-if="iconLeft" class="app-button__icon-left" :name="iconLeft" />
+      <template v-if="$slots.default">
+        <slot />
+      </template>
+      <template v-else>
+        <span v-if="text" class="app-button__text">
+          {{ text }}
+        </span>
+      </template>
+      <icon v-if="iconRight" class="app-button__icon-right" :name="iconRight" />
+    </button>
+  </template>
+</template>
+
 <script lang="ts" setup>
 import { computed, useAttrs, useSlots } from 'vue'
 import type { LocationAsRelativeRaw } from 'vue-router'
 
 import { Icon } from '@/common'
 import type { ICON_NAMES } from '@/enums'
+
+type ButtonType = 'button' | 'submit' | 'reset'
 
 const props = withDefaults(
   defineProps<{
@@ -57,63 +115,11 @@ const buttonClasses = computed(() =>
       : []),
   ].join(' '),
 )
-</script>
 
-<template>
-  <template v-if="route">
-    <router-link
-      class="app-button"
-      :class="buttonClasses"
-      v-bind="$attrs"
-      :to="route"
-    >
-      <icon v-if="iconLeft" class="app-button__icon-left" :name="iconLeft" />
-      <template v-if="$slots.default">
-        <slot />
-      </template>
-      <template v-else>
-        <span v-if="text" class="app-button__text">
-          {{ text }}
-        </span>
-      </template>
-      <icon v-if="iconRight" class="app-button__icon-right" :name="iconRight" />
-    </router-link>
-  </template>
-  <template v-else-if="href">
-    <a class="app-button" :class="buttonClasses" v-bind="$attrs" :href="href">
-      <icon v-if="iconLeft" class="app-button__icon-left" :name="iconLeft" />
-      <template v-if="$slots.default">
-        <slot />
-      </template>
-      <template v-else>
-        <span v-if="text" class="app-button__text">
-          {{ text }}
-        </span>
-      </template>
-      <icon v-if="iconRight" class="app-button__icon-right" :name="iconRight" />
-    </a>
-  </template>
-  <template v-else>
-    <button
-      class="app-button"
-      :class="buttonClasses"
-      v-bind="$attrs"
-      :disabled="isDisabled"
-      :type="$attrs.type || 'button'"
-    >
-      <icon v-if="iconLeft" class="app-button__icon-left" :name="iconLeft" />
-      <template v-if="$slots.default">
-        <slot />
-      </template>
-      <template v-else>
-        <span v-if="text" class="app-button__text">
-          {{ text }}
-        </span>
-      </template>
-      <icon v-if="iconRight" class="app-button__icon-right" :name="iconRight" />
-    </button>
-  </template>
-</template>
+const buttonType = computed<ButtonType>(
+  () => (attrs.type as ButtonType) || 'button',
+)
+</script>
 
 <style lang="scss" scoped>
 .app-button {

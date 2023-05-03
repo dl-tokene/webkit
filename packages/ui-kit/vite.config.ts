@@ -2,17 +2,12 @@ import typescript from '@rollup/plugin-typescript'
 import vue from '@vitejs/plugin-vue'
 import path from 'path'
 import { defineConfig } from 'vite'
-import dts from 'vite-plugin-dts'
+import svgLoader from 'vite-svg-loader'
 
 export default defineConfig({
   plugins: [
     vue(),
-    dts({
-      insertTypesEntry: true,
-      tsConfigFilePath: `${__dirname}/tsconfig.build.json`,
-      outputDir: `${__dirname}/dist/types`,
-      cleanVueFileName: true,
-    }),
+    svgLoader(),
     typescript({
       include: [`${__dirname}/src/**/*.vue`],
       compilerOptions: {

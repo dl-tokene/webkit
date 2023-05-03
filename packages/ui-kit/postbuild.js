@@ -1,18 +1,18 @@
-const fs = require('fs');
+const fs = require('fs')
 const { replaceTscAliasPaths } = require('tsc-alias')
 
 const writeFile = (path, data) => {
-  fs.writeFile(path, JSON.stringify(data), (err) => {
+  fs.writeFile(path, JSON.stringify(data), err => {
     if (err) throw err
   })
 }
 
 function postBuild(dirpath) {
   writeFile(`${dirpath}/dist/es/package.json`, {
-    "type": "module",
+    type: 'module',
   })
   writeFile(`${dirpath}/dist/cjs/package.json`, {
-    "type": "commonjs",
+    type: 'commonjs',
   })
 
   replaceTscAliasPaths({
@@ -20,6 +20,5 @@ function postBuild(dirpath) {
     outDir: `${dirpath}/dist/types`,
   })
 }
-
 
 postBuild(__dirname)

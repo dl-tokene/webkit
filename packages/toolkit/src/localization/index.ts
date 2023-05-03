@@ -9,7 +9,7 @@ const locale = localStorage?.getItem(STORAGE_KEY) ?? DEFAULT_LOCALE
 
 i18next.init({
   lng: locale,
-  debug: true,
+  debug: false,
   ...resources,
 })
 

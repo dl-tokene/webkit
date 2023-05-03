@@ -1,0 +1,1203 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JetBrains/web-types/master/schema/web-types.json",
+  "framework": "vue",
+  "name": "@tokene/ui-kit",
+  "version": "0.0.0-rc.2",
+  "contributions": {
+    "html": {
+      "tags": [
+        {
+          "name": "AppButton",
+          "description": "",
+          "attributes": [
+            {
+              "name": "text",
+              "required": false,
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              },
+              "default": "''"
+            },
+            {
+              "name": "scheme",
+              "required": false,
+              "value": {
+                "kind": "expression",
+                "type": "union"
+              },
+              "default": "'filled'"
+            },
+            {
+              "name": "modification",
+              "required": false,
+              "value": {
+                "kind": "expression",
+                "type": "union"
+              },
+              "default": "'border-rounded'"
+            },
+            {
+              "name": "color",
+              "required": false,
+              "value": {
+                "kind": "expression",
+                "type": "union"
+              },
+              "default": "'primary'"
+            },
+            {
+              "name": "size",
+              "required": false,
+              "value": {
+                "kind": "expression",
+                "type": "union"
+              },
+              "default": "'medium'"
+            },
+            {
+              "name": "route",
+              "required": false,
+              "value": {
+                "kind": "expression",
+                "type": "LocationAsRelativeRaw"
+              },
+              "default": "undefined"
+            },
+            {
+              "name": "href",
+              "required": false,
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              },
+              "default": "''"
+            },
+            {
+              "name": "iconLeft",
+              "required": false,
+              "value": {
+                "kind": "expression",
+                "type": "ICON_NAMES"
+              },
+              "default": "undefined"
+            },
+            {
+              "name": "iconRight",
+              "required": false,
+              "value": {
+                "kind": "expression",
+                "type": "ICON_NAMES"
+              },
+              "default": "undefined"
+            }
+          ],
+          "slots": [
+            {
+              "name": "default"
+            }
+          ]
+        },
+        {
+          "name": "AppTable",
+          "description": "",
+          "slots": [
+            {
+              "name": "thead"
+            },
+            {
+              "name": "tbody"
+            }
+          ]
+        },
+        {
+          "name": "AppTooltip",
+          "description": "",
+          "attributes": [
+            {
+              "name": "isPreferClick",
+              "required": false,
+              "value": {
+                "kind": "expression",
+                "type": "boolean"
+              },
+              "default": "false"
+            }
+          ],
+          "slots": [
+            {
+              "name": "trigger"
+            },
+            {
+              "name": "default"
+            }
+          ]
+        },
+        {
+          "name": "BasicModal",
+          "description": "",
+          "attributes": [
+            {
+              "name": "isShown",
+              "required": true,
+              "value": {
+                "kind": "expression",
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "isCloseByClickOutside",
+              "required": false,
+              "value": {
+                "kind": "expression",
+                "type": "boolean"
+              },
+              "default": "true"
+            },
+            {
+              "name": "title",
+              "required": false,
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              },
+              "default": "''"
+            },
+            {
+              "name": "subtitle",
+              "required": false,
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              },
+              "default": "''"
+            }
+          ],
+          "events": [
+            {
+              "name": "update:is-shown"
+            }
+          ],
+          "slots": [
+            {
+              "name": "default"
+            }
+          ]
+        },
+        {
+          "name": "BasicSelectField",
+          "description": "",
+          "attributes": [
+            {
+              "name": "modelValue",
+              "required": true,
+              "value": {
+                "kind": "expression",
+                "type": "union"
+              }
+            },
+            {
+              "name": "valueOptions",
+              "required": false,
+              "value": {
+                "kind": "expression",
+                "type": "Array"
+              },
+              "default": "() => []"
+            },
+            {
+              "name": "label",
+              "required": false,
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              },
+              "default": "''"
+            },
+            {
+              "name": "placeholder",
+              "required": false,
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              },
+              "default": "' '"
+            },
+            {
+              "name": "errorMessage",
+              "required": false,
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              },
+              "default": "''"
+            }
+          ],
+          "events": [
+            {
+              "name": "update:modelValue"
+            }
+          ]
+        },
+        {
+          "name": "CheckboxField",
+          "description": "",
+          "attributes": [
+            {
+              "name": "modelValue",
+              "required": true,
+              "value": {
+                "kind": "expression",
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "value",
+              "required": false,
+              "value": {
+                "kind": "expression",
+                "type": "union"
+              },
+              "default": "''"
+            },
+            {
+              "name": "label",
+              "required": false,
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              },
+              "default": "''"
+            },
+            {
+              "name": "disabled",
+              "required": false,
+              "value": {
+                "kind": "expression",
+                "type": "boolean"
+              },
+              "default": "false"
+            }
+          ],
+          "events": [
+            {
+              "name": "update:model-value"
+            }
+          ]
+        },
+        {
+          "name": "Chip",
+          "description": "",
+          "attributes": [
+            {
+              "name": "scheme",
+              "required": false,
+              "value": {
+                "kind": "expression",
+                "type": "union"
+              },
+              "default": "'filled'"
+            },
+            {
+              "name": "leadingIcon",
+              "required": false,
+              "value": {
+                "kind": "expression",
+                "type": "ICON_NAMES"
+              },
+              "default": "undefined"
+            },
+            {
+              "name": "label",
+              "required": true,
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            },
+            {
+              "name": "trailingIcon",
+              "required": false,
+              "value": {
+                "kind": "expression",
+                "type": "ICON_NAMES"
+              },
+              "default": "undefined"
+            },
+            {
+              "name": "isDisabled",
+              "required": false,
+              "value": {
+                "kind": "expression",
+                "type": "boolean"
+              },
+              "default": "false"
+            }
+          ],
+          "events": [
+            {
+              "name": "leading-button-click"
+            },
+            {
+              "name": "trailing-button-click"
+            }
+          ]
+        },
+        {
+          "name": "Collapse",
+          "description": "",
+          "attributes": [
+            {
+              "name": "isOpenedByDefault",
+              "required": false,
+              "value": {
+                "kind": "expression",
+                "type": "boolean"
+              },
+              "default": "false"
+            },
+            {
+              "name": "isCloseByClickOutside",
+              "required": false,
+              "value": {
+                "kind": "expression",
+                "type": "boolean"
+              },
+              "default": "true"
+            },
+            {
+              "name": "isShown",
+              "required": true,
+              "value": {
+                "kind": "expression",
+                "type": "boolean"
+              }
+            }
+          ],
+          "events": [
+            {
+              "name": "update:isShown"
+            }
+          ],
+          "slots": [
+            {
+              "name": "default"
+            }
+          ]
+        },
+        {
+          "name": "CopyBtn",
+          "description": "",
+          "attributes": [
+            {
+              "name": "value",
+              "required": true,
+              "value": {
+                "kind": "expression",
+                "type": "union"
+              }
+            }
+          ],
+          "slots": [
+            {
+              "name": "default"
+            }
+          ]
+        },
+        {
+          "name": "DefaultToast",
+          "description": "",
+          "attributes": [
+            {
+              "name": "title",
+              "required": false,
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              },
+              "default": "''"
+            },
+            {
+              "name": "message",
+              "required": true,
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            },
+            {
+              "name": "iconName",
+              "required": false,
+              "value": {
+                "kind": "expression",
+                "type": "ICON_NAMES"
+              },
+              "default": "undefined"
+            }
+          ]
+        },
+        {
+          "name": "Drawer",
+          "description": "",
+          "attributes": [
+            {
+              "name": "isShown",
+              "required": true,
+              "value": {
+                "kind": "expression",
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "isCloseByClickOutside",
+              "required": false,
+              "value": {
+                "kind": "expression",
+                "type": "boolean"
+              },
+              "default": "true"
+            }
+          ],
+          "slots": [
+            {
+              "name": "heading"
+            },
+            {
+              "name": "default"
+            }
+          ]
+        },
+        {
+          "name": "Dropdown",
+          "description": "",
+          "attributes": [
+            {
+              "name": "isOpenedByDefault",
+              "required": false,
+              "value": {
+                "kind": "expression",
+                "type": "boolean"
+              },
+              "default": "false"
+            },
+            {
+              "name": "isCloseByClickOutside",
+              "required": false,
+              "value": {
+                "kind": "expression",
+                "type": "boolean"
+              },
+              "default": "true"
+            }
+          ],
+          "slots": [
+            {
+              "name": "head"
+            },
+            {
+              "name": "default"
+            }
+          ]
+        },
+        {
+          "name": "ErrorMessage",
+          "description": "",
+          "attributes": [
+            {
+              "name": "title",
+              "required": false,
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              },
+              "default": "''"
+            },
+            {
+              "name": "message",
+              "required": false,
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              },
+              "default": "''"
+            },
+            {
+              "name": "schema",
+              "required": false,
+              "value": {
+                "kind": "expression",
+                "type": "union"
+              },
+              "default": "'large'"
+            },
+            {
+              "name": "customImageUrl",
+              "required": false,
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              },
+              "default": "''"
+            }
+          ]
+        },
+        {
+          "name": "InputField",
+          "description": "",
+          "attributes": [
+            {
+              "name": "scheme",
+              "required": false,
+              "value": {
+                "kind": "expression",
+                "type": "union"
+              },
+              "default": "'primary'"
+            },
+            {
+              "name": "modelValue",
+              "required": true,
+              "value": {
+                "kind": "expression",
+                "type": "union"
+              }
+            },
+            {
+              "name": "label",
+              "required": false,
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              },
+              "default": "''"
+            },
+            {
+              "name": "placeholder",
+              "required": false,
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              },
+              "default": "' '"
+            },
+            {
+              "name": "type",
+              "required": false,
+              "value": {
+                "kind": "expression",
+                "type": "union"
+              },
+              "default": "'text'"
+            },
+            {
+              "name": "errorMessage",
+              "required": false,
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              },
+              "default": "''"
+            }
+          ],
+          "events": [
+            {
+              "name": "update:modelValue"
+            }
+          ],
+          "slots": [
+            {
+              "name": "nodeLeft"
+            },
+            {
+              "name": "nodeRight"
+            }
+          ]
+        },
+        {
+          "name": "Loader",
+          "description": "",
+          "attributes": [
+            {
+              "name": "scheme",
+              "required": false,
+              "value": {
+                "kind": "expression",
+                "type": "union"
+              },
+              "default": "'spinner'"
+            }
+          ]
+        },
+        {
+          "name": "NoDataMessage",
+          "description": "",
+          "attributes": [
+            {
+              "name": "message",
+              "required": false,
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              },
+              "default": "''"
+            },
+            {
+              "name": "customImageUrl",
+              "required": false,
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              },
+              "default": "''"
+            }
+          ]
+        },
+        {
+          "name": "Pagination",
+          "description": "",
+          "attributes": [
+            {
+              "name": "type",
+              "required": false,
+              "value": {
+                "kind": "expression",
+                "type": "union"
+              },
+              "default": "'graph'"
+            },
+            {
+              "name": "pageLimit",
+              "required": false,
+              "value": {
+                "kind": "expression",
+                "type": "number"
+              },
+              "default": "15"
+            },
+            {
+              "name": "list",
+              "required": false,
+              "value": {
+                "kind": "expression",
+                "type": "Array"
+              },
+              "default": "() => []"
+            },
+            {
+              "name": "fetchCb",
+              "required": true,
+              "value": {
+                "kind": "expression",
+                "type": "TSFunctionType"
+              }
+            },
+            {
+              "name": "totalItems",
+              "required": false,
+              "value": {
+                "kind": "expression",
+                "type": "number"
+              },
+              "default": "0"
+            }
+          ],
+          "events": [
+            {
+              "name": "update:list"
+            }
+          ]
+        },
+        {
+          "name": "ProgressBar",
+          "description": "",
+          "attributes": [
+            {
+              "name": "value",
+              "required": true,
+              "value": {
+                "kind": "expression",
+                "type": "number"
+              }
+            }
+          ]
+        },
+        {
+          "name": "ProviderSelector",
+          "description": "",
+          "attributes": [
+            {
+              "name": "providerTypes",
+              "required": true,
+              "value": {
+                "kind": "expression",
+                "type": "Array"
+              }
+            }
+          ],
+          "events": [
+            {
+              "name": "select"
+            }
+          ]
+        },
+        {
+          "name": "ProviderSelectorModal",
+          "description": "",
+          "attributes": [
+            {
+              "name": "chainType",
+              "required": true,
+              "value": {
+                "kind": "expression",
+                "type": "CHAIN_TYPES"
+              }
+            },
+            {
+              "name": "title",
+              "required": false,
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              },
+              "default": "''"
+            },
+            {
+              "name": "subtitle",
+              "required": false,
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              },
+              "default": "''"
+            },
+            {
+              "name": "providerTypes",
+              "required": true,
+              "value": {
+                "kind": "expression",
+                "type": "Array"
+              }
+            }
+          ],
+          "events": [
+            {
+              "name": "selected"
+            }
+          ],
+          "slots": [
+            {
+              "name": "default"
+            }
+          ]
+        },
+        {
+          "name": "SelectField",
+          "description": "",
+          "attributes": [
+            {
+              "name": "scheme",
+              "required": false,
+              "value": {
+                "kind": "expression",
+                "type": "union"
+              },
+              "default": "'primary'"
+            },
+            {
+              "name": "modelValue",
+              "required": true,
+              "value": {
+                "kind": "expression",
+                "type": "union"
+              }
+            },
+            {
+              "name": "valueOptions",
+              "required": false,
+              "value": {
+                "kind": "expression",
+                "type": "union"
+              },
+              "default": "() => []"
+            },
+            {
+              "name": "label",
+              "required": false,
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              },
+              "default": "''"
+            },
+            {
+              "name": "placeholder",
+              "required": false,
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              },
+              "default": "' '"
+            },
+            {
+              "name": "errorMessage",
+              "required": false,
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              },
+              "default": "''"
+            },
+            {
+              "name": "type",
+              "value": {
+                "kind": "expression",
+                "type": "any"
+              },
+              "default": "'text'"
+            }
+          ],
+          "events": [
+            {
+              "name": "update:modelValue"
+            }
+          ],
+          "slots": [
+            {
+              "name": "head"
+            },
+            {
+              "name": "default"
+            }
+          ]
+        },
+        {
+          "name": "Skeleton",
+          "description": "",
+          "attributes": [
+            {
+              "name": "scheme",
+              "required": false,
+              "value": {
+                "kind": "expression",
+                "type": "union"
+              },
+              "default": "'medium'"
+            }
+          ]
+        },
+        {
+          "name": "SkeletonTable",
+          "description": "",
+          "attributes": [
+            {
+              "name": "rows",
+              "required": true,
+              "value": {
+                "kind": "expression",
+                "type": "number"
+              }
+            },
+            {
+              "name": "schemes",
+              "required": false,
+              "value": {
+                "kind": "expression",
+                "type": "Array"
+              },
+              "default": "() => ['medium', 'medium', 'medium', 'medium', 'medium']"
+            },
+            {
+              "name": "sizing",
+              "required": true,
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            }
+          ]
+        },
+        {
+          "name": "SwitchField",
+          "description": "",
+          "attributes": [
+            {
+              "name": "modelValue",
+              "required": true,
+              "value": {
+                "kind": "expression",
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "value",
+              "required": false,
+              "value": {
+                "kind": "expression",
+                "type": "union"
+              },
+              "default": "''"
+            },
+            {
+              "name": "label",
+              "required": false,
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              },
+              "default": "''"
+            },
+            {
+              "name": "disabled",
+              "required": false,
+              "value": {
+                "kind": "expression",
+                "type": "boolean"
+              },
+              "default": "false"
+            }
+          ],
+          "events": [
+            {
+              "name": "update:model-value"
+            }
+          ]
+        },
+        {
+          "name": "TextareaField",
+          "description": "",
+          "attributes": [
+            {
+              "name": "scheme",
+              "required": false,
+              "value": {
+                "kind": "expression",
+                "type": "SCHEMES"
+              },
+              "default": "'primary'"
+            },
+            {
+              "name": "modelValue",
+              "required": true,
+              "value": {
+                "kind": "expression",
+                "type": "union"
+              }
+            },
+            {
+              "name": "label",
+              "required": false,
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              },
+              "default": "''"
+            },
+            {
+              "name": "placeholder",
+              "required": false,
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              },
+              "default": "' '"
+            },
+            {
+              "name": "errorMessage",
+              "required": false,
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              },
+              "default": "''"
+            }
+          ],
+          "events": [
+            {
+              "name": "update:model-value"
+            }
+          ]
+        },
+        {
+          "name": "TransactionToast",
+          "description": "",
+          "attributes": [
+            {
+              "name": "type",
+              "required": true,
+              "value": {
+                "kind": "expression",
+                "type": "union"
+              }
+            },
+            {
+              "name": "link",
+              "required": true,
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            }
+          ]
+        },
+        {
+          "name": "UserBadge",
+          "description": "",
+          "attributes": [
+            {
+              "name": "imgUrl",
+              "required": false,
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              },
+              "default": "''"
+            },
+            {
+              "name": "address",
+              "required": false,
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              },
+              "default": "''"
+            },
+            {
+              "name": "firstName",
+              "required": false,
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              },
+              "default": "''"
+            },
+            {
+              "name": "lastName",
+              "required": false,
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              },
+              "default": "''"
+            },
+            {
+              "name": "isImgOnly",
+              "required": false,
+              "value": {
+                "kind": "expression",
+                "type": "boolean"
+              },
+              "default": "false"
+            },
+            {
+              "name": "isShowFullAddress",
+              "required": false,
+              "value": {
+                "kind": "expression",
+                "type": "boolean"
+              },
+              "default": "false"
+            }
+          ]
+        },
+        {
+          "name": "accordion",
+          "description": "",
+          "attributes": [
+            {
+              "name": "isOpenedByDefault",
+              "value": {
+                "kind": "expression",
+                "type": "boolean"
+              },
+              "default": "false"
+            },
+            {
+              "name": "isCloseByClickOutside",
+              "value": {
+                "kind": "expression",
+                "type": "boolean"
+              },
+              "default": "true"
+            }
+          ],
+          "slots": [
+            {
+              "name": "head"
+            },
+            {
+              "name": "default"
+            }
+          ]
+        },
+        {
+          "name": "dummy-component",
+          "description": "",
+          "attributes": [
+            {
+              "name": "text",
+              "required": true,
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            },
+            {
+              "name": "symbol",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              },
+              "default": "''"
+            }
+          ]
+        },
+        {
+          "name": "icon",
+          "description": "",
+          "attributes": [
+            {
+              "name": "name",
+              "required": true,
+              "value": {
+                "kind": "expression",
+                "type": "ICON_NAMES"
+              }
+            }
+          ]
+        },
+        {
+          "name": "modal",
+          "description": "",
+          "attributes": [
+            {
+              "name": "isShown",
+              "value": {
+                "kind": "expression",
+                "type": "boolean"
+              },
+              "default": "false"
+            },
+            {
+              "name": "isCloseByClickOutside",
+              "value": {
+                "kind": "expression",
+                "type": "boolean"
+              },
+              "default": "true"
+            }
+          ],
+          "slots": [
+            {
+              "name": "default"
+            }
+          ]
+        },
+        {
+          "name": "spinner",
+          "description": ""
+        }
+      ],
+      "attributes": []
+    }
+  }
+}
