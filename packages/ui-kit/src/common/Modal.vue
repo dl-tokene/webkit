@@ -10,50 +10,40 @@
   </teleport>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 import { onClickOutside } from '@vueuse/core'
-import { defineComponent, onMounted, ref } from 'vue'
+import { onMounted, ref } from 'vue'
 
-const EVENTS = {
-  updateIsShown: 'update:is-shown',
-}
-
-export default defineComponent({
-  name: 'modal',
-  props: {
-    isShown: {
-      type: Boolean,
-      default: false,
-    },
-    isCloseByClickOutside: {
-      type: Boolean,
-      default: true,
-    },
+const props = withDefaults(
+  defineProps<{
+    isShown?: boolean
+    isCloseByClickOutside?: boolean
+  }>(),
+  {
+    isShown: false,
+    isCloseByClickOutside: true,
   },
-  setup(props, { emit }) {
-    const modalPane = ref<HTMLElement | undefined>()
+)
 
-    onMounted(() => {
-      if (modalPane.value) {
-        if (props.isCloseByClickOutside) {
-          onClickOutside(modalPane, () => {
-            closeModal()
-          })
-        }
-      }
-    })
+const emit = defineEmits<{
+  (e: 'update:is-shown', value: boolean): void
+}>()
 
-    const closeModal = () => {
-      emit(EVENTS.updateIsShown, false)
+const modalPane = ref<HTMLElement | undefined>()
+
+onMounted(() => {
+  if (modalPane.value) {
+    if (props.isCloseByClickOutside) {
+      onClickOutside(modalPane, () => {
+        closeModal()
+      })
     }
-
-    return {
-      modalPane,
-
-      closeModal,
-    }
-  },
+  }
 })
+
+const closeModal = () => {
+  emit('update:is-shown', false)
+}
 </script>
 
 <style lang="scss" scoped>

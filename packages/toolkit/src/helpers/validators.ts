@@ -7,7 +7,7 @@ import {
   requiredIf as _requiredIf,
   sameAs as _sameAs,
 } from '@vuelidate/validators'
-import { createI18nMessage, MessageProps } from '@vuelidate/validators'
+import { createI18nMessage, type MessageProps } from '@vuelidate/validators'
 import { get } from 'lodash-es'
 import type { Ref } from 'vue-demi'
 

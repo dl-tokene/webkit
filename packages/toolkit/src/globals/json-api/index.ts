@@ -1,4 +1,4 @@
-import { JsonApiClient, JsonApiClientConfig } from '@distributedlab/jac'
+import { JsonApiClient, type JsonApiClientConfig } from '@distributedlab/jac'
 
 import {
   bearerAttachInterceptor,

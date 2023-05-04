@@ -4,20 +4,12 @@
   </svg>
 </template>
 
-<script lang="ts">
-import { defineComponent, PropType } from 'vue'
-
+<script lang="ts" setup>
 import type { ICON_NAMES } from '@/enums'
 
-export default defineComponent({
-  name: 'icon',
-  props: {
-    name: {
-      type: String as PropType<ICON_NAMES>,
-      required: true,
-    },
-  },
-})
+defineProps<{
+  name: ICON_NAMES
+}>()
 </script>
 
 <style lang="scss" scoped>

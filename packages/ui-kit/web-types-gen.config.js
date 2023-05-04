@@ -1,5 +1,5 @@
 module.exports = {
   componentsRoot: 'src',
   components: '**/*.vue',
-  outFile: 'web-types.json'
+  outFile: './web-types.json'
 }

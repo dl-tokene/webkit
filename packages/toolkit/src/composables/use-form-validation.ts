@@ -3,7 +3,7 @@ import useVuelidate, {
   type ValidationArgs,
 } from '@vuelidate/core'
 import { get } from 'lodash-es'
-import { computed, UnwrapNestedRefs } from 'vue-demi'
+import { computed, type UnwrapNestedRefs } from 'vue-demi'
 
 export const useFormValidation = (
   state: UnwrapNestedRefs<ChildStateLeafs>,

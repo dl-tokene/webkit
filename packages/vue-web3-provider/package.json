@@ -1,6 +1,6 @@
 {
   "name": "@tokene/vue-web3-provider",
-  "version": "0.0.0-rc.2",
+  "version": "0.0.0-rc.3",
   "description": "The Vue reactive wrapper for @distributedlab/w3p",
   "repository": {
     "type": "git",

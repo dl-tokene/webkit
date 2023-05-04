@@ -30,10 +30,6 @@ import { onMounted, ref } from 'vue'
 import { AppButton } from '@/common'
 import { ICON_NAMES } from '@/enums'
 
-enum EVENTS {
-  updateIsShown = 'update:is-shown',
-}
-
 const drawerAside = ref<HTMLElement | undefined>()
 
 const props = withDefaults(
@@ -47,7 +43,7 @@ const props = withDefaults(
 )
 
 const emit = defineEmits<{
-  (e: EVENTS.updateIsShown, value: boolean): void
+  (e: 'update:is-shown', value: boolean): void
 }>()
 
 onMounted(() => {
@@ -59,7 +55,7 @@ onMounted(() => {
 })
 
 const closeDrawer = () => {
-  emit(EVENTS.updateIsShown, false)
+  emit('update:is-shown', false)
 }
 </script>
 

@@ -30,69 +30,56 @@
   </div>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 import { onClickOutside } from '@vueuse/core'
-import { defineComponent, onMounted, ref } from 'vue'
+import { onMounted, ref } from 'vue'
 import { useRouter } from 'vue-router'
 
-export default defineComponent({
-  name: 'accordion',
-  props: {
-    isOpenedByDefault: {
-      type: Boolean,
-      default: false,
-    },
-    isCloseByClickOutside: {
-      type: Boolean,
-      default: true,
-    },
+const props = withDefaults(
+  defineProps<{
+    isOpenedByDefault?: boolean
+    isCloseByClickOutside?: boolean
+  }>(),
+  {
+    isOpenedByDefault: false,
+    isCloseByClickOutside: true,
   },
-  setup(props) {
-    const rootEl = ref<HTMLElement | null>(null)
-    const isAccordionOpen = ref(props.isOpenedByDefault)
-    const router = useRouter()
+)
 
-    router.afterEach(() => {
-      closeAccordion()
-    })
+const rootEl = ref<HTMLElement | null>(null)
+const isAccordionOpen = ref(props.isOpenedByDefault)
+const router = useRouter()
 
-    onMounted(() => {
-      if (rootEl.value) {
-        if (props.isCloseByClickOutside) {
-          onClickOutside(rootEl, () => {
-            closeAccordion()
-          })
-        }
-      }
-    })
-
-    const toggleAccordion = () => {
-      isAccordionOpen.value ? closeAccordion() : openAccordion()
-    }
-    const closeAccordion = () => {
-      isAccordionOpen.value = false
-    }
-    const openAccordion = () => {
-      isAccordionOpen.value = true
-    }
-
-    const setHeightCSSVar = (element: Element) => {
-      ;(element as HTMLElement).style.setProperty(
-        '--accordion-body-height',
-        `${element.scrollHeight}px`,
-      )
-    }
-
-    return {
-      rootEl,
-      isAccordionOpen,
-      toggleAccordion,
-      openAccordion,
-      closeAccordion,
-      setHeightCSSVar,
-    }
-  },
+router.afterEach(() => {
+  closeAccordion()
 })
+
+onMounted(() => {
+  if (rootEl.value) {
+    if (props.isCloseByClickOutside) {
+      onClickOutside(rootEl, () => {
+        closeAccordion()
+      })
+    }
+  }
+})
+
+const toggleAccordion = () => {
+  isAccordionOpen.value ? closeAccordion() : openAccordion()
+}
+const closeAccordion = () => {
+  isAccordionOpen.value = false
+}
+const openAccordion = () => {
+  isAccordionOpen.value = true
+}
+
+const setHeightCSSVar = (element: Element) => {
+  ;(element as HTMLElement).style.setProperty(
+    '--accordion-body-height',
+    `${element.scrollHeight}px`,
+  )
+}
 </script>
 
 <style lang="scss" scoped>

@@ -1,6 +1,6 @@
 {
   "name": "@tokene/ui-kit",
-  "version": "0.0.0-rc.2",
+  "version": "0.0.0-rc.3",
   "description": "Collection of common TokenE vue components",
   "repository": {
     "type": "git",
@@ -26,17 +26,20 @@
   "style": "./dist/index.css",
   "exports": {
     ".": {
+      "types": "./dist/types/index.d.ts",
       "import": "./dist/es/index.js",
       "require": "./dist/cjs/index.js",
-      "default": "./dist/index.js",
-      "types": "./dist/types/index.d.ts"
+      "default": "./dist/index.js"
     },
     "./dist/index.css": {
       "default": "./dist/index.css"
-    }
+    },
+    "./*": "./*"
   },
   "files": [
-    "dist"
+    "dist",
+    "es",
+    "./web-types.json"
   ],
   "scripts": {
     "build": "yarn clean && vite build && yarn build:types && yarn build:web-types && node ./postbuild.js",
@@ -63,14 +66,13 @@
     "i18next": "^22.4.15",
     "lodash-es": "^4.17.21",
     "loglevel": "^1.8.1",
-    "vue-router": "^4.1.6",
     "vue-toastification": "^2.0.0-rc.5"
   },
   "peerDependencies": {
     "@vuelidate/core": "^2.0.2",
     "@vuelidate/validators": "^2.0.2",
     "@vueuse/core": "^10.1.0",
-    "vue": "^3.2.47"
+    "vue": "^3.0.0"
   },
   "devDependencies": {
     "@rollup/plugin-alias": "^5.0.0",
@@ -82,8 +84,8 @@
     "@types/jest": "^29.5.1",
     "@types/lodash-es": "^4",
     "@types/node": "^18.14.2",
-    "@typescript-eslint/eslint-plugin": "^5.59.1",
-    "@typescript-eslint/parser": "^5.59.1",
+    "@typescript-eslint/eslint-plugin": "^5.59.2",
+    "@typescript-eslint/parser": "^5.59.2",
     "@vitejs/plugin-vue": "^4.2.1",
     "@vue/eslint-config-prettier": "^7.1.0",
     "@vue/eslint-config-typescript": "^11.0.3",
@@ -94,11 +96,13 @@
     "tsc-alias": "^1.8.2",
     "vite": "^4.3.3",
     "vite-svg-loader": "^4.0.0",
+    "vue": "^3.2.47",
     "vue-docgen-web-types": "^0.1.8",
+    "vue-router": "^4.1.6",
     "vue-tsc": "^1.6.1"
   },
   "typedoc": {
-    "entryPoint": "./src/index.ts",
+    "entryPoint": "./typedoc.ts",
     "readmeFile": "./README.md",
     "displayName": "@tokene/ui-kit"
   },

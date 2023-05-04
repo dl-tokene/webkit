@@ -1,4 +1,4 @@
-import { BN, BnFormatCfg, BnLike } from '@distributedlab/tools'
+import { BN, type BnFormatCfg, type BnLike } from '@distributedlab/tools'
 import { BigNumber } from '@ethersproject/bignumber'
 
 export function formatNumber(

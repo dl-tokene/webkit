@@ -1,5 +1,5 @@
 # @tokene/toolkit
-These packages aim to provide developers with a set of commonly used functions and features for building TokenE web applications, such as handling big numbers, date manipulation, subscribing to and receiving notifications when certain events occur with EventEmitter, and more.
+These packages aim to provide developers with a set of commonly used components for building TokenE web applications.
 
 ![version (scoped package)](https://badgen.net/npm/v/@tokene/ui-kit)
 ![types](https://badgen.net/npm/types/@tokene/ui-kit)

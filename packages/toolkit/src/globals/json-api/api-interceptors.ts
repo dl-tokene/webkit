@@ -1,10 +1,10 @@
 import {
   Fetcher,
-  FetcherErrorResponseInterceptor,
-  FetcherRequest,
-  FetcherRequestInterceptor,
-  FetcherResponse,
-  HTTP_METHODS,
+  type FetcherErrorResponseInterceptor,
+  type FetcherRequest,
+  type FetcherRequestInterceptor,
+  type FetcherResponse,
+  type HTTP_METHODS,
   HTTP_STATUS_CODES,
 } from '@distributedlab/fetcher'
 

@@ -1,29 +1,15 @@
 import typescript from '@rollup/plugin-typescript'
 import vue from '@vitejs/plugin-vue'
-import path from 'path'
+import * as path from 'path'
 import { defineConfig } from 'vite'
-import svgLoader from 'vite-svg-loader'
+// import svgLoader from 'vite-svg-loader'
 
 export default defineConfig({
-  plugins: [
-    vue(),
-    svgLoader(),
-    typescript({
-      include: [`${__dirname}/src/**/*.vue`],
-      compilerOptions: {
-        outDir: 'dist',
-        sourceMap: true,
-        declaration: true,
-        declarationMap: true,
-      },
-      exclude: ['vite.config.js'],
-    }),
-  ],
   build: {
     cssCodeSplit: true,
     sourcemap: true,
     lib: {
-      entry: `${__dirname}/src/index.ts`,
+      entry: path.resolve(__dirname, 'src/index.ts'),
       name: 'index',
       formats: ['es', 'cjs', 'iife'],
       fileName: format =>
@@ -33,7 +19,12 @@ export default defineConfig({
       input: {
         index: path.resolve(__dirname, 'src/index.ts'),
       },
-      external: ['vue'],
+      external: [
+        'vue',
+        '@vuelidate/core',
+        '@vuelidate/validators',
+        '@vueuse/core',
+      ],
       output: {
         assetFileNames: assetInfo => {
           return assetInfo.name!
@@ -60,4 +51,17 @@ export default defineConfig({
       '@': path.resolve(__dirname, 'src'),
     },
   },
+  plugins: [
+    typescript({
+      include: [`${__dirname}/src/**/*.vue`],
+      declaration: true,
+      declarationDir: path.resolve(__dirname, 'dist/types'),
+      rootDir: path.resolve(__dirname, 'src'),
+      compilerOptions: {
+        noEmit: false,
+      },
+    }),
+    vue(),
+    // svgLoader(),
+  ],
 })
