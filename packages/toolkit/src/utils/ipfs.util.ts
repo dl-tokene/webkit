@@ -1,6 +1,6 @@
 import axios from 'axios'
 import type { ImportCandidate } from 'ipfs-core-types/src/utils'
-import { create, IPFSHTTPClient } from 'ipfs-http-client'
+import { create, type IPFSHTTPClient } from 'ipfs-http-client'
 
 import { toolkitConfig } from '@/globals'
 

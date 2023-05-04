@@ -29,7 +29,6 @@
     "resolveJsonModule": true,
     "sourceMap": true,
     "newLine": "lf",
-    "importsNotUsedAsValues": "error",
     "isolatedModules": true,
     "useDefineForClassFields": true,
   }

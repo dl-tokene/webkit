@@ -4,12 +4,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [0.0.0-rc.3] - 2023-05-04
 ### Added
 - `root` - `styles` package
+- `root` - `ui-kit` package
 
 ### Changed
-- `vue-web3-provider` - README and package description
+- `vue-web3-provider` - README and package description, imports
+- `toolkit` - imports
+- `root` - typescript version
 
 
 ## [0.0.0-rc.2] - 2023-04-27
@@ -31,7 +34,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Initial release
 - `root` - `toolkit` package
 
-[Unreleased]: https://github.com/dl-tokene/webkit/compare/0.0.0-rc.2...HEAD
+[Unreleased]: https://github.com/dl-tokene/webkit/compare/0.0.0-rc.3...HEAD
+[0.0.0-rc.3]: https://github.com/dl-tokene/webkit/compare/0.0.0-rc.2...0.0.0-rc.3
 [0.0.0-rc.2]: https://github.com/dl-tokene/webkit/compare/0.0.0-rc.1...0.0.0-rc.2
 [0.0.0-rc.1]: https://github.com/dl-tokene/webkit/compare/0.0.0-rc.0...0.0.0-rc.1
 [0.0.0-rc.0]: https://github.com/dl-tokene/webkit/releases/tag/0.0.0-rc.0

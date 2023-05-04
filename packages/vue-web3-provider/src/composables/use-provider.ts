@@ -1,14 +1,14 @@
 import {
-  Chain,
-  ChainId,
+  type Chain,
+  type ChainId,
   createProvider,
-  CreateProviderOpts,
+  type CreateProviderOpts,
   Provider,
-  ProviderProxyConstructor,
+  type ProviderProxyConstructor,
   PROVIDERS,
-  RawProvider,
-  TransactionResponse,
-  TxRequestBody,
+  type RawProvider,
+  type TransactionResponse,
+  type TxRequestBody,
 } from '@distributedlab/w3p'
 import { onUnmounted, reactive, ref, toRefs } from 'vue-demi'
 
