@@ -1,12 +1,12 @@
 {
-  "name": "@tokene/ui-kit",
+  "name": "@tokene/toasts",
   "version": "0.0.0-rc.3",
-  "description": "Collection of common TokenE vue components",
+  "description": "Vue based toasts",
   "repository": {
     "type": "git",
-    "url": "https://github.com/dl-tokene/webkit/tree/main/packages/ui-kit"
+    "url": "https://github.com/dl-tokene/webkit/tree/main/packages/toasts"
   },
-  "homepage": "https://dl-tokene.github.io/webkit/modules/_tokene_ui_kit.html",
+  "homepage": "https://dl-tokene.github.io/webkit/modules/_tokene_toasts.html",
   "license": "MIT",
   "sideEffects": false,
   "typesVersions": {
@@ -53,23 +53,14 @@
     "access": "public"
   },
   "dependencies": {
-    "@dicebear/collection": "^6.0.3",
-    "@dicebear/core": "^6.0.3",
-    "@distributedlab/fetcher": "0.2.0-rc.6",
-    "@distributedlab/jac": "0.2.0-rc.6",
-    "@distributedlab/tools": "0.2.0-rc.6",
     "@distributedlab/w3p": "0.2.0-rc.6",
     "@tokene/styles": "workspace:^",
     "@tokene/toolkit": "workspace:^",
-    "@tokene/vue-web3-provider": "workspace:^",
-    "floating-vue": "^2.0.0-beta.20",
-    "i18next": "^22.4.15",
+    "@tokene/ui-kit": "workspace:^",
     "lodash-es": "^4.17.21",
-    "loglevel": "^1.8.1"
+    "vue-toastification": "^2.0.0-rc.5"
   },
   "peerDependencies": {
-    "@vuelidate/core": "^2.0.2",
-    "@vuelidate/validators": "^2.0.2",
     "@vueuse/core": "^10.1.0",
     "vue": "^3.2.47"
   },
@@ -103,7 +94,7 @@
   "typedoc": {
     "entryPoint": "./typedoc.ts",
     "readmeFile": "./README.md",
-    "displayName": "@tokene/ui-kit"
+    "displayName": "@tokene/toasts"
   },
   "web-types": "./web-types.json"
 }

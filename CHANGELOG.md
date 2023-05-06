@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Added
 - `toolkit` - increase gas estimates
+- `root` - `toasts` package
 
 ### Changed
 - `toolkit` - build options
@@ -14,6 +15,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 - `ui-kit` - components depended on vue-router
+
+### Removed
+- `ui-kit` - toasts components
+- `toolkit` - notification types
 
 ## [0.0.0-rc.3] - 2023-05-04
 ### Added
