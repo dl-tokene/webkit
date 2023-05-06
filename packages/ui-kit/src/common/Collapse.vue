@@ -15,7 +15,7 @@
 <script lang="ts" setup>
 import { onClickOutside } from '@vueuse/core'
 import { onMounted, ref } from 'vue'
-import { useRouter } from 'vue-router'
+import { onBeforeRouteUpdate } from 'vue-router'
 
 const props = withDefaults(
   defineProps<{
@@ -34,9 +34,8 @@ const emit = defineEmits<{
 }>()
 
 const rootEl = ref<HTMLElement | null>(null)
-const router = useRouter()
 
-router.afterEach(() => {
+onBeforeRouteUpdate(() => {
   closeCollapse()
 })
 

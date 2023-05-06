@@ -16,6 +16,10 @@ export default {
     file: `${__dirname}/dist/index.js`,
     name: `tokene_${packageDirName}`,
     format: 'iife',
+
+    globals: {
+      vue: 'vue',
+    }
   },
   external: ['vue'],
   plugins: [

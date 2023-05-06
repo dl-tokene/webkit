@@ -106,7 +106,7 @@ import {
   useAttrs,
   watch,
 } from 'vue'
-import { useRouter } from 'vue-router'
+import { onBeforeRouteUpdate } from 'vue-router'
 
 import { Icon } from '@/common'
 import { ICON_NAMES } from '@/enums'
@@ -141,9 +141,7 @@ const selectElement = ref<HTMLDivElement>()
 const isDropdownOpen = ref(false)
 const uid = getCurrentInstance()?.uid
 
-const router = useRouter()
-
-router.afterEach(() => {
+onBeforeRouteUpdate(() => {
   closeDropdown()
 })
 

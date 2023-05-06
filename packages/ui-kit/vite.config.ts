@@ -21,6 +21,7 @@ export default defineConfig({
       },
       external: [
         'vue',
+        'vue-router',
         '@vuelidate/core',
         '@vuelidate/validators',
         '@vueuse/core',

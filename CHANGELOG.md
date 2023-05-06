@@ -4,6 +4,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+### Added
+- `toolkit` - increase gas estimates
+
+### Changed
+- `toolkit` - build options
+- `ui-kit` - build options
+
+### Fixed
+- `ui-kit` - components depended on vue-router
+
 ## [0.0.0-rc.3] - 2023-05-04
 ### Added
 - `root` - `styles` package
@@ -13,7 +24,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `vue-web3-provider` - README and package description, imports
 - `toolkit` - imports
 - `root` - typescript version
-
 
 ## [0.0.0-rc.2] - 2023-04-27
 ### Added

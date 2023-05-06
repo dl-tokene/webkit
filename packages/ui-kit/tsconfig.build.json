@@ -4,6 +4,7 @@
     "src/tests",
     "**/*.test.ts",
     "node_modules",
-    "dist"
+    "dist",
+    "typedoc.ts"
   ]
 }
