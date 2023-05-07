@@ -1,0 +1,33 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "moduleResolution": "Node",
+    "module": "esnext",
+    "jsx": "preserve",
+    "forceConsistentCasingInFileNames": true,
+    "declaration": true,
+    "baseUrl": ".",
+    "types": [
+      "node",
+      "@types/lodash-es",
+      "vite-svg-loader"
+    ],
+    "paths": {
+      "@/*": ["src/*"]
+    },
+    "lib": [
+      "esnext",
+      "dom",
+      "dom.iterable",
+      "scripthost",
+    ],
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "tests/**/*.ts",
+    "tests/**/*.tsx",
+    "typedoc.ts"
+  ],
+}

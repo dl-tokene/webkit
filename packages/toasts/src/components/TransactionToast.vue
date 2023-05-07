@@ -23,10 +23,8 @@
 
 <script lang="ts" setup>
 import { i18next } from '@tokene/toolkit'
+import { Icon, ICON_NAMES } from '@tokene/ui-kit'
 import { computed } from 'vue'
-
-import { Icon } from '@/common'
-import { ICON_NAMES } from '@/enums'
 
 const props = withDefaults(
   defineProps<{
@@ -80,8 +78,6 @@ const toastMessage = computed(() => {
 </script>
 
 <style lang="scss">
-@import 'vue-toastification/src/scss/index';
-
 .Vue-Toastification__toast {
   &--success {
     background: var(--success-dark);

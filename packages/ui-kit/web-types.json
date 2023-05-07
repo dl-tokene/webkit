@@ -1,7 +1,7 @@
 {
   "framework": "vue",
   "name": "@tokene/ui-kit",
-  "version": "0.0.0-rc.2",
+  "version": "0.0.0-rc.3",
   "contributions": {
     "html": {
       "description-markup": "markdown",
@@ -473,42 +473,6 @@
           ],
           "source": {
             "module": "./src/common/CopyBtn.vue",
-            "symbol": "default"
-          }
-        },
-        {
-          "name": "DefaultToast",
-          "description": "",
-          "attributes": [
-            {
-              "name": "title",
-              "required": false,
-              "value": {
-                "kind": "expression",
-                "type": "string"
-              },
-              "default": "''"
-            },
-            {
-              "name": "message",
-              "required": true,
-              "value": {
-                "kind": "expression",
-                "type": "string"
-              }
-            },
-            {
-              "name": "iconName",
-              "required": false,
-              "value": {
-                "kind": "expression",
-                "type": "ICON_NAMES"
-              },
-              "default": "undefined"
-            }
-          ],
-          "source": {
-            "module": "./src/common/toasts/DefaultToast.vue",
             "symbol": "default"
           }
         },
@@ -1218,32 +1182,6 @@
           ],
           "source": {
             "module": "./src/fields/TextareaField.vue",
-            "symbol": "default"
-          }
-        },
-        {
-          "name": "TransactionToast",
-          "description": "",
-          "attributes": [
-            {
-              "name": "type",
-              "required": true,
-              "value": {
-                "kind": "expression",
-                "type": "union"
-              }
-            },
-            {
-              "name": "link",
-              "required": true,
-              "value": {
-                "kind": "expression",
-                "type": "string"
-              }
-            }
-          ],
-          "source": {
-            "module": "./src/common/toasts/TransactionToast.vue",
             "symbol": "default"
           }
         },

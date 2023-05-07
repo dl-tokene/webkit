@@ -1,0 +1,75 @@
+{
+  "framework": "vue",
+  "name": "@tokene/toasts",
+  "version": "0.0.0-rc.3",
+  "contributions": {
+    "html": {
+      "description-markup": "markdown",
+      "types-syntax": "typescript",
+      "tags": [
+        {
+          "name": "DefaultToast",
+          "description": "",
+          "attributes": [
+            {
+              "name": "title",
+              "required": false,
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              },
+              "default": "''"
+            },
+            {
+              "name": "message",
+              "required": true,
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            },
+            {
+              "name": "iconName",
+              "required": false,
+              "value": {
+                "kind": "expression",
+                "type": "ICON_NAMES"
+              },
+              "default": "undefined"
+            }
+          ],
+          "source": {
+            "module": "./src/components/DefaultToast.vue",
+            "symbol": "default"
+          }
+        },
+        {
+          "name": "TransactionToast",
+          "description": "",
+          "attributes": [
+            {
+              "name": "type",
+              "required": true,
+              "value": {
+                "kind": "expression",
+                "type": "union"
+              }
+            },
+            {
+              "name": "link",
+              "required": true,
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            }
+          ],
+          "source": {
+            "module": "./src/components/TransactionToast.vue",
+            "symbol": "default"
+          }
+        }
+      ]
+    }
+  }
+}

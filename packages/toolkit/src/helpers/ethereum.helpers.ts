@@ -1,4 +1,7 @@
-import { utils } from 'ethers'
+import { BN, DECIMALS } from '@distributedlab/tools'
+import type { TransactionRequest } from '@ethersproject/abstract-provider'
+import type { Deferrable } from '@ethersproject/properties'
+import { type providers, utils } from 'ethers'
 
 import { EthereumProviderInternalErrors } from '@/enums'
 import { i18next } from '@/localization'
@@ -75,4 +78,23 @@ export function handleEthereumProviderInternalError(errorMsg: string) {
     default:
       return i18next.t('errors.provider-internal-errors.default')
   }
+}
+
+export async function increaseGasLimit(
+  addressFrom: string,
+  rawProvider: providers.JsonRpcProvider,
+  txBody: Deferrable<TransactionRequest>,
+  multiplier: string | number,
+) {
+  const estimatedGas = await rawProvider.estimateGas({
+    ...txBody,
+    from: addressFrom,
+  })
+
+  return BN.fromRaw(estimatedGas?.toString(), DECIMALS.WEI)
+    .mul(BN.fromRaw(multiplier, DECIMALS.WEI))
+    .fromFraction(DECIMALS.WEI)
+    .format({
+      decimals: 0,
+    })
 }

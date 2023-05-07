@@ -19,13 +19,7 @@ export default defineConfig({
       input: {
         index: path.resolve(__dirname, 'src/index.ts'),
       },
-      external: [
-        'vue',
-        'vue-router',
-        '@vuelidate/core',
-        '@vuelidate/validators',
-        '@vueuse/core',
-      ],
+      external: ['vue', '@vueuse/core'],
       output: {
         assetFileNames: assetInfo => {
           return assetInfo.name!
