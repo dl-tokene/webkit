@@ -22,10 +22,6 @@
         :max="max"
         :disabled="isDisabled || isReadonly"
       />
-      <span
-        class="input-field__focus-indicator"
-        v-if="scheme === 'secondary'"
-      />
       <label
         v-if="label"
         :for="`input-field--${uid}`"
@@ -68,12 +64,15 @@
       <span v-if="errorMessage" class="input-field__err-msg">
         {{ errorMessage }}
       </span>
+      <span v-else-if="note" class="input-field__note-msg">
+        {{ note }}
+      </span>
     </transition>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { BN } from '@distributedlab/tools'
+import { BN, DECIMALS } from '@distributedlab/tools'
 import {
   computed,
   getCurrentInstance,
@@ -86,16 +85,15 @@ import {
 import { Icon } from '@/common'
 import { ICON_NAMES } from '@/enums'
 
-const DEFAULT_DECIMALS = 18
-
 const props = withDefaults(
   defineProps<{
-    scheme?: 'primary' | 'secondary'
+    scheme?: 'primary'
     modelValue: string | number
     label?: string
     placeholder?: string
     type?: 'text' | 'number' | 'password'
     errorMessage?: string
+    note?: string
   }>(),
   {
     scheme: 'primary',
@@ -103,6 +101,7 @@ const props = withDefaults(
     label: '',
     placeholder: ' ',
     errorMessage: '',
+    note: '',
   },
 )
 
@@ -178,14 +177,18 @@ onMounted(() => {
   if (slots?.nodeLeft && nodeLeftWrp.value) {
     inputEl.value?.style.setProperty(
       'padding-left',
-      `calc(${nodeLeftWrp.value.offsetWidth}px + var(--field-padding-left) * 2)`,
+      `calc(${
+        nodeLeftWrp.value?.offsetWidth || 0
+      }px + var(--field-padding-left) * 2)`,
     )
   }
 
   if (slots?.nodeRight && nodeRightWrp.value) {
     inputEl.value?.style.setProperty(
       'padding-right',
-      `calc(${nodeRightWrp.value.offsetWidth}px + var(--field-padding-right) * 2)`,
+      `calc(${
+        nodeRightWrp.value?.offsetWidth || 0
+      }px + var(--field-padding-right) * 2)`,
     )
   }
 })
@@ -199,15 +202,15 @@ const normalizeRange = (value: string | number): string => {
 
   if (
     String(min.value) &&
-    BN.fromRaw(value, DEFAULT_DECIMALS).isLessThan(
-      BN.fromRaw(min.value, DEFAULT_DECIMALS),
+    BN.fromRaw(value, DECIMALS.WEI).isLessThan(
+      BN.fromRaw(min.value, DECIMALS.WEI),
     )
   ) {
     result = min.value
   } else if (
     String(max.value) &&
-    BN.fromRaw(value, DEFAULT_DECIMALS).isGreaterThan(
-      BN.fromRaw(max.value, DEFAULT_DECIMALS),
+    BN.fromRaw(value, DECIMALS.WEI).isGreaterThan(
+      BN.fromRaw(max.value, DECIMALS.WEI),
     )
   ) {
     result = max.value
@@ -256,30 +259,16 @@ $z-index-side-nodes: 1;
 
   transition-property: all;
 
-  .input-field--secondary & {
-    padding: 0;
-  }
-
-  .input-field--secondary.input-field--node-left & {
-    left: calc(var(--field-padding-left) * 3);
-  }
-
   .input-field__input:not(:placeholder-shown) ~ & {
     top: 0;
     color: var(--field-text);
     border-color: var(--field-border-hover);
-
-    .input-field--secondary & {
-      transform: translateY(25%);
-    }
   }
 
   .input-field__input:not(:focus):placeholder-shown ~ & {
     top: 50%;
-    color: var(--field-label);
-    font-size: toRem(16);
-    font-weight: 400;
-    line-height: 1.3;
+
+    @include field-label;
 
     .input-field--node-left & {
       left: calc(var(--field-padding-left) * 3);
@@ -294,11 +283,6 @@ $z-index-side-nodes: 1;
   .input-field__input:not([disabled]):focus ~ & {
     color: var(--field-label-focus);
     font-weight: 700;
-
-    .input-field--secondary & {
-      transform: translateY(25%);
-      color: var(--primary-main);
-    }
   }
 
   .input-field__input:not(:focus):placeholder-shown:-webkit-autofill ~ & {
@@ -311,11 +295,6 @@ $z-index-side-nodes: 1;
     .input-field--node-left & {
       left: calc(var(--field-padding-left) * 3);
     }
-  }
-
-  /* stylelint-disable-next-line */
-  .input-field--secondary & {
-    background: var(--field-bg-secondary);
   }
 }
 
@@ -333,43 +312,8 @@ $z-index-side-nodes: 1;
 
   @include field-text;
 
-  & + .input-field__focus-indicator {
-    pointer-events: none;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-
-    &:after {
-      content: '';
-      position: absolute;
-      bottom: toRem(-2);
-      left: 50%;
-      transform: translateX(-50%);
-      height: toRem(2);
-      width: 0;
-      background: var(--primary-main);
-      transition: width calc(var(--field-transition-duration) + 0.3s);
-
-      .input-field--error & {
-        background: var(--field-error);
-      }
-    }
-  }
-
   .input-field--primary & {
     @include field-border;
-  }
-
-  .input-field--secondary & {
-    position: relative;
-    background: var(--field-bg-secondary);
-    box-shadow: inset 0 0 0 toRem(50) var(--field-bg-secondary),
-      0 toRem(2) 0 0 var(--field-border);
-    padding: calc(var(--field-padding-top) + #{toRem(12)})
-      var(--field-padding-right) var(--field-padding-bottom)
-      var(--field-padding-left);
   }
 
   transition-property: all;
@@ -414,24 +358,10 @@ $z-index-side-nodes: 1;
     padding-right: calc(var(--field-padding-right) * 3);
   }
 
-  &:not(:placeholder-shown) {
-    .input-field--secondary & {
-      & + .input-field__focus-indicator:after {
-        width: 100%;
-      }
-    }
-  }
-
   .input-field--error.input-field--primary & {
     border-color: var(--field-error);
     box-shadow: inset 0 0 0 toRem(50) var(--field-bg-primary),
       0 0 0 toRem(1) var(--field-error);
-  }
-
-  .input-field--error.input-field--secondary & {
-    border-color: var(--field-error);
-    box-shadow: inset 0 0 0 toRem(50) var(--field-bg-secondary),
-      0 toRem(2) 0 0 var(--field-error);
   }
 
   &:not([disabled]):focus {
@@ -440,12 +370,6 @@ $z-index-side-nodes: 1;
       box-shadow: inset 0 0 0 toRem(50) var(--field-bg-primary),
         0 0 0 toRem(1) var(--field-border-focus);
       border-color: var(--field-border-focus);
-    }
-
-    .input-field--secondary & {
-      & + .input-field__focus-indicator:after {
-        width: 100%;
-      }
     }
   }
 
@@ -492,8 +416,13 @@ $z-index-side-nodes: 1;
   height: toRem(18);
 }
 
-.input-field__err-msg {
+.input-field__err-msg,
+.input-field__note-msg {
   @include field-error;
+}
+
+.input-field__note-msg {
+  color: var(--text-primary-light);
 }
 
 .input-field__err-msg-transition-enter-active {

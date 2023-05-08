@@ -39,10 +39,6 @@
             :name="ICON_NAMES.triangleDown"
           />
         </button>
-        <span
-          class="select-field__focus-indicator"
-          v-if="scheme === 'secondary'"
-        />
         <label
           v-if="label"
           class="select-field__label"
@@ -92,6 +88,9 @@
       <span v-if="errorMessage" class="select-field__err-msg">
         {{ errorMessage }}
       </span>
+      <span v-else-if="note" class="select-field__note">
+        {{ note }}
+      </span>
     </transition>
   </div>
 </template>
@@ -113,12 +112,13 @@ import { ICON_NAMES } from '@/enums'
 
 const props = withDefaults(
   defineProps<{
-    scheme?: 'primary' | 'secondary'
+    scheme?: 'primary'
     modelValue: string | number
     valueOptions?: string[] | number[]
     label?: string
     placeholder?: string
     errorMessage?: string
+    note?: string
   }>(),
   {
     scheme: 'primary',
@@ -127,6 +127,7 @@ const props = withDefaults(
     label: '',
     placeholder: ' ',
     errorMessage: '',
+    note: '',
   },
 )
 
@@ -246,11 +247,6 @@ $z-local-index: 2;
 
   transition-property: all;
 
-  .select-field--secondary & {
-    background: none;
-    padding: 0;
-  }
-
   .select-field--error & {
     color: var(--field-error);
   }
@@ -264,10 +260,6 @@ $z-local-index: 2;
 
   .select-field--open & {
     color: var(--primary-main);
-  }
-
-  .select-field--label-active.select-field--secondary & {
-    transform: translateY(50%);
   }
 }
 
@@ -332,39 +324,16 @@ $z-local-index: 2;
     @include field-border;
   }
 
-  .select-field--secondary & {
-    position: relative;
-    background: var(--background-secondary-main);
-    box-shadow: inset 0 0 0 toRem(50) var(--field-bg-secondary),
-      0 toRem(2) 0 0 var(--field-border);
-    padding: calc(var(--field-padding-top) + #{toRem(12)})
-      var(--field-padding-right) var(--field-padding-bottom)
-      var(--field-padding-left);
-  }
-
   .select-field--error.select-field--primary & {
     box-shadow: inset 0 0 0 toRem(50) var(--field-bg-primary),
       0 0 0 toRem(1) var(--field-error);
     border-color: var(--field-error);
   }
 
-  .select-field--error.select-field--secondary & {
-    box-shadow: inset 0 0 0 toRem(50) var(--field-bg-secondary),
-      0 toRem(2) 0 0 var(--field-error);
-  }
-
   .select-field--open.select-field--primary & {
     box-shadow: inset 0 0 0 toRem(50) var(--field-bg-primary),
       0 0 0 toRem(2) var(--primary-main);
     border-color: var(--primary-main);
-  }
-
-  .select-field--open.select-field--secondary & {
-    & + .select-field__focus-indicator {
-      &:after {
-        width: 100%;
-      }
-    }
   }
 }
 
@@ -381,10 +350,10 @@ $z-local-index: 2;
   top: 50%;
   right: var(--field-padding-right);
   transform: translateY(-50%);
-  transition: transform 0.1s ease-in-out;
   width: toRem(18);
   height: toRem(18);
   color: var(--field-text);
+  transition: var(--field-transition-duration) ease-in-out;
 
   &--open {
     transform: translateY(-50%) rotate(180deg);
@@ -396,15 +365,15 @@ $z-local-index: 2;
   flex-direction: column;
   position: absolute;
   overflow: hidden auto;
-  top: 105%;
+  top: 110%;
   right: 0;
   width: 100%;
   max-height: 500%;
   z-index: $z-local-index;
-  background: var(--field-bg-secondary);
+  background: var(--white);
   box-shadow: 0 toRem(1) toRem(2) rgba(var(--black-rgb), 0.3),
     0 toRem(2) toRem(6) toRem(2) rgba(var(--black-rgb), 0.15);
-  border-radius: toRem(4);
+  border-radius: toRem(14);
 }
 
 .select-field__select-dropdown-enter-active {
@@ -432,20 +401,24 @@ $z-local-index: 2;
 .select-field__select-dropdown-item {
   text-align: left;
   width: 100%;
-  padding: toRem(8) var(--field-padding-right) toRem(8)
-    var(--field-padding-left);
+  padding: toRem(16);
 
   &:hover {
-    background: rgba(var(--primary-dark-rgb), 0.15);
+    background: var(--background-secondary-main);
   }
 
   &--active {
-    background: rgba(var(--primary-main-rgb), 0.25);
+    background: var(--background-primary-main);
   }
 }
 
-.select-field__err-msg {
+.select-field__err-msg,
+.select-field__note {
   @include field-error;
+}
+
+.select-field__note {
+  color: var(--text-primary-light);
 }
 
 .select-field__err-msg-transition-enter-active {

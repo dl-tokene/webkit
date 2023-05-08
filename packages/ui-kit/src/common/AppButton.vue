@@ -66,17 +66,10 @@ type ButtonType = 'button' | 'submit' | 'reset'
 const props = withDefaults(
   defineProps<{
     text?: string
-    scheme?: 'filled' | 'flat' | 'default'
-    modification?: 'border-circle' | 'border-rounded' | 'default'
-    color?:
-      | 'primary'
-      | 'secondary'
-      | 'success'
-      | 'error'
-      | 'warning'
-      | 'info'
-      | 'default'
-    size?: 'large' | 'medium' | 'small' | 'x-small' | 'default'
+    scheme?: 'filled' | 'flat' | 'none'
+    modification?: 'border-circle' | 'border-rounded' | 'none'
+    color?: 'primary' | 'success' | 'error' | 'warning' | 'info' | 'none'
+    size?: 'large' | 'medium' | 'small' | 'x-small' | 'none'
     route?: LocationAsRelativeRaw
     href?: string
     iconLeft?: ICON_NAMES
@@ -208,44 +201,69 @@ const buttonType = computed<ButtonType>(
     --app-button-border-active: var(--app-button-flat-border-active);
   }
 
-  &--success {
-    --app-button-flat-text: var(--success-light);
-    --app-button-flat-text-hover: var(--success-main);
-    --app-button-flat-border: #{toRem(1)} solid var(--success-light);
-    --app-button-flat-border-hover: #{toRem(1)} solid var(--success-main);
-    --app-button-flat-border-active: #{toRem(1)} solid var(--success-main);
-    --app-button-filled-text: var(--text-primary-main);
-    --app-button-filled-text-hover: var(--text-primary-main);
+  &--none {
+    --app-button-bg-none: transparent;
+    --app-button-bg-none-hover: transparent;
+    --app-button-bg-none-active: transparent;
+    --app-button-text-none: var(--text-primary-main);
+    --app-button-text-none-hover: var(--text-primary-main);
 
-    --app-button-filled-bg: var(--success-light);
-    --app-button-filled-bg-hover: var(--success-main);
-    --app-button-filled-bg-active: var(--success-main);
+    --app-button-bg: var(--app-button-bg-none);
+    --app-button-bg-hover: var(--app-button-bg-none-hover);
+    --app-button-bg-active: var(--app-button-bg-none-active);
+    --app-button-text: var(--app-button-text-none);
+    --app-button-text-hover: var(--app-button-text-none-hover);
+  }
+
+  &--success {
+    --app-button-flat-text: var(--success-main);
+    --app-button-flat-text-hover: var(--success-dark);
+    --app-button-flat-border: #{toRem(1)} solid var(--success-main);
+    --app-button-flat-border-hover: #{toRem(1)} solid var(--success-dark);
+    --app-button-flat-border-active: #{toRem(1)} solid var(--success-dark);
+
+    --app-button-filled-text: var(--text-primary-light);
+    --app-button-filled-text-hover: var(--text-primary-light);
+    --app-button-filled-bg: var(--success-main);
+    --app-button-filled-bg-hover: var(--success-dark);
+    --app-button-filled-bg-active: var(--success-dark);
+
+    --app-button-text-none: var(--success-main);
+    --app-button-text-none-hover: var(--success-dark);
   }
 
   &--error {
-    --app-button-flat-text: var(--error-light);
-    --app-button-flat-text-hover: var(--error-main);
-    --app-button-flat-border: #{toRem(1)} solid var(--error-light);
-    --app-button-flat-border-hover: #{toRem(1)} solid var(--error-main);
-    --app-button-flat-border-active: #{toRem(1)} solid var(--error-main);
+    --app-button-flat-text: var(--error-main);
+    --app-button-flat-text-hover: var(--error-dark);
+    --app-button-flat-border: #{toRem(1)} solid var(--error-main);
+    --app-button-flat-border-hover: #{toRem(1)} solid var(--error-dark);
+    --app-button-flat-border-active: #{toRem(1)} solid var(--error-dark);
+
     --app-button-filled-text: var(--text-primary-main);
     --app-button-filled-text-hover: var(--text-primary-main);
+    --app-button-filled-bg: var(--error-main);
+    --app-button-filled-bg-hover: var(--error-dark);
+    --app-button-filled-bg-active: var(--error-dark);
 
-    --app-button-filled-bg: var(--error-light);
-    --app-button-filled-bg-hover: var(--error-main);
-    --app-button-filled-bg-active: var(--error-main);
+    --app-button-text-none: var(--error-main);
+    --app-button-text-none-hover: var(--error-dark);
   }
 
   &--warning {
     --app-button-flat-text: var(--warning-main);
     --app-button-flat-text-hover: var(--warning-dark);
-    --app-button-flat-border: #{toRem(1)} solid var(--warning-dark);
+    --app-button-flat-border: #{toRem(1)} solid var(--warning-main);
     --app-button-flat-border-hover: #{toRem(1)} solid var(--warning-dark);
     --app-button-flat-border-active: #{toRem(1)} solid var(--warning-dark);
 
+    --app-button-filled-text: var(--text-primary-main);
+    --app-button-filled-text-hover: var(--text-primary-main);
     --app-button-filled-bg: var(--warning-main);
     --app-button-filled-bg-hover: var(--warning-dark);
     --app-button-filled-bg-active: var(--warning-dark);
+
+    --app-button-text-none: var(--warning-main);
+    --app-button-text-none-hover: var(--warning-dark);
   }
 
   &--info {
@@ -255,9 +273,14 @@ const buttonType = computed<ButtonType>(
     --app-button-flat-border-hover: #{toRem(1)} solid var(--info-dark);
     --app-button-flat-border-active: #{toRem(1)} solid var(--info-dark);
 
+    --app-button-filled-text: var(--text-primary-main);
+    --app-button-filled-text-hover: var(--text-primary-main);
     --app-button-filled-bg: var(--info-main);
     --app-button-filled-bg-hover: var(--info-dark);
     --app-button-filled-bg-active: var(--info-dark);
+
+    --app-button-text-none: var(--info-main);
+    --app-button-text-none-hover: var(--info-dark);
   }
 
   &--border-circle {
@@ -266,13 +289,6 @@ const buttonType = computed<ButtonType>(
 
   &--border-rounded {
     border-radius: toRem(4);
-  }
-
-  &--default {
-    --app-button-bg-hover: var(--background-secondary-main);
-    --app-button-bg-active: var(--background-secondary-dark);
-    --app-button-text: var(--primary-main);
-    --app-button-text-hover: var(--primary-main);
   }
 
   &--large {

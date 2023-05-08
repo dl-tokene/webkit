@@ -1,14 +1,14 @@
 <template>
   <label
-    class="checkbox-field"
+    class="switch-field"
     :class="{
-      'checkbox-field--disabled': disabled,
-      'checkbox-field--checked': modelValue,
+      'switch-field--disabled': disabled,
+      'switch-field--checked': modelValue,
     }"
   >
     <input
       v-bind="$attrs"
-      class="checkbox-field__input"
+      class="switch-field__input"
       type="checkbox"
       :checked="modelValue"
       :name="($attrs.name as string) || label"
@@ -17,14 +17,14 @@
       @change="onChange"
     />
 
-    <span class="checkbox-field__frame-wrp" aria-hidden="true">
+    <span class="switch-field__frame-wrp" aria-hidden="true">
       <span
-        class="checkbox-field__frame"
-        :class="{ 'checkbox-field__frame--checked': modelValue }"
+        class="switch-field__frame"
+        :class="{ 'switch-field__frame--checked': modelValue }"
       />
     </span>
 
-    <span v-if="label" class="checkbox-field__label">
+    <span v-if="label" class="switch-field__label">
       {{ label }}
     </span>
   </label>
@@ -52,12 +52,14 @@ const emit = defineEmits<{
 const onChange = (event: Event) => {
   const target = event.target as HTMLInputElement
 
+  console.log('target.checked', target.checked)
+
   emit('update:model-value', target.checked)
 }
 </script>
 
 <style lang="scss" scoped>
-.checkbox-field {
+.switch-field {
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -71,7 +73,7 @@ const onChange = (event: Event) => {
   }
 }
 
-.checkbox-field__input {
+.switch-field__input {
   position: absolute;
   width: toRem(1);
   height: toRem(1);
@@ -84,7 +86,7 @@ const onChange = (event: Event) => {
   overflow: hidden;
 }
 
-.checkbox-field__frame-wrp {
+.switch-field__frame-wrp {
   position: relative;
   overflow: hidden;
   width: toRem(48);
@@ -94,12 +96,12 @@ const onChange = (event: Event) => {
   border-radius: toRem(50);
   box-shadow: inset 0 0 0 toRem(1) var(--field-border);
 
-  .checkbox-field--checked & {
+  .switch-field--checked & {
     background-color: var(--primary-main);
   }
 }
 
-.checkbox-field__frame {
+.switch-field__frame {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -115,12 +117,12 @@ const onChange = (event: Event) => {
   background: var(--primary-light);
   transition: left var(--field-transition-duration) ease-in-out;
 
-  .checkbox-field--checked & {
+  .switch-field--checked & {
     left: calc(100% - #{toRem(16 + calc((24 - 16) / 2))});
   }
 }
 
-.checkbox-field__label {
+.switch-field__label {
   display: inline-flex;
   user-select: none;
 

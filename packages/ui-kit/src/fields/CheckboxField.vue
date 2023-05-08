@@ -30,7 +30,7 @@
       </span>
     </span>
 
-    <span class="checkbox-field__label">
+    <span v-if="label" class="checkbox-field__label">
       {{ label }}
     </span>
   </label>
