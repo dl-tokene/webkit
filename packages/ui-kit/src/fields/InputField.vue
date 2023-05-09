@@ -257,8 +257,6 @@ $z-index-side-nodes: 1;
 
   @include field-label;
 
-  transition-property: all;
-
   .input-field__input:not(:placeholder-shown) ~ & {
     top: 0;
     color: var(--field-text);

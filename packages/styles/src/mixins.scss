@@ -47,7 +47,7 @@ $media-breakpoints: (
   font-size: var(--field-label-font-size);
   line-height: var(--field-label-line-height);
   color: var(--field-label);
-  transition: color var(--field-transition-duration) ease;
+  transition: var(--field-transition-duration) ease;
   margin-bottom: toRem(8);
 }
 
