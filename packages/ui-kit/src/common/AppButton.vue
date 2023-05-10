@@ -367,7 +367,7 @@ const buttonType = computed<ButtonType>(
   }
 
   &--border-rounded {
-    border-radius: toRem(4);
+    border-radius: toRem(14);
   }
 
   &--large {

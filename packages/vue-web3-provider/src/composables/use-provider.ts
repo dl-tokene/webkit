@@ -52,7 +52,7 @@ export const useProvider = () => {
       })
 
       rawProvider.value = createProviderOpts.providerDetector?.getProvider(
-        providerProxyConstructor.providerType,
+        providerProxyConstructor.providerType as PROVIDERS,
       )?.instance
 
       _updateProviderState()

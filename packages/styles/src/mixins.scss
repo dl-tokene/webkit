@@ -100,20 +100,3 @@ $media-breakpoints: (
   width: 100%;
   margin: auto;
 }
-
-@mixin card ($type: 'default') {
-  @if $type == 'default' {
-    background: var(--background-primary-main);
-    border-radius: toRem(8);
-    filter: drop-shadow(0 0 toRem(12) rgba(161, 172, 211, 0.25));
-    padding: toRem(18) toRem(20);
-  }
-
-  @else if $type == 'border' {
-    background: var(--background-primary-main);
-    border: toRem(1) solid var(--background-secondary-dark);
-    border-radius: toRem(8);
-    filter: drop-shadow(0 0 toRem(12) rgba(161, 172, 211, 0.25));
-    padding: toRem(18) toRem(20);
-  }
-}
