@@ -56,5 +56,12 @@
     "typescript": "^5.0.4",
     "yorkie": "^2.0.0"
   },
-  "packageManager": "yarn@3.5.0"
+  "packageManager": "yarn@3.5.0",
+  "resolutions": {
+    "web-kit-monorepo-root": "portal:/Users/lukachisama/Documents/DISTRIBUTED_LAB/FRONTEND/web-kit",
+    "@distributedlab/fetcher": "portal:/Users/lukachisama/Documents/DISTRIBUTED_LAB/FRONTEND/web-kit/packages/fetcher",
+    "@distributedlab/jac": "portal:/Users/lukachisama/Documents/DISTRIBUTED_LAB/FRONTEND/web-kit/packages/jac",
+    "@distributedlab/tools": "portal:/Users/lukachisama/Documents/DISTRIBUTED_LAB/FRONTEND/web-kit/packages/tools",
+    "@distributedlab/w3p": "portal:/Users/lukachisama/Documents/DISTRIBUTED_LAB/FRONTEND/web-kit/packages/w3p"
+  }
 }

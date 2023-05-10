@@ -43,10 +43,10 @@
     "access": "public"
   },
   "dependencies": {
-    "@distributedlab/fetcher": "0.2.0-rc.6",
-    "@distributedlab/jac": "0.2.0-rc.6",
-    "@distributedlab/tools": "0.2.0-rc.6",
-    "@distributedlab/w3p": "0.2.0-rc.6",
+    "@distributedlab/fetcher": "*",
+    "@distributedlab/jac": "*",
+    "@distributedlab/tools": "*",
+    "@distributedlab/w3p": "*",
     "vue-demi": "^0.14.0"
   },
   "peerDependencies": {

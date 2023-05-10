@@ -746,61 +746,38 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@distributedlab/fetcher@npm:0.2.0-rc.6":
-  version: 0.2.0-rc.6
-  resolution: "@distributedlab/fetcher@npm:0.2.0-rc.6"
+"@distributedlab/fetcher@portal:/Users/lukachisama/Documents/DISTRIBUTED_LAB/FRONTEND/web-kit/packages/fetcher::locator=webkit-tokene-monorepo-root%40workspace%3A.":
+  version: 0.0.0-use.local
+  resolution: "@distributedlab/fetcher@portal:/Users/lukachisama/Documents/DISTRIBUTED_LAB/FRONTEND/web-kit/packages/fetcher::locator=webkit-tokene-monorepo-root%40workspace%3A."
   dependencies:
     uuid: ^9.0.0
-  checksum: d33fe8fdf5ce163269a8f63da8224e6d5f961f21ff4a9dea24de26abda0dbac2cab6bdb497d93f43467a6253ee4c3de2edec6b7df5beea3c7fba000da64df83a
   languageName: node
-  linkType: hard
+  linkType: soft
 
-"@distributedlab/fetcher@npm:^0.2.0-rc.6":
-  version: 0.2.0-rc.9
-  resolution: "@distributedlab/fetcher@npm:0.2.0-rc.9"
+"@distributedlab/jac@portal:/Users/lukachisama/Documents/DISTRIBUTED_LAB/FRONTEND/web-kit/packages/jac::locator=webkit-tokene-monorepo-root%40workspace%3A.":
+  version: 0.0.0-use.local
+  resolution: "@distributedlab/jac@portal:/Users/lukachisama/Documents/DISTRIBUTED_LAB/FRONTEND/web-kit/packages/jac::locator=webkit-tokene-monorepo-root%40workspace%3A."
   dependencies:
-    uuid: ^9.0.0
-  checksum: 72e6753fe9f81ede7211deb2268b56df83e5dda12ed217d22aa8952f3e6fb3107404b89e2f4d8c29b34675920f6a720605dd34378419382731087c921215a3df
-  languageName: node
-  linkType: hard
-
-"@distributedlab/jac@npm:0.2.0-rc.6":
-  version: 0.2.0-rc.6
-  resolution: "@distributedlab/jac@npm:0.2.0-rc.6"
-  dependencies:
-    "@distributedlab/fetcher": ^0.2.0-rc.6
+    "@distributedlab/fetcher": "workspace:*"
     lodash: ^4.17.21
-  checksum: 37648d5f755a7dcad1999466eec333b4815bfb32ac29bf1834059b503dc39b91524c94b88579ce7be5422de23ac46e59f3ec65ccf4b2ed109a5e2bd6a464dd2b
   languageName: node
-  linkType: hard
+  linkType: soft
 
-"@distributedlab/tools@npm:0.2.0-rc.6":
-  version: 0.2.0-rc.6
-  resolution: "@distributedlab/tools@npm:0.2.0-rc.6"
+"@distributedlab/tools@portal:/Users/lukachisama/Documents/DISTRIBUTED_LAB/FRONTEND/web-kit/packages/tools::locator=webkit-tokene-monorepo-root%40workspace%3A.":
+  version: 0.0.0-use.local
+  resolution: "@distributedlab/tools@portal:/Users/lukachisama/Documents/DISTRIBUTED_LAB/FRONTEND/web-kit/packages/tools::locator=webkit-tokene-monorepo-root%40workspace%3A."
   dependencies:
     bignumber.js: ^9.1.1
     dayjs: ^1.11.7
     tslib: ^2.5.0
-  checksum: b0fc1844ff4cc39cda0b7d90e47857e9d71589460d3365abe3c360fa3e79baaacc0194e3385ebd0b4bbd3252c761f72aa1da4a666fe414c84b0363ddb4a628ae
   languageName: node
-  linkType: hard
+  linkType: soft
 
-"@distributedlab/tools@npm:^0.2.0-rc.6":
-  version: 0.2.0-rc.9
-  resolution: "@distributedlab/tools@npm:0.2.0-rc.9"
+"@distributedlab/w3p@portal:/Users/lukachisama/Documents/DISTRIBUTED_LAB/FRONTEND/web-kit/packages/w3p::locator=webkit-tokene-monorepo-root%40workspace%3A.":
+  version: 0.0.0-use.local
+  resolution: "@distributedlab/w3p@portal:/Users/lukachisama/Documents/DISTRIBUTED_LAB/FRONTEND/web-kit/packages/w3p::locator=webkit-tokene-monorepo-root%40workspace%3A."
   dependencies:
-    bignumber.js: ^9.1.1
-    dayjs: ^1.11.7
-    tslib: ^2.5.0
-  checksum: eb424572f1e9c05ef64a10f1beb7c98de1462e42d878950b82aca490e9cb6d7d7e47296989755652faf093a6fe1f72f42e18782fb3c618ec6adb1ea42407f460
-  languageName: node
-  linkType: hard
-
-"@distributedlab/w3p@npm:0.2.0-rc.6":
-  version: 0.2.0-rc.6
-  resolution: "@distributedlab/w3p@npm:0.2.0-rc.6"
-  dependencies:
-    "@distributedlab/tools": ^0.2.0-rc.6
+    "@distributedlab/tools": "workspace:*"
     "@ethersproject/abstract-provider": ^5.7.0
     "@ethersproject/properties": ^5.7.0
     "@near-wallet-selector/core": ^7.8.2
@@ -809,9 +786,8 @@ __metadata:
     bs58: ^5.0.0
     ethers: ^5.7.2
     near-api-js: ^1.1.0
-  checksum: 4897fc8579a61268c110d6315ceecf8a728bbae7f356e8bc5c06128657006c9c39bb3d1255fa61cc0145da0f094f810219e2bea22212b53d07fabd5cb5ebad7c
   languageName: node
-  linkType: hard
+  linkType: soft
 
 "@esbuild/android-arm64@npm:0.17.18":
   version: 0.17.18
@@ -2668,10 +2644,10 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@tokene/vue-web3-provider@workspace:packages/vue-web3-provider"
   dependencies:
-    "@distributedlab/fetcher": 0.2.0-rc.6
-    "@distributedlab/jac": 0.2.0-rc.6
-    "@distributedlab/tools": 0.2.0-rc.6
-    "@distributedlab/w3p": 0.2.0-rc.6
+    "@distributedlab/fetcher": "*"
+    "@distributedlab/jac": "*"
+    "@distributedlab/tools": "*"
+    "@distributedlab/w3p": "*"
     "@rollup/plugin-alias": ^5.0.0
     "@rollup/plugin-babel": ^6.0.3
     "@rollup/plugin-commonjs": ^24.0.1
