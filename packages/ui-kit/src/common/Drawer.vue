@@ -7,7 +7,7 @@
 
           <app-button
             class="drawer__close-btn"
-            scheme="default"
+            scheme="none"
             size="medium"
             modification="border-circle"
             :icon-right="ICON_NAMES.x"

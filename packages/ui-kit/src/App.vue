@@ -46,9 +46,9 @@
         modification="border-rounded"
       />
 
-      <app-button :text="'button'" modification="" />
-      <app-button :text="'button'" scheme="flat" modification="" />
-      <app-button :text="'button'" scheme="none" modification="" />
+      <app-button :text="'button'" modification="none" />
+      <app-button :text="'button'" scheme="flat" modification="none" />
+      <app-button :text="'button'" scheme="none" modification="none" />
     </div>
     <div class="app__buttons">
       <app-button size="large" :text="'button'" />

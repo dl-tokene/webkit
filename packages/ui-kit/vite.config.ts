@@ -2,7 +2,9 @@ import typescript from '@rollup/plugin-typescript'
 import vue from '@vitejs/plugin-vue'
 import * as path from 'path'
 import { defineConfig, loadEnv } from 'vite'
+// import { viteStaticCopy } from 'vite-plugin-static-copy'
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
+import svgLoader from 'vite-svg-loader'
 
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '')
@@ -88,6 +90,15 @@ export default defineConfig(({ mode }) => {
             }),
           ]
         : []),
+      // viteStaticCopy({
+      //   targets: [
+      //     {
+      //       src: 'src/assets/**/*',
+      //       dest: 'assets',
+      //     },
+      //   ],
+      // }),
+      svgLoader(),
     ],
   }
 })

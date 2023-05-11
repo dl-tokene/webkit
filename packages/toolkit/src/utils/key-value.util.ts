@@ -10,7 +10,9 @@ export class KeyValueUtil {
       key: string
       value: string
     }>(`/integrations/key-value-svc/values/${key}`, {
-      value: JSON.stringify(rawData),
+      body: {
+        value: JSON.stringify(rawData),
+      },
     })
     return data
   }

@@ -98,7 +98,7 @@ const isDisabled = computed((): boolean =>
 const buttonClasses = computed(() =>
   [
     'app-button',
-    `app-button--${props.scheme}`,
+    `app-button--scheme-${props.scheme}`,
     `app-button--${props.modification}`,
     `app-button--${props.color}`,
     `app-button--${props.size}`,
@@ -168,7 +168,7 @@ const buttonType = computed<ButtonType>(
     border: var(--app-button-border-active);
   }
 
-  &--filled {
+  &--scheme-filled {
     --app-button-filled-bg: var(--primary-main);
     --app-button-filled-bg-hover: var(--primary-main);
     --app-button-filled-bg-focused: var(--primary-main);
@@ -200,7 +200,7 @@ const buttonType = computed<ButtonType>(
     --app-button-border-focused: var(--app-button-filled-border-focused);
   }
 
-  &--flat {
+  &--scheme-flat {
     --app-button-flat-bg: none;
     --app-button-flat-bg-hover: none;
     --app-button-flat-bg-focused: none;
@@ -232,7 +232,7 @@ const buttonType = computed<ButtonType>(
     --app-button-border-active: var(--app-button-flat-border-active);
   }
 
-  &--none {
+  &--scheme-none {
     --app-button-none-bg: transparent;
     --app-button-none-bg-hover: transparent;
     --app-button-none-bg-focused: transparent;

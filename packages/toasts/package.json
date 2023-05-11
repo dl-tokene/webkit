@@ -53,7 +53,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@distributedlab/w3p": "0.2.0-rc.6",
+    "@distributedlab/w3p": "0.2.0-rc.10",
     "@tokene/styles": "workspace:^",
     "@tokene/toolkit": "workspace:^",
     "@tokene/ui-kit": "workspace:^",
