@@ -1,6 +1,6 @@
 {
   "name": "@tokene/ui-kit",
-  "version": "0.0.0-rc.4",
+  "version": "0.0.0-rc.5",
   "description": "Collection of common TokenE vue components",
   "repository": {
     "type": "git",
