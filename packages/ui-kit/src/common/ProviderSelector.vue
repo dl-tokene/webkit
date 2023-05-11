@@ -36,6 +36,7 @@ const getIconForCurrentDesignatedProvider = (providerType: PROVIDERS) => {
   const designatedProvidersToIconsMap = {
     [PROVIDERS.Metamask]: ICON_NAMES.metamaskHeadRight,
     [PROVIDERS.Coinbase]: ICON_NAMES.coinbase,
+    ['tokene']: ICON_NAMES.tokene,
   }
 
   return get(

@@ -6,6 +6,7 @@
     :label="label"
     :placeholder="placeholder"
     :error-message="errorMessage"
+    :note="note"
   >
     <template #head>
       <div class="basic-select-field__head">
@@ -46,12 +47,14 @@ const props = withDefaults(
     label?: string
     placeholder?: string
     errorMessage?: string
+    note?: string
   }>(),
   {
     valueOptions: () => [],
     label: '',
     placeholder: ' ',
     errorMessage: '',
+    note: '',
   },
 )
 

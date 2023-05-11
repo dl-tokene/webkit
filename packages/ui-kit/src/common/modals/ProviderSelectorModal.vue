@@ -18,7 +18,7 @@
           </p>
           <app-button
             class="provider-selector-modal__modal-close-button"
-            scheme="default"
+            scheme="none"
             size="small"
             modification="border-circle"
             :icon-right="ICON_NAMES.x"

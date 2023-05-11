@@ -1,6 +1,6 @@
 <template>
   <div class="error-message">
-    <img class="error-message__img" :src="imageUrl" alt="" />
+    <img class="error-message__img" :src="imageUrl()" alt="" />
     <h3 v-if="title" class="error-message__title">
       {{ title }}
     </h3>
@@ -12,6 +12,9 @@
 
 <script lang="ts" setup>
 import { computed } from 'vue'
+
+import errorLargeImage from '@/assets/images/error-large-image.svg?url'
+import errorSmallImage from '@/assets/images/error-small-image.svg?url'
 
 const props = withDefaults(
   defineProps<{
@@ -28,13 +31,13 @@ const props = withDefaults(
   },
 )
 
-const imageUrl = computed(
-  () =>
-    props.customImageUrl ||
-    {
-      large: '/images/error-large-image.svg',
-      small: '/images/error-small-image.svg',
-    }[props.schema],
+const imageUrl = computed(() =>
+  props.customImageUrl
+    ? () => props.customImageUrl
+    : {
+        large: () => errorLargeImage,
+        small: () => errorSmallImage,
+      }[props.schema],
 )
 </script>
 

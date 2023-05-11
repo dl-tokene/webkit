@@ -98,14 +98,14 @@
   --field-bg-secondary: var(--background-secondary-light);
 
   /* label */
-  --field-label: var(--text-primary-main);
-  --field-label-hover: var(--text-primary-main);
-  --field-label-focus: var(--text-primary-main);
+  --field-label: var(--text-primary-light);
+  --field-label-hover: var(--text-primary-light);
+  --field-label-focus: var(--primary-main);
   --field-label-font-size: #{toRem(16)};
   --field-label-line-height: 1.5;
 
   /* text */
-  --field-text: var(--text-primary-main);
+  --field-text: var(--text-primary-light);
   --field-text-font-size: #{toRem(16)};
   --field-text-line-height: 1.5;
   --field-placeholder: #{rgba($text-primary-main, 0.35)};

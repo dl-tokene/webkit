@@ -1,6 +1,6 @@
 <template>
   <div class="no-data-message">
-    <img class="no-data-message__img" :src="imageUrl" alt="" />
+    <img class="no-data-message__img" :src="imageUrl()" alt="" />
     <span v-if="message" class="no-data-message__message">
       {{ message }}
     </span>
@@ -10,6 +10,8 @@
 <script lang="ts" setup>
 import { computed } from 'vue'
 
+import emptyImage from '@/assets/images/empty-image.svg?url'
+
 const props = withDefaults(
   defineProps<{
     message?: string
@@ -18,8 +20,8 @@ const props = withDefaults(
   { message: '', customImageUrl: '' },
 )
 
-const imageUrl = computed(
-  () => props.customImageUrl || '/images/empty-image.svg',
+const imageUrl = computed(() =>
+  props.customImageUrl ? () => props.customImageUrl : () => emptyImage,
 )
 </script>
 

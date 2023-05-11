@@ -37,7 +37,7 @@ export class StorageUtil {
     )
     const { data } = await api.post<{ id: string }>(
       '/integrations/storage/documents',
-      formData,
+      { body: formData },
     )
     this.id = data.id
   }

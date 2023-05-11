@@ -36,8 +36,8 @@ export const useNotifications = () => {
     [TYPE.DEFAULT]: ICON_NAMES.exclamationCircleFilled,
     [TYPE.INFO]: ICON_NAMES.exclamationCircleFilled,
     [TYPE.SUCCESS]: ICON_NAMES.checkFilled,
-    [TYPE.ERROR]: ICON_NAMES.exclamationCircleFilled,
-    [TYPE.WARNING]: ICON_NAMES.triangleFilled,
+    [TYPE.ERROR]: ICON_NAMES.xCircleFilled,
+    [TYPE.WARNING]: ICON_NAMES.exclamationTriangleFilled,
   }
 
   const showToast = (
@@ -85,7 +85,8 @@ export const useNotifications = () => {
           error: TYPE.ERROR,
           warning: TYPE.WARNING,
         }[messageType],
-        timeout: MINUTE / 2,
+        toastClassName: 'default-toast',
+        timeout: MINUTE * 2,
         closeOnClick: false,
       },
     )
@@ -107,7 +108,8 @@ export const useNotifications = () => {
           success: TYPE.SUCCESS,
           error: TYPE.ERROR,
         }[type],
-        timeout: MINUTE / 2,
+        toastClassName: 'transaction-toast',
+        timeout: MINUTE * 2,
         closeOnClick: false,
       },
     )

@@ -2,7 +2,7 @@
   <div v-if="isShowPagination" class="pagination">
     <app-button
       class="pagination__item"
-      scheme="default"
+      scheme="none"
       type="button"
       :icon-right="ICON_NAMES.angleLeft"
       @click="handlePrevStep"
@@ -46,7 +46,7 @@
     </template>
     <app-button
       class="pagination__item"
-      scheme="default"
+      scheme="none"
       type="button"
       :icon-right="ICON_NAMES.angleRight"
       @click="handleNextPage"

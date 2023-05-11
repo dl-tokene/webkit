@@ -47,13 +47,13 @@ $media-breakpoints: (
   font-size: var(--field-label-font-size);
   line-height: var(--field-label-line-height);
   color: var(--field-label);
-  transition: color var(--field-transition-duration) ease;
+  transition: var(--field-transition-duration) ease;
   margin-bottom: toRem(8);
 }
 
 @mixin field-border {
   border: toRem(1) solid var(--field-border);
-  border-radius: toRem(4);
+  border-radius: toRem(14);
 }
 
 @mixin field-placeholder {
@@ -69,11 +69,13 @@ $media-breakpoints: (
 @mixin field-error {
   overflow: hidden;
   color: var(--field-error);
-  font-size: toRem(10);
-  line-height: 1.4;
+  font-size: toRem(12);
+  letter-spacing: toRem(0.4);
+  line-height: 1.3;
   transition: var(--field-transition-duration) ease;
   transition-property: opacity, color, font-size, transform;
   margin-top: toRem(4);
+  padding-left: var(--field-padding-left);
 }
 
 @mixin scrollbar {
@@ -97,21 +99,4 @@ $media-breakpoints: (
   max-width: toRem(420);
   width: 100%;
   margin: auto;
-}
-
-@mixin card ($type: 'default') {
-  @if $type == 'default' {
-    background: var(--background-primary-main);
-    border-radius: toRem(8);
-    filter: drop-shadow(0 0 toRem(12) rgba(161, 172, 211, 0.25));
-    padding: toRem(18) toRem(20);
-  }
-
-  @else if $type == 'border' {
-    background: var(--background-primary-main);
-    border: toRem(1) solid var(--background-secondary-dark);
-    border-radius: toRem(8);
-    filter: drop-shadow(0 0 toRem(12) rgba(161, 172, 211, 0.25));
-    padding: toRem(18) toRem(20);
-  }
 }

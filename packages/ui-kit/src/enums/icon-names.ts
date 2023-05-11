@@ -112,4 +112,6 @@ export enum ICON_NAMES {
   wire = 'wire',
   x = 'x',
   xOutline = 'x-outline',
+  xCircleFilled = 'x-circle-filled',
+  exclamationTriangleFilled = 'exclamation-triangle-filled',
 }

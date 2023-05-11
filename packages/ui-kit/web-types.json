@@ -1,7 +1,7 @@
 {
   "framework": "vue",
   "name": "@tokene/ui-kit",
-  "version": "0.0.0-rc.3",
+  "version": "0.0.0-rc.4",
   "contributions": {
     "html": {
       "description-markup": "markdown",
@@ -40,6 +40,14 @@
           ],
           "source": {
             "module": "./src/common/Accordion.vue",
+            "symbol": "default"
+          }
+        },
+        {
+          "name": "App",
+          "description": "",
+          "source": {
+            "module": "./src/App.vue",
             "symbol": "default"
           }
         },
@@ -277,6 +285,15 @@
             },
             {
               "name": "errorMessage",
+              "required": false,
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              },
+              "default": "''"
+            },
+            {
+              "name": "note",
               "required": false,
               "value": {
                 "kind": "expression",
@@ -625,7 +642,7 @@
               "required": false,
               "value": {
                 "kind": "expression",
-                "type": "union"
+                "type": "\"primary\""
               },
               "default": "'primary'"
             },
@@ -666,6 +683,15 @@
             },
             {
               "name": "errorMessage",
+              "required": false,
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              },
+              "default": "''"
+            },
+            {
+              "name": "note",
               "required": false,
               "value": {
                 "kind": "expression",
@@ -940,7 +966,7 @@
               "required": false,
               "value": {
                 "kind": "expression",
-                "type": "union"
+                "type": "\"primary\""
               },
               "default": "'primary'"
             },
@@ -981,6 +1007,15 @@
             },
             {
               "name": "errorMessage",
+              "required": false,
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              },
+              "default": "''"
+            },
+            {
+              "name": "note",
               "required": false,
               "value": {
                 "kind": "expression",
@@ -1167,6 +1202,15 @@
             },
             {
               "name": "errorMessage",
+              "required": false,
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              },
+              "default": "''"
+            },
+            {
+              "name": "note",
               "required": false,
               "value": {
                 "kind": "expression",

@@ -17,7 +17,7 @@
           </div>
           <app-button
             class="basic-modal__close-btn"
-            scheme="default"
+            scheme="none"
             :icon-right="ICON_NAMES.x"
             @click="modal.close"
           />
