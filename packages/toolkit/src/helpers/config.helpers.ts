@@ -51,6 +51,8 @@ export function getConfigFromEnv<T extends EnvConfig>(
 
   Object.assign(config, _mapEnvCfg(documentEnv))
 
+  Object.assign(rawConfig, config)
+
   return config
 }
 
