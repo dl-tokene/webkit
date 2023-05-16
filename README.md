@@ -178,7 +178,7 @@ To test the packages, you need:
     ```json
     {
       "dependencies": {
-        "@tokene/jac": "toolkit"
+        "@tokene/toolkit": "*"
       }
     }
     ```

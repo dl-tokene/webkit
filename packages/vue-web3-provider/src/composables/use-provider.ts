@@ -43,11 +43,23 @@ export const useProvider = () => {
       _provider = await createProvider(providerProxyConstructor, {
         providerDetector: createProviderOpts.providerDetector,
         listeners: {
-          onAccountChanged: _updateProviderState,
-          onChainChanged: _updateProviderState,
-          onConnect: _updateProviderState,
-          onDisconnect: _updateProviderState,
           ...createProviderOpts.listeners,
+          onAccountChanged: () => {
+            createProviderOpts?.listeners?.onAccountChanged?.()
+            _updateProviderState()
+          },
+          onChainChanged: () => {
+            createProviderOpts?.listeners?.onChainChanged?.()
+            _updateProviderState()
+          },
+          onConnect: () => {
+            createProviderOpts?.listeners?.onConnect?.()
+            _updateProviderState()
+          },
+          onDisconnect: () => {
+            createProviderOpts?.listeners?.onDisconnect?.()
+            _updateProviderState()
+          },
         },
       })
 
@@ -80,12 +92,6 @@ export const useProvider = () => {
 
   const addChain = async (chain: Chain) => {
     await _provider?.addChain?.(chain)
-  }
-
-  const setChainDetails = (chain: Chain) => {
-    _provider?.setChainDetails?.(chain)
-
-    _updateProviderState()
   }
 
   const getAddressUrl = (chain: Chain, address: string) => {
@@ -133,7 +139,6 @@ export const useProvider = () => {
     connect,
     switchChain,
     addChain,
-    setChainDetails,
     getAddressUrl,
     getHashFromTx,
     getTxUrl,

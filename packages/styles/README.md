@@ -2,8 +2,6 @@
 Default styles for every single TokenE frontend project with common utility as like as toRem, ...etc, mixins and variables
 
 ![version (scoped package)](https://badgen.net/npm/v/@tokene/styles)
-![types](https://badgen.net/npm/types/@tokene/styles)
-![tree-shaking](https://badgen.net/bundlephobia/tree-shaking/@tokene/styles)
 ![checks](https://badgen.net/github/checks/dl-tokene/webkit/main)
 
 ## Getting Started

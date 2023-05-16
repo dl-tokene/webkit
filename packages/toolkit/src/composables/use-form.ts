@@ -23,7 +23,7 @@ export function useForm() {
     isConfirmationShown.value = false
   }
 
-  const hideConfirmationAfterSubmit = async (submitFn: () => void) => {
+  const hideConfirmationAfterSubmit = async (submitFn: () => Promise<void>) => {
     isFormPending.value = true
     await submitFn()
     hideConfirmation()
