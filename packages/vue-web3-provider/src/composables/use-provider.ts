@@ -35,10 +35,10 @@ export const useProvider = () => {
 
   const rawProvider = ref<RawProvider>()
 
-  const init = async (
+  async function init<T extends keyof Record<string, string>>(
     providerProxyConstructor: ProviderProxyConstructor,
-    createProviderOpts: CreateProviderOpts,
-  ) => {
+    createProviderOpts: CreateProviderOpts<T>,
+  ) {
     try {
       _provider = await createProvider(providerProxyConstructor, {
         providerDetector: createProviderOpts.providerDetector,

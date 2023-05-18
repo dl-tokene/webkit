@@ -1,6 +1,6 @@
 {
   "name": "@tokene/vue-web3-provider",
-  "version": "0.0.0-rc.8",
+  "version": "0.0.0-rc.9",
   "description": "The Vue reactive wrapper for @distributedlab/w3p",
   "repository": {
     "type": "git",
@@ -43,10 +43,10 @@
     "access": "public"
   },
   "dependencies": {
-    "@distributedlab/fetcher": "^0.2.0-rc.11",
-    "@distributedlab/jac": "^0.2.0-rc.11",
-    "@distributedlab/tools": "^0.2.0-rc.11",
-    "@distributedlab/w3p": "^0.2.0-rc.11",
+    "@distributedlab/fetcher": "^0.2.0-rc.14",
+    "@distributedlab/jac": "^0.2.0-rc.14",
+    "@distributedlab/tools": "^0.2.0-rc.14",
+    "@distributedlab/w3p": "^0.2.0-rc.14",
     "vue-demi": "^0.14.0"
   },
   "peerDependencies": {

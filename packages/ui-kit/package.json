@@ -1,6 +1,6 @@
 {
   "name": "@tokene/ui-kit",
-  "version": "0.0.0-rc.8",
+  "version": "0.0.0-rc.9",
   "description": "Collection of common TokenE vue components",
   "repository": {
     "type": "git",
@@ -58,10 +58,9 @@
   "dependencies": {
     "@dicebear/collection": "^6.0.3",
     "@dicebear/core": "^6.0.3",
-    "@distributedlab/fetcher": "0.2.0-rc.11",
-    "@distributedlab/jac": "0.2.0-rc.11",
-    "@distributedlab/tools": "0.2.0-rc.11",
-    "@distributedlab/w3p": "0.2.0-rc.11",
+    "@distributedlab/jac": "^0.2.0-rc.14",
+    "@distributedlab/tools": "^0.2.0-rc.14",
+    "@distributedlab/w3p": "^0.2.0-rc.14",
     "@tokene/styles": "workspace:^",
     "@tokene/toolkit": "workspace:^",
     "@tokene/vue-web3-provider": "workspace:^",
