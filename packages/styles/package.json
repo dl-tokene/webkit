@@ -1,6 +1,6 @@
 {
   "name": "@tokene/styles",
-  "version": "0.0.0-rc.9",
+  "version": "0.0.0-rc.10",
   "description": "Default styles for every single frontend module of TokenE",
   "repository": {
     "type": "git",

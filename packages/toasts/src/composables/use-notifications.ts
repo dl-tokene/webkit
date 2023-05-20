@@ -2,17 +2,19 @@ import { i18next } from '@tokene/toolkit'
 import { ICON_NAMES } from '@tokene/ui-kit'
 import { isObject } from 'lodash-es'
 import { TYPE, useToast } from 'vue-toastification'
+import type { ToastOptions } from 'vue-toastification/dist/types/types'
 
 import { DefaultToast, TransactionToast } from '@/components'
 import {
   CommonNotificationTypes,
   NotificationObjectPayload,
+  NotificationPayload,
   NotificationTxType,
 } from '@/types'
 
 const MINUTE = 60 * 1000
 
-export const useNotifications = () => {
+export const useNotifications = (options?: ToastOptions) => {
   const toast = useToast()
 
   // FIXME
@@ -42,7 +44,7 @@ export const useNotifications = () => {
 
   const showToast = (
     messageType = 'default' as CommonNotificationTypes,
-    payload?: string | NotificationObjectPayload,
+    payload?: NotificationPayload,
   ) => {
     let title = ''
     let message = ''
@@ -77,6 +79,7 @@ export const useNotifications = () => {
         },
       },
       {
+        ...(options || {}),
         icon: false,
         type: {
           default: TYPE.DEFAULT,
@@ -86,7 +89,9 @@ export const useNotifications = () => {
           warning: TYPE.WARNING,
         }[messageType],
         toastClassName: 'default-toast',
-        timeout: MINUTE * 2,
+        ...(options?.timeout
+          ? { timeout: options.timeout }
+          : { timeout: MINUTE / 2 }),
         closeOnClick: false,
       },
     )
@@ -102,6 +107,7 @@ export const useNotifications = () => {
         },
       },
       {
+        ...(options || {}),
         icon: false,
         type: {
           pending: TYPE.INFO,
@@ -109,7 +115,9 @@ export const useNotifications = () => {
           error: TYPE.ERROR,
         }[type],
         toastClassName: 'transaction-toast',
-        timeout: MINUTE * 2,
+        ...(options?.timeout
+          ? { timeout: options.timeout }
+          : { timeout: MINUTE / 2 }),
         closeOnClick: false,
       },
     )
