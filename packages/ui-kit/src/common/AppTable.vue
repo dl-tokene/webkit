@@ -17,11 +17,10 @@
   overflow: auto auto;
   width: 100%;
   flex: 1;
-
-  @include scrollbar;
 }
 
 .app-table {
+  border-collapse: collapse;
   position: absolute;
   top: 0;
   left: 0;
@@ -35,33 +34,43 @@
   }
 
   thead {
-    background: var(--bg-primary-dark);
+    position: sticky;
+    top: 0;
+    background: var(--background-primary-main);
+    border-radius: toRem(14);
 
     th {
-      font-size: toRem(12);
-      line-height: 1.3;
-      font-weight: 600;
-      letter-spacing: toRem(0.5);
+      font-size: toRem(16);
+      line-height: 1.5;
+      font-weight: 400;
+      letter-spacing: toRem(0.15);
       color: var(--text-secondary-main);
-      padding-top: toRem(10);
-      padding-bottom: toRem(10);
+      padding-top: toRem(16);
+      padding-bottom: toRem(16);
+      margin-bottom: toRem(10);
     }
   }
 
   tbody {
+    td {
+      vertical-align: middle;
+      font-size: toRem(14);
+      line-height: 1.5;
+      border-bottom: toRem(1) solid var(--border-secondary-main);
+    }
+
     tr {
       transition: 0.15s ease-in-out;
 
       &:hover {
         background: var(--background-primary-dark);
       }
-    }
 
-    td {
-      vertical-align: middle;
-      font-size: toRem(14);
-      line-height: 1.5;
-      border-bottom: toRem(1) solid var(--border-secondary-main);
+      &:last-child {
+        td {
+          border-bottom: none;
+        }
+      }
     }
   }
 }

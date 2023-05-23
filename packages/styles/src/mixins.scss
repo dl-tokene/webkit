@@ -100,3 +100,12 @@ $media-breakpoints: (
   width: 100%;
   margin: auto;
 }
+
+@mixin square-static-size ($size) {
+  width: $size;
+  height: $size;
+  max-width: $size;
+  max-height: $size;
+  min-width: $size;
+  min-height: $size;
+}

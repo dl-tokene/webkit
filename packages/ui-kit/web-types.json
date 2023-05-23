@@ -419,6 +419,14 @@
               "name": "trailing-button-click"
             }
           ],
+          "slots": [
+            {
+              "name": "leading"
+            },
+            {
+              "name": "trailing"
+            }
+          ],
           "source": {
             "module": "./src/common/Chip.vue",
             "symbol": "default"
@@ -808,15 +816,6 @@
           "description": "",
           "attributes": [
             {
-              "name": "type",
-              "required": false,
-              "value": {
-                "kind": "expression",
-                "type": "union"
-              },
-              "default": "'graph'"
-            },
-            {
               "name": "pageLimit",
               "required": false,
               "value": {
@@ -835,6 +834,15 @@
               "default": "() => []"
             },
             {
+              "name": "totalPages",
+              "required": false,
+              "value": {
+                "kind": "expression",
+                "type": "number"
+              },
+              "default": "undefined"
+            },
+            {
               "name": "fetchCb",
               "required": true,
               "value": {
@@ -843,18 +851,29 @@
               }
             },
             {
-              "name": "totalItems",
+              "name": "fetchNextCb",
+              "required": true,
+              "value": {
+                "kind": "expression",
+                "type": "TSFunctionType"
+              }
+            },
+            {
+              "name": "fetchPrevCb",
+              "required": true,
+              "value": {
+                "kind": "expression",
+                "type": "TSFunctionType"
+              }
+            },
+            {
+              "name": "fetchPageCb",
               "required": false,
               "value": {
                 "kind": "expression",
-                "type": "number"
+                "type": "TSFunctionType"
               },
-              "default": "0"
-            }
-          ],
-          "events": [
-            {
-              "name": "update:list"
+              "default": "undefined"
             }
           ],
           "source": {

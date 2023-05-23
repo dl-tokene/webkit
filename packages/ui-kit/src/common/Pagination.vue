@@ -1,9 +1,10 @@
 <template>
   <div v-if="isShowPagination" class="pagination">
     <app-button
-      class="pagination__item"
+      class="pagination__item pagination__item--arrow"
       scheme="none"
       type="button"
+      size="none"
       :icon-right="ICON_NAMES.triangleLeft"
       @click="handleFetchPrev"
       :disabled="isPrevBtnDisabled"
@@ -19,6 +20,7 @@
             'pagination__item--active': currentPage === FIRST_PAGE_NUMBER,
           },
         ]"
+        @click="handleFetchPage(FIRST_PAGE_NUMBER)"
       >
         {{ FIRST_PAGE_NUMBER }}
       </button>
@@ -33,6 +35,7 @@
           'pagination__item',
           { 'pagination__item--active': currentPage === item },
         ]"
+        @click="handleFetchPage(item)"
       >
         {{ item }}
       </button>
@@ -46,14 +49,16 @@
           'pagination__item',
           { 'pagination__item--active': currentPage === totalPages },
         ]"
+        @click="handleFetchPage(totalPages)"
       >
         {{ totalPages }}
       </button>
     </template>
 
     <app-button
-      class="pagination__item"
+      class="pagination__item pagination__item--arrow"
       scheme="none"
+      size="none"
       type="button"
       :icon-right="ICON_NAMES.triangleRight"
       @click="handleFetchNext"
@@ -215,20 +220,22 @@ init()
   display: flex;
   justify-content: center;
   align-items: center;
-  width: toRem(42);
-  height: toRem(42);
-  max-width: toRem(42);
-  max-height: toRem(42);
-  min-width: toRem(42);
-  min-height: toRem(42);
   border-radius: 50%;
   font-size: toRem(14);
   line-height: 1.4;
   font-weight: 500;
 
+  @include square-static-size(#{toRem(42)});
+
   &--active {
     background: var(--primary-main);
     color: var(--text-primary-invert-main);
+  }
+
+  &--arrow {
+    --button-icon-size: #{toRem(24)};
+
+    color: var(--primary-main);
   }
 }
 

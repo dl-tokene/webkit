@@ -1,26 +1,36 @@
 <template>
   <div :class="chipClasses">
-    <button
-      type="button"
-      v-if="leadingIcon"
-      class="chip__left-icon-btn"
-      @click.stop="handleLeftBtnClick"
-      :disabled="isDisabled"
-    >
-      <icon class="chip__left-icon" :name="leadingIcon" />
-    </button>
+    <template v-if="$slots.leading">
+      <slot name="leading" />
+    </template>
+    <template v-else>
+      <button
+        type="button"
+        v-if="leadingIcon"
+        class="chip__left-icon-btn"
+        @click.stop="handleLeftBtnClick"
+        :disabled="isDisabled"
+      >
+        <icon class="chip__left-icon" :name="leadingIcon" />
+      </button>
+    </template>
     <span class="chip__label">
       {{ label }}
     </span>
-    <button
-      type="button"
-      v-if="trailingIcon"
-      class="chip__right-icon-btn"
-      @click.stop="handleRightBtnClick"
-      :disabled="isDisabled"
-    >
-      <icon class="chip__right-icon" :name="trailingIcon" />
-    </button>
+    <template v-if="$slots.trailing">
+      <slot name="trailing" />
+    </template>
+    <template v-else>
+      <button
+        type="button"
+        v-if="trailingIcon"
+        class="chip__right-icon-btn"
+        @click.stop="handleRightBtnClick"
+        :disabled="isDisabled"
+      >
+        <icon class="chip__right-icon" :name="trailingIcon" />
+      </button>
+    </template>
   </div>
 </template>
 
@@ -77,7 +87,7 @@ const handleRightBtnClick = () => {
   max-width: 100%;
 
   &--filled {
-    background: var(--background-secondary-main);
+    background: var(--background-secondary-light);
 
     &:hover {
       background: var(--background-secondary-light);
@@ -115,7 +125,7 @@ const handleRightBtnClick = () => {
   min-height: toRem(18);
   max-width: toRem(18);
   max-height: toRem(18);
-  color: var(--primary-main);
+  color: var(--text-primary-light);
 }
 
 .chip__label {
@@ -125,7 +135,7 @@ const handleRightBtnClick = () => {
   font-size: toRem(14);
   line-height: 1.3;
   font-weight: 500;
-  color: var(--text-primary-main);
+  color: var(--text-primary-light);
   letter-spacing: toRem(0.1);
   flex: 1;
 

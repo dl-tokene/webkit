@@ -1,8 +1,9 @@
 <template>
-  <div class="app-tooltip">
+  <div class="app-tooltip__wrapper">
     <tooltip
       :triggers="[...(isShowByClick ? ['click'] : ['hover'])]"
       :auto-hide="true"
+      :popper-class="`app-tooltip ${$attrs.class}`"
     >
       <div class="app-tooltip__trigger">
         <slot name="trigger" />
@@ -36,10 +37,14 @@ const props = withDefaults(
 const isShowByClick = computed(() => props.isPreferClick || isMobile())
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .app-tooltip {
-  &:deep(.v-popper) {
+  .v-popper {
     width: auto;
+  }
+
+  .v-popper__inner {
+    padding: 0;
   }
 }
 
