@@ -4,194 +4,201 @@
       class="pagination__item"
       scheme="none"
       type="button"
-      :icon-right="ICON_NAMES.angleLeft"
-      @click="handlePrevStep"
+      :icon-right="ICON_NAMES.triangleLeft"
+      @click="handleFetchPrev"
       :disabled="isPrevBtnDisabled"
     />
-    <template v-if="type !== 'graph'">
+
+    <template v-if="totalPages">
       <button
-        class="pagination__item"
-        :class="{
-          'pagination__item--active': currentPage === FIRST_PAGE_NUMBER,
-        }"
+        v-if="isShowFirstPageBtn"
         type="button"
-        @click="handleSpecificPage(FIRST_PAGE_NUMBER)"
+        :class="[
+          'pagination__item',
+          {
+            'pagination__item--active': currentPage === FIRST_PAGE_NUMBER,
+          },
+        ]"
       >
-        {{ FIRST_PAGE_NUMBER + 1 }}
+        {{ FIRST_PAGE_NUMBER }}
       </button>
-      <template v-if="isShowFirstDivider">
-        <div class="pagination__divider" />
-      </template>
+
+      <div v-if="isShowFirstDivider" class="pagination__divider" />
+
       <button
-        v-for="item in range"
+        v-for="item in pagesRange"
         :key="item"
-        class="pagination__item"
-        :class="{ 'pagination__item--active': currentPage === item }"
         type="button"
-        @click="handleSpecificPage(item)"
+        :class="[
+          'pagination__item',
+          { 'pagination__item--active': currentPage === item },
+        ]"
       >
         {{ item }}
       </button>
-      <template v-if="isShowLastDivider">
-        <div class="pagination__divider" />
-      </template>
+
+      <div v-if="isShowLastDivider" class="pagination__divider" />
+
       <button
-        class="pagination__item"
-        :class="{ 'pagination__item--active': currentPage === totalPages }"
+        v-if="isShowLastPageBtn"
         type="button"
-        @click="handleSpecificPage(totalPages)"
+        :class="[
+          'pagination__item',
+          { 'pagination__item--active': currentPage === totalPages },
+        ]"
       >
         {{ totalPages }}
       </button>
     </template>
+
     <app-button
       class="pagination__item"
       scheme="none"
       type="button"
-      :icon-right="ICON_NAMES.angleRight"
-      @click="handleNextPage"
+      :icon-right="ICON_NAMES.triangleRight"
+      @click="handleFetchNext"
       :disabled="isNextBtnDisabled"
     />
   </div>
 </template>
 
 <script lang="ts" setup>
-import type { JsonApiResponse } from '@distributedlab/jac'
-import { WINDOW_BREAKPOINTS } from '@tokene/toolkit'
-import { useWindowSize } from '@vueuse/core'
-import { computed, ref, watch } from 'vue'
+import { computed, ref } from 'vue'
 
 import { AppButton } from '@/common'
 import { ICON_NAMES } from '@/enums'
 
-const FIRST_PAGE_NUMBER = 0
-
-const ELEMENTS_OFFSET_LEFT = 2
+const FIRST_PAGE_NUMBER = 1
 const DEFAULT_ELEMENTS_TO_DISPLAY = 5
 
 const props = withDefaults(
   defineProps<{
-    type?: 'graph' | 'rest-api'
     pageLimit?: number
     list?: unknown[]
-    fetchCb: (
-      pageNumber: number,
-      limit: number,
-    ) => Promise<JsonApiResponse<unknown[]>> | Promise<void> | void
-    totalItems?: number
+    totalPages?: number
+
+    fetchCb: () => Promise<void>
+    fetchNextCb: () => Promise<void>
+    fetchPrevCb: () => Promise<void>
+    fetchPageCb?: (page: number) => Promise<void>
   }>(),
   {
-    type: 'graph',
     pageLimit: 15,
     list: () => [],
-    totalItems: 0,
+    totalPages: undefined,
+
+    fetchPageCb: undefined,
   },
 )
 
-const emit = defineEmits<{
-  (e: 'update:list', value: unknown[]): void
-}>()
-
-const { width: windowWith } = useWindowSize()
-
-const elementsToDisplay = computed(() => {
-  return windowWith.value >= WINDOW_BREAKPOINTS.xSmall
-    ? DEFAULT_ELEMENTS_TO_DISPLAY
-    : DEFAULT_ELEMENTS_TO_DISPLAY - 3
-})
-
 const isLoaded = ref(false)
-
-const totalItems = ref(props.totalItems)
 
 const currentPage = ref(FIRST_PAGE_NUMBER)
 
-const totalPages = computed(() => totalItems.value / props.pageLimit)
-
 const isFirstPage = computed(() => currentPage.value === FIRST_PAGE_NUMBER)
 
-const isLastPage = computed(() => currentPage.value === totalPages.value)
+const isNextBtnDisabled = ref(false)
 
-const range = computed<number[]>(() => {
-  try {
-    const supportedRange = Array.from(
-      Array(totalPages.value - 2),
-      (_, i) => i + 2,
-    )
-
-    const suggestedRangeFrom = currentPage.value - ELEMENTS_OFFSET_LEFT
-    const rangeFrom = !supportedRange.includes(suggestedRangeFrom)
-      ? supportedRange[0]
-      : suggestedRangeFrom >
-        supportedRange[supportedRange.length - elementsToDisplay.value]
-      ? supportedRange[supportedRange.length - elementsToDisplay.value]
-      : suggestedRangeFrom
-
-    return supportedRange.slice(
-      supportedRange.indexOf(rangeFrom),
-      supportedRange.indexOf(rangeFrom + elementsToDisplay.value - 1) + 1,
-    )
-  } catch (error) {
-    return []
-  }
+const isPrevBtnDisabled = computed(() => {
+  return isFirstPage.value
 })
 
-const isShowFirstDivider = computed(() => !range.value.includes(2))
-
-const isShowLastDivider = computed(
-  () => !range.value.includes(totalPages.value - 1),
+const isShowPagination = computed(
+  () => !isPrevBtnDisabled.value || !isNextBtnDisabled.value,
 )
 
-watch(currentPage, () => {
-  init()
+/** If totalPages provided */
+
+const pagesRange = computed(() => {
+  if (!props.totalPages) return []
+
+  const elementsLeft = Math.trunc(DEFAULT_ELEMENTS_TO_DISPLAY / 2)
+  const elementsRight = Math.trunc(DEFAULT_ELEMENTS_TO_DISPLAY / 2)
+
+  let proposedStartPage = currentPage.value - elementsLeft
+  let proposedEndPage = currentPage.value + elementsRight
+
+  if (proposedStartPage <= FIRST_PAGE_NUMBER) {
+    proposedStartPage = FIRST_PAGE_NUMBER
+  }
+
+  if (proposedEndPage >= +props.totalPages) {
+    proposedEndPage = +props.totalPages
+  }
+
+  return Array(proposedEndPage - proposedStartPage + 1)
+    .fill(0)
+    .map((_, index) => index + proposedStartPage)
 })
 
-const handleNextPage = () => {
+const isShowFirstPageBtn = computed(() => {
+  if (!pagesRange.value.length) return false
+
+  return pagesRange.value[0] > FIRST_PAGE_NUMBER
+})
+
+const isShowFirstDivider = computed(() => {
+  if (!pagesRange.value.length) return false
+
+  return pagesRange.value[0] > FIRST_PAGE_NUMBER + 1
+})
+
+const isShowLastPageBtn = computed(() => {
+  if (!pagesRange.value.length || !props.totalPages) return false
+
+  return pagesRange.value[pagesRange.value.length - 1] < +props.totalPages
+})
+
+const isShowLastDivider = computed(() => {
+  if (!pagesRange.value.length || !props.totalPages) return false
+
+  return pagesRange.value[pagesRange.value.length - 2] < +props.totalPages - 1
+})
+
+const init = async () => {
+  await props.fetchCb()
+
+  if (props.list.length < props.pageLimit) {
+    isNextBtnDisabled.value = true
+  }
+
+  isLoaded.value = true
+}
+
+const handleFetchPrev = async () => {
+  if (isPrevBtnDisabled.value) return
+
+  currentPage.value -= 1
+
+  await props.fetchPrevCb()
+
+  isNextBtnDisabled.value = false
+}
+
+const handleFetchNext = async () => {
   if (isNextBtnDisabled.value) return
 
   currentPage.value += 1
-}
 
-const handlePrevStep = () => {
-  if (isFirstPage.value) return
+  await props.fetchNextCb()
 
-  currentPage.value -= 1
-}
-
-const handleSpecificPage = (pageNumber: number) => {
-  currentPage.value = pageNumber
-}
-
-const isPrevBtnDisabled = computed(() => isFirstPage.value)
-
-const isNextBtnDisabled = computed(
-  () =>
-    (props.type !== 'graph' && isLastPage.value) ||
-    props.list.length < props.pageLimit,
-)
-
-const isShowPagination = computed(
-  () =>
-    (isLoaded.value && props.type === 'graph') ||
-    totalItems.value !== currentPage.value ||
-    totalPages.value > 1,
-)
-
-const init = async () => {
-  if (props.type === 'rest-api') {
-    const response = await props.fetchCb(currentPage.value, props.pageLimit)
-
-    if (!response) return
-
-    totalItems.value = Number(response?.meta?.total_pages) * props.pageLimit
-
-    currentPage.value = Number(response?.meta?.current_page)
-
-    emit('update:list', response.data)
-  } else if (props.type === 'graph') {
-    await props.fetchCb(currentPage.value, props.pageLimit)
+  if (props.list.length < props.pageLimit) {
+    isNextBtnDisabled.value = true
   }
-  isLoaded.value = true
+
+  if (props.list.length === 0) {
+    await props.fetchPrevCb()
+
+    isNextBtnDisabled.value = true
+  }
+}
+
+const handleFetchPage = async (page: number) => {
+  if (page === currentPage.value) return
+
+  currentPage.value = page
+
+  await props.fetchPageCb?.(page)
 }
 
 init()

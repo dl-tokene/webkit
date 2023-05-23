@@ -1,15 +1,11 @@
+import { FetcherInterceptor } from '@distributedlab/fetcher'
 import { JsonApiClient, type JsonApiClientConfig } from '@distributedlab/jac'
-
-import {
-  bearerAttachInterceptor,
-  refreshTokenInterceptor,
-} from './api-interceptors'
 
 export let api: JsonApiClient
 
 export const initApi = (
   baseUrl: string,
-  isWithAuthInterceptors = true,
+  interceptors?: FetcherInterceptor[],
   config?: JsonApiClientConfig,
 ) => {
   api = new JsonApiClient(
@@ -17,10 +13,8 @@ export const initApi = (
       baseUrl: baseUrl,
       ...(config ? { config } : {}),
     },
-    [
-      ...(isWithAuthInterceptors
-        ? [{ request: bearerAttachInterceptor, error: refreshTokenInterceptor }]
-        : []),
-    ],
+    [...(interceptors?.length ? interceptors : [])],
   )
 }
+
+export * from './api-interceptors'

@@ -38,7 +38,7 @@ const handleCopy = async () => {
   background: none;
 }
 
-.copy__icon {
+.copy-btn__icon {
   width: 1.2em;
   height: 1.2em;
 }
