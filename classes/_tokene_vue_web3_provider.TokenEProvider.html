@@ -27,7 +27,7 @@
 <ul class="tsd-hierarchy">
 <li><span class="tsd-signature-type">ProviderProxy</span></li></ul></section><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/dl-tokene/webkit/blob/2a44576/packages/vue-web3-provider/src/providers/tokene.ts#L9">packages/vue-web3-provider/src/providers/tokene.ts:9</a></li></ul></aside>
+<li>Defined in <a href="https://github.com/dl-tokene/webkit/blob/346cf78/packages/vue-web3-provider/src/providers/tokene.ts#L9">packages/vue-web3-provider/src/providers/tokene.ts:9</a></li></ul></aside>
 <section class="tsd-panel-group tsd-index-group">
 <section class="tsd-panel tsd-index-panel">
 <details class="tsd-index-content tsd-index-accordion" open><summary class="tsd-accordion-summary tsd-index-summary">
@@ -70,6 +70,7 @@
 <a href="_tokene_vue_web3_provider.TokenEProvider.html#onTxConfirmed" class="tsd-index-link tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>on<wbr/>Tx<wbr/>Confirmed</span></a>
 <a href="_tokene_vue_web3_provider.TokenEProvider.html#onTxSent" class="tsd-index-link tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>on<wbr/>Tx<wbr/>Sent</span></a>
 <a href="_tokene_vue_web3_provider.TokenEProvider.html#signAndSendTx" class="tsd-index-link tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>sign<wbr/>And<wbr/>Send<wbr/>Tx</span></a>
+<a href="_tokene_vue_web3_provider.TokenEProvider.html#signMessage" class="tsd-index-link tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>sign<wbr/>Message</span></a>
 <a href="_tokene_vue_web3_provider.TokenEProvider.html#switchChain" class="tsd-index-link tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>switch<wbr/>Chain</span></a>
 </div></section></div></details></section></section>
 <section class="tsd-panel-group tsd-member-group">
@@ -87,7 +88,7 @@
 <h4 class="tsd-returns-title">Returns <a href="_tokene_vue_web3_provider.TokenEProvider.html" class="tsd-signature-type" data-tsd-kind="Class">TokenEProvider</a></h4><aside class="tsd-sources">
 <p>Overrides BaseEVMProvider.constructor</p>
 <ul>
-<li>Defined in <a href="https://github.com/dl-tokene/webkit/blob/2a44576/packages/vue-web3-provider/src/providers/tokene.ts#L10">packages/vue-web3-provider/src/providers/tokene.ts:10</a></li></ul></aside></li></ul></section></section>
+<li>Defined in <a href="https://github.com/dl-tokene/webkit/blob/346cf78/packages/vue-web3-provider/src/providers/tokene.ts#L10">packages/vue-web3-provider/src/providers/tokene.ts:10</a></li></ul></aside></li></ul></section></section>
 <section class="tsd-panel-group tsd-member-group">
 <h2>Properties</h2>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-inherited tsd-is-external"><a id="_private" class="tsd-anchor"></a>
@@ -160,7 +161,7 @@
 <li class="tsd-description">
 <h4 class="tsd-returns-title">Returns <a href="../enums/_tokene_vue_web3_provider.EXTERNAL_PROVIDERS.html#TokenE" class="tsd-signature-type" data-tsd-kind="Enumeration Member">TokenE</a></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/dl-tokene/webkit/blob/2a44576/packages/vue-web3-provider/src/providers/tokene.ts#L14">packages/vue-web3-provider/src/providers/tokene.ts:14</a></li></ul></aside></li></ul></section></section>
+<li>Defined in <a href="https://github.com/dl-tokene/webkit/blob/346cf78/packages/vue-web3-provider/src/providers/tokene.ts#L14">packages/vue-web3-provider/src/providers/tokene.ts:14</a></li></ul></aside></li></ul></section></section>
 <section class="tsd-panel-group tsd-member-group">
 <h2>Methods</h2>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-external"><a id="addChain" class="tsd-anchor"></a>
@@ -496,6 +497,21 @@
 <p>Inherited from BaseEVMProvider.signAndSendTx</p>
 <ul>
 <li>Defined in node_modules/@distributedlab/w3p/dist/types/providers/wrapped/_base-evm.d.ts:18</li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-external"><a id="signMessage" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>sign<wbr/>Message</span><a href="#signMessage" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-external">
+<li class="tsd-signature tsd-anchor-link" id="signMessage.signMessage-1">sign<wbr/>Message<span class="tsd-signature-symbol">(</span>message<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span><a href="#signMessage.signMessage-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5>message: <span class="tsd-signature-type">string</span></h5></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h4><aside class="tsd-sources">
+<p>Implementation of ProviderProxy.signMessage</p>
+<p>Inherited from BaseEVMProvider.signMessage</p>
+<ul>
+<li>Defined in node_modules/@distributedlab/w3p/dist/types/providers/wrapped/_base-evm.d.ts:19</li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-external"><a id="switchChain" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>switch<wbr/>Chain</span><a href="#switchChain" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-external">
@@ -567,6 +583,7 @@
 <li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-external"><a href="_tokene_vue_web3_provider.TokenEProvider.html#onTxConfirmed" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>on<wbr/>Tx<wbr/>Confirmed</a></li>
 <li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-external"><a href="_tokene_vue_web3_provider.TokenEProvider.html#onTxSent" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>on<wbr/>Tx<wbr/>Sent</a></li>
 <li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-external"><a href="_tokene_vue_web3_provider.TokenEProvider.html#signAndSendTx" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>sign<wbr/>And<wbr/>Send<wbr/>Tx</a></li>
+<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-external"><a href="_tokene_vue_web3_provider.TokenEProvider.html#signMessage" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>sign<wbr/>Message</a></li>
 <li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-external"><a href="_tokene_vue_web3_provider.TokenEProvider.html#switchChain" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>switch<wbr/>Chain</a></li></ul></li></ul></nav></div></div>
 <div class="container tsd-generator">
 <p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p></div>
