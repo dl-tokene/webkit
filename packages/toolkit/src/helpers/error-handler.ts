@@ -9,18 +9,12 @@ import { handleEthereumProviderInternalError } from '@/helpers'
 import { i18next } from '@/localization'
 
 export class ErrorHandler {
-  static customErrors: {
-    error: Error
-    errorMessage: string
-  }[] = []
+  static handleCustomError: (err: Error) => string | undefined
 
-  static setCustomErrors(
-    customErrors: {
-      error: Error
-      errorMessage: string
-    }[],
+  static setCustomErrorHandler(
+    handleCustomError: (err: Error) => string | undefined,
   ) {
-    this.customErrors = customErrors
+    this.handleCustomError = handleCustomError
   }
 
   static process(error: Error | unknown, errorMessage = ''): void {
@@ -112,12 +106,8 @@ export class ErrorHandler {
           )
           break
         default: {
-          const customError = this.customErrors.find(
-            item => (error.constructor as unknown as Error) === item.error,
-          )
-          errorMessage = customError
-            ? customError.errorMessage
-            : i18next.t('errors.default')
+          errorMessage =
+            this.handleCustomError?.(error) ?? i18next.t('errors.default')
         }
       }
     }
