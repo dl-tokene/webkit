@@ -9,18 +9,18 @@ import { handleEthereumProviderInternalError } from '@/helpers'
 import { i18next } from '@/localization'
 
 export class ErrorHandler {
-  static #customErrors: {
+  static customErrors: {
     error: Error
-    getMessage: () => string
+    errorMessage: string
   }[] = []
 
   static setCustomErrors(
     customErrors: {
       error: Error
-      getMessage: () => string
+      errorMessage: string
     }[],
   ) {
-    this.#customErrors = customErrors
+    this.customErrors = customErrors
   }
 
   static process(error: Error | unknown, errorMessage = ''): void {
@@ -39,113 +39,87 @@ export class ErrorHandler {
 
   static _getErrorMessage(error: Error | unknown): string {
     let errorMessage = ''
-    let isErrorMatched = false
 
     if (error instanceof Error) {
-      const errorsList = [
-        {
-          error: errors.ProviderChainNotFoundError,
-          getMessage: () => i18next.t('errors.provider-chain-not-found-error'),
-        },
-        {
-          error: errors.ProviderInjectedInstanceNotFoundError,
-          getMessage: () => i18next.t('errors.provider-not-supported-error'),
-        },
-        {
-          error: errors.ProviderUserRejectedRequest,
-          getMessage: () => '',
-        },
-        {
-          error: errors.ProviderUnauthorized,
-          getMessage: () => i18next.t('errors.provider-unauthorized'),
-        },
-        {
-          error: errors.ProviderUnsupportedMethod,
-          getMessage: () => i18next.t('errors.provider-unsupported-method'),
-        },
-        {
-          error: errors.ProviderDisconnected,
-          getMessage: () => i18next.t('errors.provider-disconnected'),
-        },
-        {
-          error: errors.ProviderChainDisconnected,
-          getMessage: () => i18next.t('errors.provider-chain-disconnected'),
-        },
-        {
-          error: errors.ProviderParseError,
-          getMessage: () => i18next.t('errors.provider-parse-error'),
-        },
-        {
-          error: errors.ProviderInvalidRequest,
-          getMessage: () => i18next.t('errors.provider-invalid-request'),
-        },
-        {
-          error: errors.ProviderMethodNotFound,
-          getMessage: () => i18next.t('errors.provider-method-not-found'),
-        },
-        {
-          error: errors.ProviderInvalidParams,
-          getMessage: () => i18next.t('errors.provider-invalid-params'),
-        },
-        {
-          error: errors.ProviderInternalError,
-          getErrorMessage: () =>
-            handleEthereumProviderInternalError(
-              (error.cause as EthProviderRpcError & { reason: string })
-                ?.reason || '',
-            ),
-        },
-        {
-          error: errors.ProviderInvalidInput,
-          getMessage: () => i18next.t('errors.provider-invalid-input'),
-        },
-        {
-          error: errors.ProviderResourceNotFound,
-          getMessage: () => i18next.t('errors.provider-resource-not-found'),
-        },
-        {
-          error: errors.ProviderResourceUnavailable,
-          getMessage: () => i18next.t('errors.provider-resource-unavailable'),
-        },
-        {
-          error: errors.ProviderTransactionRejected,
-          getMessage: () => i18next.t('errors.provider-transaction-rejected'),
-        },
-        {
-          error: errors.ProviderMethodNotSupported,
-          getMessage: () => i18next.t('errors.provider-method-not-supported'),
-        },
-        {
-          error: errors.ProviderLimitExceeded,
-          getMessage: () => i18next.t('errors.provider-limit-exceeded'),
-        },
-        {
-          error: errors.ProviderJsonRpcVersionNotSupported,
-          getErrorMessage: () =>
-            i18next.t('errors.provider-json-rpc-version-not-supported'),
-        },
-        {
-          error: errors.BadRequestError,
-          getErrorMessage: () =>
-            get(
-              { admin_not_found: i18next.t('errors.admin-not-found') },
-              get(error, 'code', '') ||
-                get(error, 'originalError.response.data.errors[0].code', ''),
-              '',
-            ),
-        },
-        ...this.#customErrors,
-      ]
-
-      for (const err of errorsList) {
-        if (error.constructor == err.error) {
-          errorMessage = err?.getMessage?.() as string
-          isErrorMatched = true
+      switch (error.constructor) {
+        case errors.ProviderChainNotFoundError:
+          errorMessage = i18next.t('errors.provider-chain-not-found-error')
           break
+        case errors.ProviderInjectedInstanceNotFoundError:
+          errorMessage = i18next.t('errors.provider-not-supported-error')
+          break
+        case errors.ProviderUserRejectedRequest:
+          break
+        case errors.ProviderUnauthorized:
+          errorMessage = i18next.t('errors.provider-unauthorized')
+          break
+        case errors.ProviderUnsupportedMethod:
+          errorMessage = i18next.t('errors.provider-unsupported-method')
+          break
+        case errors.ProviderDisconnected:
+          errorMessage = i18next.t('errors.provider-disconnected')
+          break
+        case errors.ProviderChainDisconnected:
+          errorMessage = i18next.t('errors.provider-chain-disconnected')
+          break
+        case errors.ProviderParseError:
+          errorMessage = i18next.t('errors.provider-parse-error')
+          break
+        case errors.ProviderInvalidRequest:
+          errorMessage = i18next.t('errors.provider-invalid-request')
+          break
+        case errors.ProviderMethodNotFound:
+          errorMessage = i18next.t('errors.provider-method-not-found')
+          break
+        case errors.ProviderInvalidParams:
+          errorMessage = i18next.t('errors.provider-invalid-params')
+          break
+        case errors.ProviderInternalError:
+          errorMessage = handleEthereumProviderInternalError(
+            (error.cause as EthProviderRpcError & { reason: string })?.reason ||
+              '',
+          )
+          break
+        case errors.ProviderInvalidInput:
+          errorMessage = i18next.t('errors.provider-invalid-input')
+          break
+        case errors.ProviderResourceNotFound:
+          errorMessage = i18next.t('errors.provider-resource-not-found')
+          break
+        case errors.ProviderResourceUnavailable:
+          errorMessage = i18next.t('errors.provider-resource-unavailable')
+          break
+        case errors.ProviderTransactionRejected:
+          errorMessage = i18next.t('errors.provider-transaction-rejected')
+          break
+        case errors.ProviderMethodNotSupported:
+          errorMessage = i18next.t('errors.provider-method-not-supported')
+          break
+        case errors.ProviderLimitExceeded:
+          errorMessage = i18next.t('errors.provider-limit-exceeded')
+          break
+        case errors.ProviderJsonRpcVersionNotSupported:
+          errorMessage = i18next.t(
+            'errors.provider-json-rpc-version-not-supported',
+          )
+          break
+        case errors.BadRequestError:
+          errorMessage = get(
+            { admin_not_found: i18next.t('errors.admin-not-found') },
+            get(error, 'code', '') ||
+              get(error, 'originalError.response.data.errors[0].code', ''),
+            '',
+          )
+          break
+        default: {
+          const customError = this.customErrors.find(
+            item => (error.constructor as unknown as Error) === item.error,
+          )
+          errorMessage = customError
+            ? customError.errorMessage
+            : i18next.t('errors.default')
         }
       }
-
-      if (!isErrorMatched) errorMessage = i18next.t('errors.default')
     }
 
     return errorMessage
