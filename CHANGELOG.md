@@ -6,7 +6,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.0.0-rc.11] - 2023-05-26
 ### Added
-- `@tokene/toolkit` - custom errors for error handler
+- `@tokene/toolkit`
+  - custom errors for error handler
+  - auth helpers
+  - key-values enum
+
+### Changed
+- `@tokene/ui-kit` - design
+- `@tokene/toolkit` - interceptors
+- `@tokene/styles` - common variable usages
 
 ## [0.0.0-rc.10] - 2023-05-20
 ### Added
