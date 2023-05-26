@@ -9,10 +9,10 @@ import { handleEthereumProviderInternalError } from '@/helpers'
 import { i18next } from '@/localization'
 
 export class ErrorHandler {
-  static getCustomErrorMessage: (err: Error) => string | undefined
+  static getCustomErrorMessage?: (err: Error) => string
 
   static setCustomErrorMessageGetter(
-    getCustomErrorMessage: (err: Error) => string | undefined,
+    getCustomErrorMessage: (err: Error) => string,
   ) {
     this.getCustomErrorMessage = getCustomErrorMessage
   }
