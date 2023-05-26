@@ -47,10 +47,13 @@ export class ErrorHandler {
           error: errors.ProviderChainNotFoundError,
           getMessage: () => i18next.t('errors.provider-chain-not-found-error'),
         },
-
         {
           error: errors.ProviderInjectedInstanceNotFoundError,
           getMessage: () => i18next.t('errors.provider-not-supported-error'),
+        },
+        {
+          error: errors.ProviderUserRejectedRequest,
+          getMessage: () => '',
         },
         {
           error: errors.ProviderUnauthorized,
