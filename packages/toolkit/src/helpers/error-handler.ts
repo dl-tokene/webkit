@@ -9,6 +9,14 @@ import { handleEthereumProviderInternalError } from '@/helpers'
 import { i18next } from '@/localization'
 
 export class ErrorHandler {
+  static getCustomErrorMessage?: (err: Error) => string
+
+  static setCustomErrorMessageGetter(
+    getCustomErrorMessage: (err: Error) => string,
+  ) {
+    this.getCustomErrorMessage = getCustomErrorMessage
+  }
+
   static process(error: Error | unknown, errorMessage = ''): void {
     const msgTranslation = errorMessage || ErrorHandler._getErrorMessage(error)
 
@@ -98,7 +106,8 @@ export class ErrorHandler {
           )
           break
         default: {
-          errorMessage = i18next.t('errors.default')
+          errorMessage =
+            this.getCustomErrorMessage?.(error) ?? i18next.t('errors.default')
         }
       }
     }
