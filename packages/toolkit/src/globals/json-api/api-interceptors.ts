@@ -32,12 +32,12 @@ export const createRefreshTokenInterceptorHandler: (
   getAccessTokenFn: () => string,
   refreshTokenFn: () => Promise<void>,
   logoutFn: () => Promise<void>,
-  errorHandlerFn: () => Promise<void>,
+  errorHandlerFn?: (error: unknown) => Promise<void>,
 ) => FetcherErrorResponseInterceptor = (
   getAccessTokenFn: () => string,
   refreshTokenFn: () => Promise<void>,
   logoutFn: () => Promise<void>,
-  errorHandlerFn: () => Promise<void>,
+  errorHandlerFn?: (error: unknown) => Promise<void>,
 ) => {
   return async (response: FetcherResponse<unknown>) => {
     const config = response?.request
@@ -80,7 +80,7 @@ export const createRefreshTokenInterceptorHandler: (
 
       await logoutFn()
 
-      await errorHandlerFn()
+      await errorHandlerFn?.(error)
 
       return Promise.reject(error)
     }

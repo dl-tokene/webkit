@@ -68,7 +68,7 @@ watch(isModalShown, value => {
 
 <style lang="scss" scoped>
 .basic-modal__pane {
-  background: var(--background-primary-main);
+  background: var(--background-primary-light);
   padding: toRem(24);
   border-radius: toRem(28);
 }
@@ -96,5 +96,9 @@ watch(isModalShown, value => {
   font-size: toRem(14);
   line-height: 1.45;
   color: var(--text-secondary-main);
+}
+
+.basic-modal__close-btn {
+  color: var(--primary-main);
 }
 </style>

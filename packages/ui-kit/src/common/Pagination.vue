@@ -195,6 +195,8 @@ const handleFetchNext = async () => {
     await props.fetchPrevCb()
 
     isNextBtnDisabled.value = true
+
+    currentPage.value -= 1
   }
 }
 
