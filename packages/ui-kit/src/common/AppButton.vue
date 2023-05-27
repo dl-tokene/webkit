@@ -287,10 +287,10 @@ const buttonType = computed<ButtonType>(
     --app-button-filled-bg-focused: var(--error-main);
     --app-button-filled-bg-active: var(--error-dark);
 
-    --app-button-filled-text: var(--text-primary-light);
-    --app-button-filled-text-hover: var(--text-primary-light);
-    --app-button-filled-text-focused: var(--text-primary-light);
-    --app-button-filled-text-active: var(--text-primary-light);
+    --app-button-filled-text: var(--text-primary-invert-main);
+    --app-button-filled-text-hover: var(--text-primary-invert-main);
+    --app-button-filled-text-focused: var(--text-primary-invert-main);
+    --app-button-filled-text-active: var(--text-primary-invert-main);
 
     --app-button-flat-text: var(--error-main);
     --app-button-flat-text-hover: var(--error-main);

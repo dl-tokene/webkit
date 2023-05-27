@@ -68,6 +68,8 @@
 </template>
 
 <script lang="ts" setup>
+import { WINDOW_BREAKPOINTS } from '@tokene/toolkit'
+import { useWindowSize } from '@vueuse/core'
 import { computed, ref } from 'vue'
 
 import { AppButton } from '@/common'
@@ -75,6 +77,7 @@ import { ICON_NAMES } from '@/enums'
 
 const FIRST_PAGE_NUMBER = 1
 const DEFAULT_ELEMENTS_TO_DISPLAY = 5
+const MOBILE_ELEMENTS_TO_DISPLAY = 3
 
 const props = withDefaults(
   defineProps<{
@@ -96,6 +99,8 @@ const props = withDefaults(
   },
 )
 
+const { width: windowWidth } = useWindowSize()
+
 const isLoaded = ref(false)
 
 const currentPage = ref(FIRST_PAGE_NUMBER)
@@ -114,11 +119,17 @@ const isShowPagination = computed(
 
 /** If totalPages provided */
 
+const elementsToDisplay = computed(() => {
+  return windowWidth.value > WINDOW_BREAKPOINTS.xSmall
+    ? DEFAULT_ELEMENTS_TO_DISPLAY
+    : MOBILE_ELEMENTS_TO_DISPLAY
+})
+
 const pagesRange = computed(() => {
   if (!props.totalPages) return []
 
-  const elementsLeft = Math.trunc(DEFAULT_ELEMENTS_TO_DISPLAY / 2)
-  const elementsRight = Math.trunc(DEFAULT_ELEMENTS_TO_DISPLAY / 2)
+  const elementsLeft = Math.trunc(elementsToDisplay.value / 2)
+  const elementsRight = Math.trunc(elementsToDisplay.value / 2)
 
   let proposedStartPage = currentPage.value - elementsLeft
   let proposedEndPage = currentPage.value + elementsRight
@@ -157,7 +168,7 @@ const isShowLastPageBtn = computed(() => {
 const isShowLastDivider = computed(() => {
   if (!pagesRange.value.length || !props.totalPages) return false
 
-  return pagesRange.value[pagesRange.value.length - 2] < +props.totalPages - 1
+  return pagesRange.value[pagesRange.value.length - 1] < +props.totalPages - 1
 })
 
 const init = async () => {
@@ -227,7 +238,7 @@ init()
   line-height: 1.4;
   font-weight: 500;
 
-  @include square-static-size(#{toRem(42)});
+  @include square-static-size(#{toRem(36)});
 
   &--active {
     background: var(--primary-main);
@@ -235,9 +246,13 @@ init()
   }
 
   &--arrow {
-    --button-icon-size: #{toRem(24)};
+    --button-icon-size: #{toRem(18)};
 
     color: var(--primary-main);
+  }
+
+  @include respond-to(xsmall) {
+    font-size: toRem(8);
   }
 }
 

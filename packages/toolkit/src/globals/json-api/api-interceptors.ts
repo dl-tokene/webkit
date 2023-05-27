@@ -45,17 +45,17 @@ export const createRefreshTokenInterceptorHandler: (
 
     // If error isn't unauthorized - return error
     if (
-      !isUnauthorized
+      !isUnauthorized &&
       // Add if you use a refresh token (as 'refresh_token_url' there should be refresh token endpoint)
-      // && config.url !== 'refresh_token_url'
+      !config.url.includes('refresh_token')
     )
       return Promise.reject(response)
 
     try {
-      const accessToken = getAccessTokenFn()
-
       // Executes some refresh token logic in the client app
       await refreshTokenFn()
+
+      const accessToken = getAccessTokenFn()
 
       const url = new URL(config.url)
 

@@ -1189,7 +1189,7 @@
               "required": false,
               "value": {
                 "kind": "expression",
-                "type": "SCHEMES"
+                "type": "\"primary\""
               },
               "default": "'primary'"
             },
