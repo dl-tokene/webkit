@@ -1,0 +1,37 @@
+query getKycRequests($creator: Bytes!, $id: String, $offset: Int, $limit: Int) {
+  requests(
+    where: { creator: $creator, misc_contains: $id },
+    orderBy: requestId,
+    orderDirection: desc,
+    first: $limit,
+    skip: $offset
+  ) {
+    ...requestCommonFields
+  }
+}
+
+query getKycRequestById($id: ID!) {
+  request(id: $id) {
+    ...requestCommonFields
+  }
+}
+
+query getKycRequestsByAddress($address: String!) {
+  requests(
+    where: { misc: $address }
+    orderBy: requestId
+    orderDirection: desc
+  ) {
+    ...requestCommonFields
+  }
+}
+
+query getKycRequestsByAddressAndStatus($address: String!, $status: BigInt!) {
+  requests(
+    where: { misc: $address, status: $status }
+    orderBy: requestId
+    orderDirection: desc
+  ) {
+    ...requestCommonFields
+  }
+}

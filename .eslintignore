@@ -7,3 +7,5 @@ node_modules/
 scripts/*.js
 .eslintrc.js
 rollup.config.js
+packages/**/types/contracts/*.ts
+packages/**/types/graphql/*.ts

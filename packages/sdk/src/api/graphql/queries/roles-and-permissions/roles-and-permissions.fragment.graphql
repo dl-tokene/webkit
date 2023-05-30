@@ -1,0 +1,10 @@
+fragment roleWithResources on Role {
+  id
+  description
+  resources {
+    id
+    name
+    allows
+    disallows
+  }
+}

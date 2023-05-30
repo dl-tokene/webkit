@@ -1,0 +1,36 @@
+query getUsersByIdPaginated ($id: Bytes!, $offset: Int, $limit: Int) {
+  users (
+    where: { id_contains: $id },
+    first: $limit,
+    skip: $offset,
+    orderBy: id,
+    orderDirection: desc
+  ) {
+    ...userCommonFields
+  }
+}
+
+query getUserById($id: ID!) {
+  user(id: $id) {
+    ...userCommonFields
+  }
+}
+
+query getUsersByRoleIdsPaginated($roleIds: [ID!], $id: Bytes!, $offset: Int, $limit: Int) {
+  users(
+    where: { id_contains: $id, roles_: { id_in: $roleIds } },
+    first: $limit,
+    skip: $offset,
+    orderBy: id,
+    orderDirection: desc
+  ) {
+    ...userCommonFields
+  }
+}
+
+query getUserById($id: ID!) {
+  user(id: $id) {
+    ...userCommonFields
+  }
+}
+

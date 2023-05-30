@@ -1,0 +1,13 @@
+query GetMasterContractRegistryAddress {
+  globals {
+    masterContractsRegistry
+  }
+}
+
+query GetCoreContracts {
+  contracts {
+    id
+    address
+    isProxy
+  }
+}

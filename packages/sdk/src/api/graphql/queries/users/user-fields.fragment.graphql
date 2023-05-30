@@ -1,0 +1,7 @@
+fragment userCommonFields on User {
+  id
+  roles {
+    id
+    description
+  }
+}

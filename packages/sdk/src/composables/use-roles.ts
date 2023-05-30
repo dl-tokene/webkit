@@ -1,0 +1,220 @@
+import { computed, ref } from 'vue-demi'
+
+import { coreApolloClient } from '@/api/graphql/core.graphql'
+import { coreContracts } from '@/globals'
+import { type Permission, type Role } from '@/types'
+import {
+  GetRolesWithResources,
+  GetRolesWithResourcesQuery,
+  type RoleWithResourcesFragment,
+} from '@/types/graphql'
+
+const formatRoleFromGraph = (graphRole: RoleWithResourcesFragment): Role => {
+  let roleName = ''
+  let roleDescription = ''
+
+  try {
+    const parsedRoleDescription = JSON.parse(graphRole.description)
+    roleName = parsedRoleDescription.name
+  } catch (error) {
+    roleName = graphRole.id // TEMP
+  }
+
+  try {
+    const parsedRoleDescription = JSON.parse(graphRole.description)
+    roleDescription = parsedRoleDescription.description
+  } catch (error) {
+    roleDescription = graphRole.id // TEMP
+  }
+
+  return {
+    id: graphRole.id,
+    name: roleName,
+    description: roleDescription,
+    resources: graphRole.resources.map(el => ({
+      id: el.id,
+      name: el.name,
+      allows: el.allows,
+      disallows: el.disallows,
+    })),
+    flattenAllowedPermissions: graphRole.resources.reduce(
+      (acc, curr) => [
+        ...acc,
+        ...(curr?.allows?.map(el => ({
+          resource: { id: curr.id, name: curr.name },
+          action: el,
+        })) || []),
+      ],
+      [] as Permission[],
+    ),
+    flattenDisallowedPermissions: graphRole.resources.reduce(
+      (acc, curr) => [
+        ...acc,
+        ...(curr?.disallows?.map(el => ({
+          resource: { id: curr.id, name: curr.name },
+          action: el,
+        })) || []),
+      ],
+      [] as Permission[],
+    ),
+  } as Role
+}
+
+export const useRoles = () => {
+  const rolesWithResources = ref<RoleWithResourcesFragment[]>([])
+
+  const masterRoleId = ref('')
+  const bannedRoleId = ref('')
+
+  const roles = computed(() => {
+    return rolesWithResources.value && rolesWithResources.value.length
+      ? (rolesWithResources.value.map(el => formatRoleFromGraph(el)) as Role[])
+      : []
+  })
+
+  const loadRoles = async () => {
+    const masterAccessManagementContract =
+      coreContracts.getMasterAccessManagementContract()
+
+    const { data } = await coreApolloClient.query<GetRolesWithResourcesQuery>({
+      query: GetRolesWithResources,
+    })
+
+    if (!data.roles) return
+
+    rolesWithResources.value = data.roles
+
+    masterRoleId.value = await masterAccessManagementContract.getMasterRoleId()
+    bannedRoleId.value = await masterAccessManagementContract.getBannedRoleId()
+  }
+
+  const createRole = async (
+    name: string,
+    description: string,
+    allowedPermissions: Permission[],
+    disallowedPermissions: Permission[],
+  ) => {
+    const masterAccessManagementContract =
+      coreContracts.getMasterAccessManagementContract()
+
+    await masterAccessManagementContract.addCombinedPermissionsToRole(
+      name,
+      JSON.stringify({ name, description }),
+      allowedPermissions.map(el => ({
+        resource: el.resource.name,
+        permissions: [el.action],
+      })),
+      disallowedPermissions.map(el => ({
+        resource: el.resource.name,
+        permissions: [el.action],
+      })),
+    )
+  }
+
+  const removeRolePermission = async (
+    id: string,
+    permission: Permission,
+    isAllowed: boolean,
+  ) => {
+    const masterAccessManagementContract =
+      coreContracts.getMasterAccessManagementContract()
+
+    await masterAccessManagementContract.removePermissionsFromRole(
+      id,
+      [
+        {
+          resource: permission.resource.name,
+          permissions: [permission.action],
+        },
+      ],
+      isAllowed,
+    )
+  }
+
+  const updateRole = async (
+    id: string,
+    name: string,
+    description: string,
+    allowedPermissions: Permission[],
+    disallowedPermissions: Permission[],
+    newAllowedPermissions: Permission[],
+    newDisallowedPermissions: Permission[],
+  ) => {
+    const masterAccessManagementContract =
+      coreContracts.getMasterAccessManagementContract()
+
+    const allowedPermissionsToRemove: Permission[] =
+      allowedPermissions.filter(
+        el =>
+          !newAllowedPermissions.find(
+            _el =>
+              _el.resource.name === el.resource.name &&
+              _el.action === el.action,
+          ),
+      ) || ([] as Permission[])
+
+    const disallowedPermissionsToRemove: Permission[] =
+      disallowedPermissions.filter(
+        el =>
+          !newAllowedPermissions.find(
+            _el =>
+              _el.resource.name === el.resource.name &&
+              _el.action === el.action,
+          ),
+      ) || ([] as Permission[])
+
+    await masterAccessManagementContract.updateRolePermissions(
+      id,
+      JSON.stringify({ name, description }),
+      allowedPermissionsToRemove.map(el => ({
+        resource: el.resource.name,
+        permissions: [el.action],
+      })),
+      disallowedPermissionsToRemove.map(el => ({
+        resource: el.resource.name,
+        permissions: [el.action],
+      })),
+      newAllowedPermissions.map(el => ({
+        resource: el.resource.name,
+        permissions: [el.action],
+      })),
+      newDisallowedPermissions.map(el => ({
+        resource: el.resource.name,
+        permissions: [el.action],
+      })),
+    )
+  }
+
+  const grantRoles = async (to: string, roles: string[]) => {
+    const masterAccessManagementContract =
+      coreContracts.getMasterAccessManagementContract()
+
+    await masterAccessManagementContract.grantRoles(to, roles)
+  }
+
+  const revokeRoles = async (from: string, roles: string[]) => {
+    const masterAccessManagementContract =
+      coreContracts.getMasterAccessManagementContract()
+
+    await masterAccessManagementContract.revokeRoles(from, roles)
+  }
+
+  const grantMasterRole = async (to: string) => {
+    await grantRoles(to, [masterRoleId.value])
+  }
+
+  return {
+    roles,
+
+    masterRoleId,
+    bannedRoleId,
+
+    loadRoles,
+    createRole,
+    removeRolePermission,
+    updateRole,
+    grantRoles,
+    revokeRoles,
+    grantMasterRole,
+  }
+}

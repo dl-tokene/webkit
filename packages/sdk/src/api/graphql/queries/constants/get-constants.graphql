@@ -1,0 +1,27 @@
+fragment constant on Constant {
+  id
+  value
+}
+
+query getConstantsPaginated ($offset: Int, $limit: Int) {
+  constants(
+    first: $limit,
+    skip: $offset,
+    orderBy: id,
+    orderDirection: desc
+  ) {
+    ...constant
+  }
+}
+
+query getConstantsByIdPaginated ($id: ID!, $offset: Int, $limit: Int) {
+  constants(
+    where: { id: $id },
+    first: $limit,
+    skip: $offset,
+    orderBy: id,
+    orderDirection: desc
+  ) {
+    ...constant
+  }
+}
