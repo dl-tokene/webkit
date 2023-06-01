@@ -124,6 +124,10 @@ export const useProvider = () => {
     _provider = undefined
   }
 
+  const getProvider = () => {
+    return _provider
+  }
+
   onUnmounted(() => {
     if (_providerReactiveState.providerType) return
 
@@ -146,5 +150,7 @@ export const useProvider = () => {
     signMessage,
 
     disconnect,
+
+    getProvider,
   }
 }

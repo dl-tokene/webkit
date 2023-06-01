@@ -1,0 +1,63 @@
+[
+  {
+    "id": "KYC_REQUESTS",
+    "name": "KYC Management",
+    "short_description":
+    "KYC extension for the ability to manage and saving your data. Allows you to store and check user data, it is associated with...",
+    "full_description": [
+      ["image", "/images/extensions/kyc/post-1.jpg"],
+      ["paragraph", "KYC extension for the ability to manage and saving your data. Allows you to store and check user data, it is associated with the Role Based Access Control (RBAC) module and allows you to issue automatic roles after checking the data."],
+      ["image", "/images/extensions/kyc/post-3.jpg"],
+      ["paragraph", "All personal data is stored securely off-chain, but proofs are stored on-chain that this data remains unmodified"],
+      ["image", "/images/extensions/kyc/post-2.jpg"]
+    ],
+    "thumbnailUrl": "images/extensions/kyc/thumbnail.jpg",
+    "state": "not-connected",
+    "is_can_be_frozen": true,
+    "contract_name": "KYC_REQUESTS",
+    "contract_address": ""
+  },
+  {
+    "id": "bridge",
+    "name": "Bridge",
+    "short_description":
+    "Bridge extension for transferring assets from your infrastructure to any connected network. With support for...",
+    "full_description": [
+      ["paragraph", "A bridge is a component of TokenE that allows transferring assets from your infrastructure to any connected network:"],
+      ["image", "/images/extensions/bridge/post-1.jpg"],
+      ["paragraph", "Supported assets: Native currency (system asset), ERC-20 tokens, ERC-721 tokens, ERC-1155 tokens or analogs if the connected network doesn't support these standards."],
+      ["paragraph", "Supported networks: Ethereum, Binance Smart Chain, Polygon, Custom EVM-compatible networks, Solana, NEAR, Cosmos."],
+      ["image", "/images/extensions/bridge/post-2.jpg"],
+      ["paragraph", "Bridge architecture's focus: security (refusal from the single point of failure), flexibility (increasing speed and simplicity of connecting different networks)"],
+      ["paragraph", "Bridge services:"],
+      ["paragraph", "Assets are locked in the smart contract (controlled by multisignature) on the source chain (for example, USDT on Ethereum). Then a corresponding amount of wrapper tokens are minted on the destination chain (TokenE). The reverse process includes burning wrapped tokens and unlocking the original tokens on the initial network."],
+      ["paragraph", "Liquidity-based bridging"],
+      ["paragraph", "In this case, the bridge doesn't operate with wrapped tokens but uses tokens in liquidity pools in both (TokenE and external) networks. In this case, the bridge controls some amount of tokens in these pools and allows to perform the transfer within this amount."],
+      ["paragraph", "NFT bridging"],
+      ["paragraph", "TokenE bridge supports transferring NFT tokens over connected networks (ERC-721 and ERC-1155 standards)."],
+      ["image", "/images/extensions/bridge/post-3.jpg"]
+    ],
+    "thumbnailUrl": "images/extensions/bridge/thumbnail.jpg",
+    "state": "not-connected",
+    "is_can_be_frozen": false
+  },
+  {
+    "id": "TOKEN_FACTORY",
+    "name": "Tokens",
+    "short_description":
+    "Tokens extension allows you easily manage tokens, deploy, mint, issue and transfer them. It can be extended with...",
+    "full_description": [
+      ["paragraph", "Tokens extension for the ability to deploy your own contracts (ERC-20 and ERC-721) on the platform."],
+      ["image", "/images/extensions/tokens/thumbnail.jpg"],
+      ["image", "/images/extensions/tokens/post-1.jpg"],
+      ["paragraph", "Allows you easily manage tokens, deploy, mint, issue and transfer them. It can be extended with different token implementations. Currently offered: ERC-20 and ERC-721. The token contracts themselves are upgradeable and exchanged through a beacon proxy so their deployment is quite cheap."],
+      ["image", "/images/extensions/tokens/post-2.jpg"],
+      ["image", "/images/extensions/tokens/post-3.jpg"]
+    ],
+    "thumbnailUrl": "images/extensions/tokens/thumbnail.jpg",
+    "state": "not-connected",
+    "is_can_be_frozen": true,
+    "contract_name": "TOKEN_FACTORY",
+    "contract_address": ""
+  }
+]

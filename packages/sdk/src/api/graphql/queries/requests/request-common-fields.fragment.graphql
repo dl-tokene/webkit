@@ -1,0 +1,13 @@
+fragment requestCommonFields on Request {
+  id
+  requestId
+  creator
+  executor
+  acceptData
+  rejectData
+  misc
+  description
+  status
+  rejectReason
+  timestamp
+}

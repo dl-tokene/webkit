@@ -8,7 +8,7 @@ import {
   sameAs as _sameAs,
 } from '@vuelidate/validators'
 import { createI18nMessage, type MessageProps } from '@vuelidate/validators'
-import { get } from 'lodash-es'
+import get from 'lodash/get'
 import type { Ref } from 'vue-demi'
 
 import { verifyEthAddress } from '@/helpers'

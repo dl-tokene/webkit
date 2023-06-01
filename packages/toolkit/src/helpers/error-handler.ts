@@ -1,5 +1,5 @@
 import type { EthProviderRpcError } from '@distributedlab/w3p'
-import { get } from 'lodash-es'
+import get from 'lodash/get'
 import log from 'loglevel'
 
 import { DEFAULT_BUS_EVENTS } from '@/enums'

@@ -1,6 +1,6 @@
 {
   "name": "@tokene/ui-kit",
-  "version": "0.0.0-rc.11",
+  "version": "0.0.0-rc.12",
   "description": "Collection of common TokenE vue components",
   "repository": {
     "type": "git",
@@ -66,7 +66,7 @@
     "@tokene/vue-web3-provider": "workspace:^",
     "floating-vue": "^2.0.0-beta.20",
     "i18next": "^22.4.15",
-    "lodash-es": "^4.17.21",
+    "lodash": "^4.17.21",
     "loglevel": "^1.8.1"
   },
   "peerDependencies": {
@@ -83,7 +83,7 @@
     "@swc/core": "^1.3.53",
     "@swc/jest": "^0.2.26",
     "@types/jest": "^29.5.1",
-    "@types/lodash-es": "^4",
+    "@types/lodash": "^4.14.195",
     "@types/node": "^18.14.2",
     "@typescript-eslint/eslint-plugin": "^5.59.2",
     "@typescript-eslint/parser": "^5.59.2",

@@ -1,5 +1,5 @@
 import { useWindowSize } from '@vueuse/core'
-import { debounce } from 'lodash-es'
+import debounce from 'lodash/debounce'
 import { onBeforeUnmount } from 'vue'
 
 export const useViewportSizes = (): { assignVhCssVariable(): void } => {
