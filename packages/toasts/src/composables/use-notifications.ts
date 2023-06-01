@@ -1,6 +1,6 @@
 import { i18next } from '@tokene/toolkit'
 import { ICON_NAMES } from '@tokene/ui-kit'
-import { isObject } from 'lodash-es'
+import isObject from 'lodash/isObject'
 import { TYPE, useToast } from 'vue-toastification'
 import type { ToastOptions } from 'vue-toastification/dist/types/types'
 

@@ -9,7 +9,7 @@
     "baseUrl": ".",
     "types": [
       "node",
-      "@types/lodash-es",
+      "@types/lodash",
       "vite-svg-loader"
     ],
     "paths": {

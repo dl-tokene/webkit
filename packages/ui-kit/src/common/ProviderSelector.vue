@@ -15,7 +15,7 @@
 
 <script lang="ts" setup>
 import { PROVIDERS } from '@distributedlab/w3p'
-import { get } from 'lodash-es'
+import get from 'lodash/get'
 
 import { AppButton } from '@/common'
 import { ICON_NAMES } from '@/enums'
