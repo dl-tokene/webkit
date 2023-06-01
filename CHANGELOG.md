@@ -4,9 +4,23 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [0.0.0-rc.12] - 2023-06-01
 ### Added
 - `root` - `@tokene/sdk` - Collection of common interactions with TokenE graph and core contracts
+- `@tokene/toolkit` - working with key-values
+
+### Changed
+- `@tokene/styles` - global elements colors usage
+- `@tokene/toasts` - replace lodash-es by lodash
+- `@tokene/ui-kit` - replace lodash-es by lodash
+- `@tokene/toolkit`
+  - replace lodash-es by lodash
+  - update use-universal-storage to be able to SSO
+
+### Fixed
+- `@tokene/toolkit`
+  - `use-universal-storage` composable storages priority
+  - key-value util parsing response
 
 ## [0.0.0-rc.11] - 2023-05-26
 ### Added
@@ -102,7 +116,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Initial release
 - `root` - `@tokene/toolkit` package
 
-[Unreleased]: https://github.com/dl-tokene/webkit/compare/0.0.0-rc.11...HEAD
+[Unreleased]: https://github.com/dl-tokene/webkit/compare/0.0.0-rc.12...HEAD
+[0.0.0-rc.12]: https://github.com/dl-tokene/webkit/compare/0.0.0-rc.11...0.0.0-rc.12
 [0.0.0-rc.11]: https://github.com/dl-tokene/webkit/compare/0.0.0-rc.10...0.0.0-rc.11
 [0.0.0-rc.10]: https://github.com/dl-tokene/webkit/compare/0.0.0-rc.9...0.0.0-rc.10
 [0.0.0-rc.9]: https://github.com/dl-tokene/webkit/compare/0.0.0-rc.8...0.0.0-rc.9
