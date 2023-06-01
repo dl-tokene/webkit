@@ -63,7 +63,7 @@ export function useUniversalStorage<T>(
   const init = () => {
     isLoaded.value = false
 
-    if (options?.isSessionStorage) {
+    if (options?.isSessionStorage && options?.isLocalStorage) {
       localStorageState.value = sessionStorageState.value
     }
 
