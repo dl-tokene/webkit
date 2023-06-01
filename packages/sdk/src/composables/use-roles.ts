@@ -2,63 +2,13 @@ import { computed, ref } from 'vue-demi'
 
 import { coreApolloClient } from '@/api/graphql/core.graphql'
 import { coreContracts } from '@/globals'
-import { type Permission, type Role } from '@/types'
+import { formatRoleFromGraph } from '@/helpers'
+import { type FlattenRole, type Permission } from '@/types'
 import {
   GetRolesWithResources,
   GetRolesWithResourcesQuery,
   type RoleWithResourcesFragment,
 } from '@/types/graphql'
-
-const formatRoleFromGraph = (graphRole: RoleWithResourcesFragment): Role => {
-  let roleName = ''
-  let roleDescription = ''
-
-  try {
-    const parsedRoleDescription = JSON.parse(graphRole.description)
-    roleName = parsedRoleDescription.name
-  } catch (error) {
-    roleName = graphRole.id // TEMP
-  }
-
-  try {
-    const parsedRoleDescription = JSON.parse(graphRole.description)
-    roleDescription = parsedRoleDescription.description
-  } catch (error) {
-    roleDescription = graphRole.id // TEMP
-  }
-
-  return {
-    id: graphRole.id,
-    name: roleName,
-    description: roleDescription,
-    resources: graphRole.resources.map(el => ({
-      id: el.id,
-      name: el.name,
-      allows: el.allows,
-      disallows: el.disallows,
-    })),
-    flattenAllowedPermissions: graphRole.resources.reduce(
-      (acc, curr) => [
-        ...acc,
-        ...(curr?.allows?.map(el => ({
-          resource: { id: curr.id, name: curr.name },
-          action: el,
-        })) || []),
-      ],
-      [] as Permission[],
-    ),
-    flattenDisallowedPermissions: graphRole.resources.reduce(
-      (acc, curr) => [
-        ...acc,
-        ...(curr?.disallows?.map(el => ({
-          resource: { id: curr.id, name: curr.name },
-          action: el,
-        })) || []),
-      ],
-      [] as Permission[],
-    ),
-  } as Role
-}
 
 export const useRoles = () => {
   const rolesWithResources = ref<RoleWithResourcesFragment[]>([])
@@ -66,15 +16,19 @@ export const useRoles = () => {
   const masterRoleId = ref('')
   const bannedRoleId = ref('')
 
-  const roles = computed(() => {
-    return rolesWithResources.value && rolesWithResources.value.length
-      ? (rolesWithResources.value.map(el => formatRoleFromGraph(el)) as Role[])
-      : []
-  })
+  const roles = computed(
+    () =>
+      rolesWithResources.value?.map(
+        el => formatRoleFromGraph(el) as FlattenRole,
+      ) ?? [],
+  )
 
   const loadRoles = async () => {
     const masterAccessManagementContract =
       coreContracts.getMasterAccessManagementContract()
+
+    masterRoleId.value = await masterAccessManagementContract.getMasterRoleId()
+    bannedRoleId.value = await masterAccessManagementContract.getBannedRoleId()
 
     const { data } = await coreApolloClient.query<GetRolesWithResourcesQuery>({
       query: GetRolesWithResources,
@@ -83,9 +37,6 @@ export const useRoles = () => {
     if (!data.roles) return
 
     rolesWithResources.value = data.roles
-
-    masterRoleId.value = await masterAccessManagementContract.getMasterRoleId()
-    bannedRoleId.value = await masterAccessManagementContract.getBannedRoleId()
   }
 
   const createRole = async (
@@ -204,6 +155,7 @@ export const useRoles = () => {
   }
 
   return {
+    rolesWithResources,
     roles,
 
     masterRoleId,

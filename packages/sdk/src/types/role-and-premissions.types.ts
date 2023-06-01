@@ -1,18 +1,13 @@
-export type PermissionType = 'allowed' | 'disallowed'
+import type { Resource } from '@/types/graphql'
 
-export type Resource = {
-  id: string
-  name: string
-  allows?: string[]
-  disallows?: string[]
-}
+export type PermissionType = 'allowed' | 'disallowed'
 
 export type Permission = {
   resource: Resource
   action: string
 }
 
-export type Role = {
+export type FlattenRole = {
   id: string
   name: string
   description: string

@@ -1,6 +1,6 @@
 import { type RemovableRef, useStorage } from '@vueuse/core'
 import { useCookies } from '@vueuse/integrations/useCookies'
-import { isEmpty } from 'lodash-es'
+import isEmpty from 'lodash/isEmpty'
 import { ref, watch } from 'vue'
 
 export function useUniversalStorage<T>(

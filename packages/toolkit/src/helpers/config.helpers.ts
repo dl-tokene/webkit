@@ -1,4 +1,5 @@
-import { mapKeys, pickBy } from 'lodash-es'
+import mapKeys from 'lodash/mapKeys'
+import pickBy from 'lodash/pickBy'
 
 import type { EnvConfig } from '@/types'
 import { KeyValueUtil } from '@/utils'

@@ -5,7 +5,10 @@
     "lib": ["ESNext", "DOM"],
     "paths": {
       "@/*": ["src/*"]
-    }
+    },
+    "types": [
+      "@types/lodash"
+    ]
   },
   "include": ["src/**/*.ts"],
   "exclude": ["src/types/contracts/", "src/types/graphql/index"]
