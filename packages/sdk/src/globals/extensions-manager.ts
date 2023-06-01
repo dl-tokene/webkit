@@ -80,18 +80,13 @@ export class ExtensionsManager {
   async updateExtensionStatus(extension: Extension, state: EXTENSION_STATES) {
     const extensions = cloneDeep(this.#extensions)
 
-    const extensionStates = extensions.reduce(
-      (acc, cur) => ({
-        ...acc,
-        [cur.id]: {
-          ...cur,
-          state: cur.id === extension.id ? state : cur.state,
-        },
-      }),
-      {},
+    await new KeyValueUtil().create(
+      KEY_VALUES.extensions,
+      extensions.map(el => ({
+        ...el,
+        state: el.id === extension.id ? state : el.state,
+      })),
     )
-
-    await new KeyValueUtil().create(KEY_VALUES.extensions, extensionStates)
   }
 }
 
