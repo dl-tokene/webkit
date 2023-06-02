@@ -98,6 +98,6 @@
   "typedoc": {
     "entryPoint": "./src/index.ts",
     "readmeFile": "./README.md",
-    "displayName": "@tokene/toolkit"
+    "displayName": "@tokene/sdk"
   }
 }
