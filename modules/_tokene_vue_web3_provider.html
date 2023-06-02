@@ -16,7 +16,7 @@
 <li><a href="_tokene_vue_web3_provider.html">@tokene/vue-web3-provider</a></li></ul>
 <h1>Module @tokene/vue-web3-provider</h1></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/dl-tokene/webkit/blob/558d18f/packages/vue-web3-provider/src/index.ts#L1">packages/vue-web3-provider/src/index.ts:1</a></li></ul></aside>
+<li>Defined in <a href="https://github.com/dl-tokene/webkit/blob/9fe7b2e/packages/vue-web3-provider/src/index.ts#L1">packages/vue-web3-provider/src/index.ts:1</a></li></ul></aside>
 <section class="tsd-panel-group">
 <section class="tsd-panel tsd-typography">
 <a href="#tokenevue-web3-provider" id="tokenevue-web3-provider" style="color: inherit; text-decoration: none;">
@@ -41,7 +41,7 @@
 <a href="#default-example" id="default-example" style="color: inherit; text-decoration: none;">
   <h4>Default example</h4>
 </a>
-<pre><code class="language-ts"><span class="hl-14">import</span><span class="hl-1"> { </span><span class="hl-5">useProvider</span><span class="hl-1"> } </span><span class="hl-14">from</span><span class="hl-1"> </span><span class="hl-2">&#39;@tokene/vue-web3-provider&#39;</span><br/><span class="hl-14">import</span><span class="hl-1"> { </span><span class="hl-5">ProviderDetector</span><span class="hl-1">, </span><span class="hl-5">MetamaskProvider</span><span class="hl-1"> } </span><span class="hl-14">from</span><span class="hl-1"> </span><span class="hl-2">&#39;@distributedlab/w3p&#39;</span><br/><br/><span class="hl-3">const</span><span class="hl-1"> </span><span class="hl-17">providerDetector</span><span class="hl-1"> = </span><span class="hl-3">new</span><span class="hl-1"> </span><span class="hl-0">ProviderDetector</span><span class="hl-1">()</span><br/><span class="hl-3">const</span><span class="hl-1"> </span><span class="hl-17">provider</span><span class="hl-1"> = </span><span class="hl-0">useProvider</span><span class="hl-1">()</span><br/><br/><span class="hl-3">const</span><span class="hl-1"> </span><span class="hl-0">init</span><span class="hl-1"> = </span><span class="hl-3">async</span><span class="hl-1"> () </span><span class="hl-3">=&gt;</span><span class="hl-1"> {</span><br/><span class="hl-1">  </span><span class="hl-14">await</span><span class="hl-1"> </span><span class="hl-5">providerDetector</span><span class="hl-1">.</span><span class="hl-0">init</span><span class="hl-1">()</span><br/><span class="hl-1">  </span><span class="hl-14">await</span><span class="hl-1"> </span><span class="hl-5">provider</span><span class="hl-1">.</span><span class="hl-0">init</span><span class="hl-1">(</span><span class="hl-5">MetamaskProvider</span><span class="hl-1">, {</span><br/><span class="hl-1">    </span><span class="hl-5">providerDetector:</span><span class="hl-1"> </span><span class="hl-5">ProviderDetector</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-5">listeners:</span><span class="hl-1"> {},</span><br/><span class="hl-1">  })</span><br/><span class="hl-1">}</span><br/><br/><span class="hl-0">init</span><span class="hl-1">()</span>
+<pre><code class="language-ts"><span class="hl-14">import</span><span class="hl-1"> { </span><span class="hl-5">useProvider</span><span class="hl-1"> } </span><span class="hl-14">from</span><span class="hl-1"> </span><span class="hl-2">&#39;@tokene/vue-web3-provider&#39;</span><br/><span class="hl-14">import</span><span class="hl-1"> { </span><span class="hl-5">ProviderDetector</span><span class="hl-1">, </span><span class="hl-5">MetamaskProvider</span><span class="hl-1"> } </span><span class="hl-14">from</span><span class="hl-1"> </span><span class="hl-2">&#39;@distributedlab/w3p&#39;</span><br/><br/><span class="hl-3">const</span><span class="hl-1"> </span><span class="hl-16">providerDetector</span><span class="hl-1"> = </span><span class="hl-3">new</span><span class="hl-1"> </span><span class="hl-0">ProviderDetector</span><span class="hl-1">()</span><br/><span class="hl-3">const</span><span class="hl-1"> </span><span class="hl-16">provider</span><span class="hl-1"> = </span><span class="hl-0">useProvider</span><span class="hl-1">()</span><br/><br/><span class="hl-3">const</span><span class="hl-1"> </span><span class="hl-0">init</span><span class="hl-1"> = </span><span class="hl-3">async</span><span class="hl-1"> () </span><span class="hl-3">=&gt;</span><span class="hl-1"> {</span><br/><span class="hl-1">  </span><span class="hl-14">await</span><span class="hl-1"> </span><span class="hl-5">providerDetector</span><span class="hl-1">.</span><span class="hl-0">init</span><span class="hl-1">()</span><br/><span class="hl-1">  </span><span class="hl-14">await</span><span class="hl-1"> </span><span class="hl-5">provider</span><span class="hl-1">.</span><span class="hl-0">init</span><span class="hl-1">(</span><span class="hl-5">MetamaskProvider</span><span class="hl-1">, {</span><br/><span class="hl-1">    </span><span class="hl-5">providerDetector:</span><span class="hl-1"> </span><span class="hl-5">ProviderDetector</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-5">listeners:</span><span class="hl-1"> {},</span><br/><span class="hl-1">  })</span><br/><span class="hl-1">}</span><br/><br/><span class="hl-0">init</span><span class="hl-1">()</span>
 </code></pre>
 
 <a href="#running-the-tests" id="running-the-tests" style="color: inherit; text-decoration: none;">
@@ -100,12 +100,12 @@
 <ul>
 <li class="current"><a href="../modules.html">Token<wbr/>E | <wbr/>Webkit</a>
 <ul>
+<li class="tsd-kind-module"><a href="_tokene_sdk.html">@tokene/sdk</a>
+<ul>
+<li class="tsd-kind-namespace tsd-parent-kind-module"><a href="_tokene_sdk.factories.html">factories</a></li></ul></li>
 <li class="tsd-kind-module"><a href="_tokene_styles.html">@tokene/styles</a></li>
 <li class="tsd-kind-module"><a href="_tokene_toasts.html">@tokene/toasts</a></li>
-<li class="tsd-kind-module"><a href="_tokene_toolkit.html">@tokene/toolkit</a>
-<ul>
-<li class="tsd-kind-namespace tsd-parent-kind-module"><a href="_tokene_toolkit.factories.html">factories</a></li></ul></li>
-<li class="tsd-kind-module"><a href="_tokene_toolkit-1.html">@tokene/toolkit</a></li>
+<li class="tsd-kind-module"><a href="_tokene_toolkit.html">@tokene/toolkit</a></li>
 <li class="tsd-kind-module"><a href="_tokene_ui_kit.html">@tokene/ui-<wbr/>kit</a></li>
 <li class="current selected tsd-kind-module"><a href="_tokene_vue_web3_provider.html">@tokene/vue-<wbr/>web3-<wbr/>provider</a></li></ul></li></ul></div></details></nav>
 <nav class="tsd-navigation secondary menu-sticky">
