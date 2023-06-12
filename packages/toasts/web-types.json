@@ -1,7 +1,7 @@
 {
   "framework": "vue",
   "name": "@tokene/toasts",
-  "version": "0.0.0-rc.12",
+  "version": "0.0.0-rc.13",
   "contributions": {
     "html": {
       "description-markup": "markdown",

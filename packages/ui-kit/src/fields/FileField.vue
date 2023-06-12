@@ -40,7 +40,11 @@
         </div>
       </template>
       <template v-else>
-        <button type="button" class="file-field__open-btn" @click="open">
+        <button
+          type="button"
+          class="file-field__open-btn"
+          @click="openfileDialog"
+        >
           <span ref="dropZoneRef" class="file-field__drop-zone" />
 
           <span class="file-field__label">
@@ -222,8 +226,8 @@ const handleOpen = async () => {
   }
 }
 
-const setHeightCSSVar = (element: HTMLElement) => {
-  element.style.setProperty(
+const setHeightCSSVar = (element: Element) => {
+  ;(element as HTMLElement).style.setProperty(
     '--field-error-msg-height',
     `${element.scrollHeight}px`,
   )
@@ -233,6 +237,10 @@ const openDocument = () => {
   if (!props.modelValue) return
 
   window.open(URL.createObjectURL(props.modelValue), '_blank')
+}
+
+const openfileDialog = () => {
+  open()
 }
 </script>
 

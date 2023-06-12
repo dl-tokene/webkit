@@ -1,7 +1,7 @@
 {
   "framework": "vue",
   "name": "@tokene/ui-kit",
-  "version": "0.0.0-rc.12",
+  "version": "0.0.0-rc.13",
   "contributions": {
     "html": {
       "description-markup": "markdown",
@@ -624,6 +624,96 @@
           }
         },
         {
+          "name": "FileField",
+          "description": "",
+          "attributes": [
+            {
+              "name": "modelValue",
+              "required": false,
+              "value": {
+                "kind": "expression",
+                "type": "union"
+              },
+              "default": "undefined"
+            },
+            {
+              "name": "errorMessage",
+              "required": false,
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              },
+              "default": "''"
+            },
+            {
+              "name": "disabled",
+              "required": false,
+              "value": {
+                "kind": "expression",
+                "type": "union"
+              },
+              "default": "false"
+            },
+            {
+              "name": "label",
+              "required": false,
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              },
+              "default": "''"
+            },
+            {
+              "name": "note",
+              "required": false,
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              },
+              "default": "''"
+            },
+            {
+              "name": "fileExtensions",
+              "required": false,
+              "value": {
+                "kind": "expression",
+                "type": "Array"
+              },
+              "default": "() => ['jpg', 'png', 'jpeg']"
+            },
+            {
+              "name": "maxSize",
+              "required": false,
+              "value": {
+                "kind": "expression",
+                "type": "number"
+              },
+              "default": "2"
+            },
+            {
+              "name": "mode",
+              "required": false,
+              "value": {
+                "kind": "expression",
+                "type": "union"
+              },
+              "default": "'edit'"
+            }
+          ],
+          "events": [
+            {
+              "name": "update:modelValue"
+            },
+            {
+              "name": "error-message"
+            }
+          ],
+          "source": {
+            "module": "./src/fields/FileField.vue",
+            "symbol": "default"
+          }
+        },
+        {
           "name": "Icon",
           "description": "",
           "attributes": [
@@ -638,6 +728,24 @@
           ],
           "source": {
             "module": "./src/common/Icon.vue",
+            "symbol": "default"
+          }
+        },
+        {
+          "name": "Identicon",
+          "description": "",
+          "attributes": [
+            {
+              "name": "seed",
+              "required": true,
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            }
+          ],
+          "source": {
+            "module": "./src/common/Identicon.vue",
             "symbol": "default"
           }
         },
