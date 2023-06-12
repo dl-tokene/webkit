@@ -48,6 +48,7 @@ export default defineConfig({
       '@tokene/styles',
       '@tokene/toolkit',
       '@tokene/ui-kit',
+      'lodash',
     ],
     alias: {
       '@': path.resolve(__dirname, 'src'),
