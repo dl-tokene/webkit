@@ -4,7 +4,8 @@
   "description": "The Vue reactive wrapper for @distributedlab/w3p",
   "repository": {
     "type": "git",
-    "url": "https://github.com/dl-tokene/webkit/tree/main/packages/vue-web3-provider"
+    "url": "https://github.com/dl-tokene/webkit.git",
+    "directory": "packages/vue-web3-provider"
   },
   "homepage": "https://dl-tokene.github.io/webkit/modules/_tokene_vue_web3_provider.html",
   "license": "MIT",
@@ -43,10 +44,10 @@
     "access": "public"
   },
   "dependencies": {
-    "@distributedlab/fetcher": "^0.2.0-rc.14",
-    "@distributedlab/jac": "^0.2.0-rc.14",
-    "@distributedlab/tools": "^0.2.0-rc.14",
-    "@distributedlab/w3p": "^0.2.0-rc.14",
+    "@distributedlab/fetcher": "^0.2.0-rc.19",
+    "@distributedlab/jac": "^0.2.0-rc.19",
+    "@distributedlab/tools": "^0.2.0-rc.19",
+    "@distributedlab/w3p": "^0.2.0-rc.19",
     "vue-demi": "^0.14.0"
   },
   "peerDependencies": {

@@ -3,8 +3,12 @@ import cloneDeep from 'lodash/cloneDeep'
 
 import { coreApolloClient } from '@/api'
 import { coreContracts } from '@/globals'
-import { Extension, EXTENSION_STATES } from '@/types'
-import { GetCoreContracts, GetCoreContractsQuery } from '@/types/graphql'
+import {
+  type Extension,
+  EXTENSION_STATES,
+  GetCoreContracts,
+  type GetCoreContractsQuery,
+} from '@/types'
 
 /**
  * For now we can check module existence by checking if MasterContractRegistry

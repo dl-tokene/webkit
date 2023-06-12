@@ -1,4 +1,5 @@
 export { default as CheckboxField } from './CheckboxField.vue'
+export { default as FileField } from './FileField.vue'
 export { default as InputField } from './InputField.vue'
 export { BasicSelectField } from './select-fields'
 export { default as SelectField } from './SelectField.vue'

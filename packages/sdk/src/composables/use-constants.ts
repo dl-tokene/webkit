@@ -1,13 +1,13 @@
 import { Buffer } from 'buffer'
 import { reactive, ref } from 'vue-demi'
 
-import { coreApolloClient } from '@/api/graphql/core.graphql'
+import { coreApolloClient } from '@/api'
 import { coreContracts } from '@/globals'
 import {
   type ConstantFragment,
   GetConstantsByIdPaginated,
   GetConstantsPaginated,
-} from '@/types/graphql'
+} from '@/types'
 
 export const useConstants = () => {
   const { addConstant: _addConstant, removeConstant: _removeConstant } =

@@ -1,7 +1,7 @@
 import { BlobUtil, StorageUtil } from '@tokene/toolkit'
 import { computed, ref } from 'vue-demi'
 
-import { coreApolloClient } from '@/api/graphql/core.graphql'
+import { coreApolloClient } from '@/api'
 import { useRoles } from '@/composables'
 import { REQUEST_STATUSES } from '@/enums'
 import { coreContracts } from '@/globals'
@@ -12,7 +12,7 @@ import {
   GetUserById,
   GetUserByIdQuery,
   UserCommonFieldsFragment,
-} from '@/types/graphql'
+} from '@/types'
 
 export const useUserDetails = (address: string) => {
   const {

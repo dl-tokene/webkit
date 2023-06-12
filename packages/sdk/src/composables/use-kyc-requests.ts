@@ -1,7 +1,7 @@
 import { BlobUtil, StorageUtil } from '@tokene/toolkit'
 import { reactive, ref } from 'vue'
 
-import { coreApolloClient } from '@/api/graphql/core.graphql'
+import { coreApolloClient } from '@/api'
 import { coreContracts, extensionsManager } from '@/globals'
 import { Kyc, RequestDescriptionKyc } from '@/types'
 import {
@@ -9,7 +9,7 @@ import {
   GetKycRequestByIdQuery,
   GetKycRequests,
   GetKycRequestsQuery,
-} from '@/types/graphql'
+} from '@/types'
 
 export const useKycRequests = (queryParams?: {
   id?: string

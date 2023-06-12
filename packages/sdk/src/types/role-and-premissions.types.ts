@@ -1,4 +1,4 @@
-import type { Resource } from '@/types/graphql'
+import type { Resource } from '@/types'
 
 export type PermissionType = 'allowed' | 'disallowed'
 

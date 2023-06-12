@@ -1,6 +1,6 @@
 import { computed, ref } from 'vue-demi'
 
-import { coreApolloClient } from '@/api/graphql/core.graphql'
+import { coreApolloClient } from '@/api'
 import { coreContracts } from '@/globals'
 import { formatRoleFromGraph } from '@/helpers'
 import { type FlattenRole, type Permission } from '@/types'
@@ -8,7 +8,7 @@ import {
   GetRolesWithResources,
   GetRolesWithResourcesQuery,
   type RoleWithResourcesFragment,
-} from '@/types/graphql'
+} from '@/types'
 
 export const useRoles = () => {
   const rolesWithResources = ref<RoleWithResourcesFragment[]>([])

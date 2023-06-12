@@ -1,6 +1,6 @@
-import { Provider, RawProvider } from '@distributedlab/w3p'
+import { type Provider, type RawProvider } from '@distributedlab/w3p'
 
-import { coreApolloClient } from '@/api/graphql/core.graphql'
+import { coreApolloClient } from '@/api'
 import {
   useConstantsRegistry,
   useMasterAccessManagement,
@@ -8,7 +8,7 @@ import {
   useReviewableRequests,
 } from '@/composables/contracts'
 import { sdkConfig } from '@/config'
-import { GetCoreContracts, GetCoreContractsQuery } from '@/types/graphql'
+import { GetCoreContracts, type GetCoreContractsQuery } from '@/types'
 
 export class CoreContracts {
   #provider: Provider
@@ -26,8 +26,15 @@ export class CoreContracts {
     this.#rawProvider = rawProvider
   }
 
+  get provider() {
+    return this.#provider
+  }
+
+  get rawProvider() {
+    return this.#rawProvider
+  }
+
   async loadCoreContractsAddresses() {
-    // TODO: check
     const masterContractsRegistry = this.getMasterContractsRegistryContract()
 
     const { data } = await coreApolloClient.query<GetCoreContractsQuery>({
@@ -45,6 +52,19 @@ export class CoreContracts {
     this.#reviewableRequestsContractAddress =
       data?.contracts?.find(el => el.id === 'REVIEWABLE_REQUESTS')?.address ||
       (await masterContractsRegistry.getReviewableRequests())
+  }
+
+  async getContractAddressByName(name: string) {
+    const masterContractsRegistry = this.getMasterContractsRegistryContract()
+
+    const { data } = await coreApolloClient.query<GetCoreContractsQuery>({
+      query: GetCoreContracts,
+    })
+
+    return (
+      data?.contracts?.find(el => el.id === name)?.address ||
+      (await masterContractsRegistry.getContractAddressByName(name))
+    )
   }
 
   getMasterContractsRegistryContract() {
