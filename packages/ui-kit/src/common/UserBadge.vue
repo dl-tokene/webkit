@@ -1,11 +1,12 @@
 <template>
   <div class="user-badge">
-    <div ref="userBadgeImgWrpEl" class="user-badge__img-wrp">
-      <img
-        class="user-badge__img"
-        :src="imgUrl || fallbackAvatar"
-        :alt="fullName || address"
-      />
+    <div class="user-badge__img-wrp">
+      <template v-if="imgUrl">
+        <img class="user-badge__img" :src="imgUrl" :alt="fullName || address" />
+      </template>
+      <template v-else-if="address">
+        <identicon class="user-badge__img" :seed="address.toLowerCase()" />
+      </template>
     </div>
     <template v-if="!isImgOnly">
       <div class="user-badge__details">
@@ -21,10 +22,10 @@
 </template>
 
 <script lang="ts" setup>
-import { identicon } from '@dicebear/collection'
-import { createAvatar } from '@dicebear/core'
 import { abbrCenter } from '@tokene/toolkit'
-import { computed, ref, watch } from 'vue'
+import { computed } from 'vue'
+
+import { Identicon } from '@/common'
 
 const props = withDefaults(
   defineProps<{
@@ -45,30 +46,11 @@ const props = withDefaults(
   },
 )
 
-const fallbackAvatar = ref('')
-const userBadgeImgWrpEl = ref<HTMLDivElement>()
-
 const fullName = computed(() =>
   props.firstName && props.lastName
     ? `${props.firstName} ${props.lastName}`
     : '',
 )
-
-watch(
-  () => props.address,
-  () => {
-    init()
-  },
-)
-
-const init = async () => {
-  fallbackAvatar.value = await createAvatar(identicon, {
-    seed: props.address?.toLowerCase(),
-    size: userBadgeImgWrpEl.value?.clientWidth || 40,
-  }).toDataUri()
-}
-
-init()
 </script>
 
 <style lang="scss" scoped>

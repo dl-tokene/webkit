@@ -9,7 +9,7 @@ export function formatNumber(
   if (!value || (value instanceof BigNumber && value.isZero()) || isNaN(+value))
     throw new TypeError('Invalid value')
 
-  const finalDecimals = value instanceof BN ? value.decimals : decimals
+  const finalDecimals = Number(value instanceof BN ? value.decimals : decimals)
   const finalAmount =
     value instanceof BN
       ? value
@@ -22,7 +22,7 @@ export function formatTokenAmount(
   value: BigNumber | BnLike,
   decimals?: number,
 ): string {
-  const finalDecimals = value instanceof BN ? value.decimals : decimals
+  const finalDecimals = Number(value instanceof BN ? value.decimals : decimals)
 
   if (!finalDecimals) throw new TypeError('Invalid decimals')
 
@@ -54,7 +54,7 @@ export const formatTokenBalance = (
   value: BigNumber | BnLike,
   decimals?: number,
 ) => {
-  const finalDecimals = value instanceof BN ? value.decimals : decimals
+  const finalDecimals = Number(value instanceof BN ? value.decimals : decimals)
 
   if (!finalDecimals) throw new TypeError('Invalid decimals')
 
@@ -86,7 +86,7 @@ export const formatPercentageAmount = (
   value: BigNumber | BnLike,
   decimals?: number,
 ) => {
-  const finalDecimals = value instanceof BN ? value.decimals : decimals
+  const finalDecimals = Number(value instanceof BN ? value.decimals : decimals)
 
   if (!finalDecimals) throw new TypeError('Invalid decimals')
 

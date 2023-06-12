@@ -1,13 +1,13 @@
 import { reactive, ref } from 'vue-demi'
 
-import { coreApolloClient } from '@/api/graphql/core.graphql'
-import { type UserCommonFieldsFragment } from '@/types/graphql'
+import { coreApolloClient } from '@/api'
 import {
   GetUserById,
-  GetUserByIdQuery,
+  type GetUserByIdQuery,
   GetUsersByIdPaginated,
   GetUsersByRoleIdsPaginated,
-} from '@/types/graphql'
+  type UserCommonFieldsFragment,
+} from '@/types'
 
 export const useUsers = (defaultFilters?: {
   id?: string

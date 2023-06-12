@@ -5,3 +5,7 @@ export { ConstantsRegistry__factory } from "./ConstantsRegistry__factory";
 export { MasterAccessManagement__factory } from "./MasterAccessManagement__factory";
 export { MasterContractsRegistry__factory } from "./MasterContractsRegistry__factory";
 export { ReviewableRequests__factory } from "./ReviewableRequests__factory";
+export { TERC20__factory } from "./TERC20__factory";
+export { TERC721__factory } from "./TERC721__factory";
+export { TokenFactory__factory } from "./TokenFactory__factory";
+export { TokenRegistry__factory } from "./TokenRegistry__factory";

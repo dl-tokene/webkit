@@ -1,10 +1,11 @@
 {
   "name": "@tokene/toolkit",
-  "version": "0.0.0-rc.12",
+  "version": "0.0.0-rc.13",
   "description": "Collection of common utility functions and classes in tokenE frontend modules",
   "repository": {
     "type": "git",
-    "url": "https://github.com/dl-tokene/webkit/tree/main/packages/toolkit"
+    "url": "https://github.com/dl-tokene/webkit.git",
+    "directory": "packages/toolkit"
   },
   "homepage": "https://dl-tokene.github.io/webkit/modules/_tokene_toolkit.html",
   "license": "MIT",
@@ -43,10 +44,10 @@
     "access": "public"
   },
   "dependencies": {
-    "@distributedlab/fetcher": "^0.2.0-rc.14",
-    "@distributedlab/jac": "^0.2.0-rc.14",
-    "@distributedlab/tools": "^0.2.0-rc.14",
-    "@distributedlab/w3p": "^0.2.0-rc.14",
+    "@distributedlab/fetcher": "^0.2.0-rc.19",
+    "@distributedlab/jac": "^0.2.0-rc.19",
+    "@distributedlab/tools": "^0.2.0-rc.19",
+    "@distributedlab/w3p": "^0.2.0-rc.19",
     "@vuelidate/core": "^2.0.2",
     "@vuelidate/validators": "^2.0.2",
     "@vueuse/core": "^10.1.0",

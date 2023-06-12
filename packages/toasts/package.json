@@ -1,10 +1,11 @@
 {
   "name": "@tokene/toasts",
-  "version": "0.0.0-rc.12",
+  "version": "0.0.0-rc.13",
   "description": "Vue based toasts",
   "repository": {
     "type": "git",
-    "url": "https://github.com/dl-tokene/webkit/tree/main/packages/toasts"
+    "url": "https://github.com/dl-tokene/webkit.git",
+    "directory": "packages/toasts"
   },
   "homepage": "https://dl-tokene.github.io/webkit/modules/_tokene_toasts.html",
   "license": "MIT",
@@ -53,7 +54,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@distributedlab/w3p": "^0.2.0-rc.14",
+    "@distributedlab/w3p": "^0.2.0-rc.19",
     "@tokene/styles": "workspace:^",
     "@tokene/toolkit": "workspace:^",
     "@tokene/ui-kit": "workspace:^",

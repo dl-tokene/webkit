@@ -141,5 +141,11 @@
   "api-errors": {
     "session-expired-title": "Session expired",
     "session-expired-desc": "Please login again to continue using the application."
+
+  },
+
+  "file-field": {
+    "incorrect-file-type-err": "You cannot upload a {{type}} file. Allowed types: {{allowedTypes}}",
+    "max-size-exceeded-err": "You cannot upload a file exceeding {{maxSize}} MB"
   }
 }

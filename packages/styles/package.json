@@ -1,10 +1,11 @@
 {
   "name": "@tokene/styles",
-  "version": "0.0.0-rc.12",
+  "version": "0.0.0-rc.13",
   "description": "Default styles for every single frontend module of TokenE",
   "repository": {
     "type": "git",
-    "url": "https://github.com/dl-tokene/webkit/tree/main/packages/styles"
+    "url": "https://github.com/dl-tokene/webkit.git",
+    "directory": "packages/styles"
   },
   "homepage": "https://dl-tokene.github.io/webkit/modules/_tokene_styles.html",
   "license": "MIT",

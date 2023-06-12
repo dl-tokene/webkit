@@ -1,10 +1,11 @@
 {
   "name": "@tokene/ui-kit",
-  "version": "0.0.0-rc.12",
+  "version": "0.0.0-rc.13",
   "description": "Collection of common TokenE vue components",
   "repository": {
     "type": "git",
-    "url": "https://github.com/dl-tokene/webkit/tree/main/packages/ui-kit"
+    "url": "https://github.com/dl-tokene/webkit.git",
+    "directory": "packages/ui-kit"
   },
   "homepage": "https://dl-tokene.github.io/webkit/modules/_tokene_ui_kit.html",
   "license": "MIT",
@@ -58,9 +59,9 @@
   "dependencies": {
     "@dicebear/collection": "^6.0.3",
     "@dicebear/core": "^6.0.3",
-    "@distributedlab/jac": "^0.2.0-rc.14",
-    "@distributedlab/tools": "^0.2.0-rc.14",
-    "@distributedlab/w3p": "^0.2.0-rc.14",
+    "@distributedlab/jac": "^0.2.0-rc.19",
+    "@distributedlab/tools": "^0.2.0-rc.19",
+    "@distributedlab/w3p": "^0.2.0-rc.19",
     "@tokene/styles": "workspace:^",
     "@tokene/toolkit": "workspace:^",
     "@tokene/vue-web3-provider": "workspace:^",

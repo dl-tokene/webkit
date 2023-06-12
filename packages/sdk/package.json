@@ -1,10 +1,11 @@
 {
   "name": "@tokene/sdk",
-  "version": "0.0.0-rc.12",
+  "version": "0.0.0-rc.13",
   "description": "Collection of common interactions with TokenE graph and core contracts",
   "repository": {
     "type": "git",
-    "url": "https://github.com/dl-tokene/webkit/tree/main/packages/toolkit"
+    "url": "https://github.com/dl-tokene/webkit.git",
+    "directory": "packages/toolkit"
   },
   "homepage": "https://dl-tokene.github.io/webkit/modules/_tokene_toolkit.html",
   "license": "MIT",
@@ -46,10 +47,10 @@
   },
   "dependencies": {
     "@apollo/client": "^3.7.14",
-    "@distributedlab/fetcher": "^0.2.0-rc.14",
-    "@distributedlab/jac": "^0.2.0-rc.14",
-    "@distributedlab/tools": "^0.2.0-rc.14",
-    "@distributedlab/w3p": "^0.2.0-rc.14",
+    "@distributedlab/fetcher": "^0.2.0-rc.19",
+    "@distributedlab/jac": "^0.2.0-rc.19",
+    "@distributedlab/tools": "^0.2.0-rc.19",
+    "@distributedlab/w3p": "^0.2.0-rc.19",
     "@tokene/toolkit": "workspace:^",
     "@tokene/vue-web3-provider": "workspace:^",
     "@vuelidate/core": "^2.0.2",

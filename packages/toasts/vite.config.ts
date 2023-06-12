@@ -42,6 +42,14 @@ export default defineConfig({
     },
   },
   resolve: {
+    dedupe: [
+      'vue',
+      '@distributedlab/w3p',
+      '@tokene/styles',
+      '@tokene/toolkit',
+      '@tokene/ui-kit',
+      'lodash',
+    ],
     alias: {
       '@': path.resolve(__dirname, 'src'),
     },

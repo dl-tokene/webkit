@@ -27,6 +27,14 @@ export default {
     resolve({
       browser: true,
       preferBuiltins: false,
+      dedupe: [
+        '@distributedlab/fetcher',
+        '@distributedlab/jac',
+        '@distributedlab/tools',
+        '@distributedlab/w3p',
+        '@tokene/toolkit',
+        '@tokene/vue-web3-provider',
+      ]
     }),
     nodePolyfills(),
     alias({

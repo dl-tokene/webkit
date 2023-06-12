@@ -1,0 +1,51 @@
+fragment TERC20Common on TERC20 {
+  id
+  name
+  symbol
+  decimals
+  contractURI
+  totalSupplyCap
+  totalSupply
+}
+
+query getTerc20SByName($name: String) {
+  terc20S (where: { name_contains: $name }) {
+    ...TERC20Common
+  }
+}
+
+fragment TERC721Common on TERC721 {
+  id
+  name
+  symbol
+  contractURI
+  baseURI
+  totalSupplyCap
+  totalSupply
+}
+
+query getTerc721SByName($name: String) {
+  terc721S (where: { name_contains: $name }) {
+    ...TERC721Common
+  }
+}
+
+query getTerc20SByNamePaginated($name: String, $offset: Int, $limit: Int) {
+  terc20S (
+    where: { name_contains: $name },
+    first: $limit,
+    skip: $offset,
+  ) {
+    ...TERC20Common
+  }
+}
+
+query getTerc721SByNamePaginated($name: String, $offset: Int, $limit: Int) {
+  terc721S (
+    where: { name_contains: $name },
+    first: $limit,
+    skip: $offset,
+  ) {
+    ...TERC721Common
+  }
+}

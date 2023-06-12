@@ -4,6 +4,26 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.0.0-rc.13] - 2023-06-12
+### Added
+- `@tokene/sdk` - Token management
+- `@tokene/toolkit` - useFile composable
+- `@tokene/ui-kit`
+  - FileField component
+  - Identicon component
+
+### Changed
+- `@tokene/ui-kit` - UserBadge component
+
+### Fixed
+- `@tokene/styles` - package.json repository field
+- `@tokene/toasts` - package.json repository field
+- `@tokene/toolkit`
+  - package.json repository field
+  - format helpers
+- `@tokene/ui-kit` - package.json repository field
+- `@tokene/vue-web3-provider` - package.json repository field
+
 ## [0.0.0-rc.12] - 2023-06-02
 ### Added
 - `root` - `@tokene/sdk` - Collection of common interactions with TokenE graph and core contracts
@@ -116,7 +136,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Initial release
 - `root` - `@tokene/toolkit` package
 
-[Unreleased]: https://github.com/dl-tokene/webkit/compare/0.0.0-rc.12...HEAD
+[Unreleased]: https://github.com/dl-tokene/webkit/compare/0.0.0-rc.13...HEAD
+[0.0.0-rc.13]: https://github.com/dl-tokene/webkit/compare/0.0.0-rc.12...0.0.0-rc.13
 [0.0.0-rc.12]: https://github.com/dl-tokene/webkit/compare/0.0.0-rc.11...0.0.0-rc.12
 [0.0.0-rc.11]: https://github.com/dl-tokene/webkit/compare/0.0.0-rc.10...0.0.0-rc.11
 [0.0.0-rc.10]: https://github.com/dl-tokene/webkit/compare/0.0.0-rc.9...0.0.0-rc.10
