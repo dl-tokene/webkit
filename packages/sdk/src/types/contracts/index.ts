@@ -2,6 +2,7 @@
 /* tslint:disable */
 /* eslint-disable */
 export type { ConstantsRegistry } from "./ConstantsRegistry";
+export type { KYCRequests } from "./KYCRequests";
 export type { MasterAccessManagement } from "./MasterAccessManagement";
 export type { MasterContractsRegistry } from "./MasterContractsRegistry";
 export type { ReviewableRequests } from "./ReviewableRequests";
@@ -11,6 +12,7 @@ export type { TokenFactory } from "./TokenFactory";
 export type { TokenRegistry } from "./TokenRegistry";
 export * as factories from "./factories";
 export { ConstantsRegistry__factory } from "./factories/ConstantsRegistry__factory";
+export { KYCRequests__factory } from "./factories/KYCRequests__factory";
 export { MasterAccessManagement__factory } from "./factories/MasterAccessManagement__factory";
 export { MasterContractsRegistry__factory } from "./factories/MasterContractsRegistry__factory";
 export { ReviewableRequests__factory } from "./factories/ReviewableRequests__factory";

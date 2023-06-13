@@ -70,14 +70,14 @@ const reviewableRequestsContract = coreContracts.getReviewableRequestsContract()
 some of composables, helpers and utils require to have access to the ExtensionsManager,
 but if you ain't use them, you can skip `extensionsManager.init()` but you will not able to use some of sdk features, for example:
 
-- [use-kyc-requests.ts](src/composables/use-kyc-requests.ts)
+- [use-kyc-requests.ts](src/composables/use-kyc-management.ts)
 
 Usage of this contracts you can check in [composables](./src/composables)
 
 Furthermore, here's some prepared composables you can use in your app, if you haven't some specific needs:
 
 - [use-constants.ts](./src/composables/use-constants.ts)
-- [use-kyc-requests.ts](./src/composables/use-kyc-requests.ts)
+- [use-kyc-requests.ts](./src/composables/use-kyc-management.ts)
 - [use-roles.ts](./src/composables/use-roles.ts)
 - [use-user-details.ts](./src/composables/use-user-details.ts)
 - [use-users.ts](./src/composables/use-users.ts)

@@ -11,7 +11,7 @@ import {
   GetKycRequestsQuery,
 } from '@/types'
 
-export const useKycRequests = (queryParams?: {
+export const useKycManagement = (queryParams?: {
   id?: string
   offset?: number
   limit?: number

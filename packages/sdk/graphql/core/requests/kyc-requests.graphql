@@ -35,3 +35,13 @@ query getKycRequestsByAddressAndStatus($address: String!, $status: BigInt!) {
     ...requestCommonFields
   }
 }
+
+query getUserKycRequestsByStatus($misc: String!, $status: BigInt!) {
+  requests(
+    where: { misc: $misc, status: $status }
+    orderBy: requestId
+    orderDirection: desc
+  ) {
+    ...requestCommonFields
+  }
+}

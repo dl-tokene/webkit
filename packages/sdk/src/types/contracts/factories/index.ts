@@ -2,6 +2,7 @@
 /* tslint:disable */
 /* eslint-disable */
 export { ConstantsRegistry__factory } from "./ConstantsRegistry__factory";
+export { KYCRequests__factory } from "./KYCRequests__factory";
 export { MasterAccessManagement__factory } from "./MasterAccessManagement__factory";
 export { MasterContractsRegistry__factory } from "./MasterContractsRegistry__factory";
 export { ReviewableRequests__factory } from "./ReviewableRequests__factory";
