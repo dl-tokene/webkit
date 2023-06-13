@@ -1683,6 +1683,14 @@ export type GetKycRequestsByAddressAndStatusQueryVariables = Exact<{
 
 export type GetKycRequestsByAddressAndStatusQuery = { __typename?: 'Query', requests: Array<{ __typename?: 'Request', id: string, requestId: any, creator: any, executor: any, acceptData: any, rejectData: any, misc: string, description: string, status: any, rejectReason: string, timestamp: any }> };
 
+export type GetUserKycRequestsByStatusQueryVariables = Exact<{
+  misc: Scalars['String']['input'];
+  status: Scalars['BigInt']['input'];
+}>;
+
+
+export type GetUserKycRequestsByStatusQuery = { __typename?: 'Query', requests: Array<{ __typename?: 'Request', id: string, requestId: any, creator: any, executor: any, acceptData: any, rejectData: any, misc: string, description: string, status: any, rejectReason: string, timestamp: any }> };
+
 export type RequestCommonFieldsFragment = { __typename?: 'Request', id: string, requestId: any, creator: any, executor: any, acceptData: any, rejectData: any, misc: string, description: string, status: any, rejectReason: string, timestamp: any };
 
 export type GetRolesWithResourcesQueryVariables = Exact<{ [key: string]: never; }>;
@@ -1894,6 +1902,17 @@ export const GetKycRequestsByAddressAndStatus = gql`
     query getKycRequestsByAddressAndStatus($address: String!, $status: BigInt!) {
   requests(
     where: {misc: $address, status: $status}
+    orderBy: requestId
+    orderDirection: desc
+  ) {
+    ...requestCommonFields
+  }
+}
+    ${RequestCommonFields}`;
+export const GetUserKycRequestsByStatus = gql`
+    query getUserKycRequestsByStatus($misc: String!, $status: BigInt!) {
+  requests(
+    where: {misc: $misc, status: $status}
     orderBy: requestId
     orderDirection: desc
   ) {
