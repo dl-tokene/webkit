@@ -4,6 +4,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.0.0-rc.15] - 2023-06-14
+### Added
+- `@tokene/ui-kit` - Image cropper component
+- `@tokene/toolkit` - Image cropper component localization
+
+### Changed
+- `@tokene/ui-kit` - BasicModal component mobile design
+
+### Fixed
+- `@tokene/toolkit` - blob util post request
+
 ## [0.0.0-rc.14] - 2023-06-13
 ### Added
 - `@tokene/sdk` - user side kyc management
@@ -140,7 +151,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Initial release
 - `root` - `@tokene/toolkit` package
 
-[Unreleased]: https://github.com/dl-tokene/webkit/compare/0.0.0-rc.14...HEAD
+[Unreleased]: https://github.com/dl-tokene/webkit/compare/0.0.0-rc.15...HEAD
+[0.0.0-rc.15]: https://github.com/dl-tokene/webkit/compare/0.0.0-rc.14...0.0.0-rc.15
 [0.0.0-rc.14]: https://github.com/dl-tokene/webkit/compare/0.0.0-rc.13...0.0.0-rc.14
 [0.0.0-rc.13]: https://github.com/dl-tokene/webkit/compare/0.0.0-rc.12...0.0.0-rc.13
 [0.0.0-rc.12]: https://github.com/dl-tokene/webkit/compare/0.0.0-rc.11...0.0.0-rc.12

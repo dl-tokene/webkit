@@ -3692,6 +3692,7 @@ __metadata:
     vite-plugin-svg-icons: ^2.0.1
     vite-svg-loader: ^4.0.0
     vue: ^3.2.47
+    vue-advanced-cropper: ^2.8.8
     vue-docgen-web-types: ^0.1.8
     vue-router: ^4.1.6
     vue-tsc: ^1.6.1
@@ -5816,6 +5817,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"classnames@npm:^2.2.6":
+  version: 2.3.2
+  resolution: "classnames@npm:2.3.2"
+  checksum: 2c62199789618d95545c872787137262e741f9db13328e216b093eea91c85ef2bfb152c1f9e63027204e2559a006a92eb74147d46c800a9f96297ae1d9f96f4e
+  languageName: node
+  linkType: hard
+
 "clean-css@npm:^5.3.2":
   version: 5.3.2
   resolution: "clean-css@npm:5.3.2"
@@ -6713,6 +6721,13 @@ __metadata:
   version: 3.1.2
   resolution: "dset@npm:3.1.2"
   checksum: 4f8066f517aa0a70af688c66e9a0a5590f0aada76f6edc7ba9ddb309e27d3a6d65c0a2e31ab2a84005d4c791e5327773cdde59b8ab169050330a0dc283663e87
+  languageName: node
+  linkType: hard
+
+"easy-bem@npm:^1.0.2":
+  version: 1.1.1
+  resolution: "easy-bem@npm:1.1.1"
+  checksum: c4d44a8cd792fddf9e1869bba543b7ec958080d56ea4764bb6e53b8238a0c2d075f0ee46b95f9dca40032b3e56e5bfc794a5da286eaf424d9db730c5ae91d656
   languageName: node
   linkType: hard
 
@@ -14129,6 +14144,19 @@ __metadata:
   version: 8.0.0
   resolution: "vscode-textmate@npm:8.0.0"
   checksum: 127780dfea89559d70b8326df6ec344cfd701312dd7f3f591a718693812b7852c30b6715e3cfc8b3200a4e2515b4c96f0843c0eacc0a3020969b5de262c2a4bb
+  languageName: node
+  linkType: hard
+
+"vue-advanced-cropper@npm:^2.8.8":
+  version: 2.8.8
+  resolution: "vue-advanced-cropper@npm:2.8.8"
+  dependencies:
+    classnames: ^2.2.6
+    debounce: ^1.2.0
+    easy-bem: ^1.0.2
+  peerDependencies:
+    vue: ^3.0.0
+  checksum: 9ae67a1d89cd86fc4e7bce63b59512e423632ed7b45a3dc784278342d11ea39385956887a76c482d0909d8d73db44470a4e1bc32fe34d38813ceb41e0ac725a6
   languageName: node
   linkType: hard
 

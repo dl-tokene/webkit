@@ -147,5 +147,11 @@
   "file-field": {
     "incorrect-file-type-err": "You cannot upload a {{type}} file. Allowed types: {{allowedTypes}}",
     "max-size-exceeded-err": "You cannot upload a file exceeding {{maxSize}} MB"
+  },
+
+  "image-cropper-field": {
+    "modal-title": "Upload photo",
+    "cancel-cropping-btn": "Go back",
+    "crop-btn": "Crop"
   }
 }

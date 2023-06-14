@@ -1,7 +1,7 @@
 {
   "framework": "vue",
   "name": "@tokene/ui-kit",
-  "version": "0.0.0-rc.14",
+  "version": "0.0.0-rc.15",
   "contributions": {
     "html": {
       "description-markup": "markdown",
@@ -746,6 +746,92 @@
           ],
           "source": {
             "module": "./src/common/Identicon.vue",
+            "symbol": "default"
+          }
+        },
+        {
+          "name": "ImageCropperField",
+          "description": "",
+          "attributes": [
+            {
+              "name": "modelValue",
+              "required": true,
+              "value": {
+                "kind": "expression",
+                "type": "union"
+              }
+            },
+            {
+              "name": "errorMessage",
+              "required": false,
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              },
+              "default": "''"
+            },
+            {
+              "name": "isDisabled",
+              "required": false,
+              "value": {
+                "kind": "expression",
+                "type": "union"
+              },
+              "default": "false"
+            },
+            {
+              "name": "label",
+              "required": false,
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              },
+              "default": "''"
+            },
+            {
+              "name": "note",
+              "required": false,
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              },
+              "default": "''"
+            },
+            {
+              "name": "fileExtensions",
+              "required": false,
+              "value": {
+                "kind": "expression",
+                "type": "Array"
+              },
+              "default": "() => ['jpg', 'png', 'pdf', 'jpeg']"
+            },
+            {
+              "name": "maxSize",
+              "required": false,
+              "value": {
+                "kind": "expression",
+                "type": "number"
+              },
+              "default": "undefined"
+            },
+            {
+              "name": "aspectRatio",
+              "required": false,
+              "value": {
+                "kind": "expression",
+                "type": "number"
+              },
+              "default": "1"
+            }
+          ],
+          "events": [
+            {
+              "name": "update:modelValue"
+            }
+          ],
+          "source": {
+            "module": "./src/fields/ImageCropperField.vue",
             "symbol": "default"
           }
         },

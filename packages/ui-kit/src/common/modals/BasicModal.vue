@@ -68,9 +68,17 @@ watch(isModalShown, value => {
 
 <style lang="scss" scoped>
 .basic-modal__pane {
+  display: flex;
+  flex-direction: column;
   background: var(--background-primary-light);
   padding: toRem(24);
   border-radius: toRem(28);
+
+  @include respond-to(small) {
+    width: 100vw;
+    height: vh(100);
+    border-radius: 0;
+  }
 }
 
 .basic-modal__header {
