@@ -1,6 +1,6 @@
 {
   "name": "@tokene/toolkit",
-  "version": "0.0.0-rc.14",
+  "version": "0.0.0-rc.15",
   "description": "Collection of common utility functions and classes in tokenE frontend modules",
   "repository": {
     "type": "git",

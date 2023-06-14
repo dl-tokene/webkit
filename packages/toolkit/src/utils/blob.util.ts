@@ -30,9 +30,11 @@ export class BlobUtil<T> {
       purpose: string
     }>('/integrations/storage/blobs', {
       body: {
-        blob: this.#rawData,
-        purpose: 'KYC',
-        owner: this.#owner,
+        data: {
+          blob: this.#rawData,
+          purpose: 'KYC',
+          owner: this.#owner,
+        },
       },
     })
 
