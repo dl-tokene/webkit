@@ -1,6 +1,6 @@
 {
   "name": "@tokene/sdk",
-  "version": "0.0.0-rc.15",
+  "version": "0.0.0-rc.16",
   "description": "Collection of common interactions with TokenE graph and core contracts",
   "repository": {
     "type": "git",

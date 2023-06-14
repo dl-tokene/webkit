@@ -4,6 +4,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.0.0-rc.16] - 2023-06-14
+### Fixed
+- `@tokene/ui-kit` - set vue-tsc@1.6.1 static version because newer versions ain't generate types
+- `@tokene/toasts` - set vue-tsc@1.6.1 static version because newer versions ain't generate types
+
 ## [0.0.0-rc.15] - 2023-06-14
 ### Added
 - `@tokene/ui-kit` - Image cropper component
@@ -151,7 +156,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Initial release
 - `root` - `@tokene/toolkit` package
 
-[Unreleased]: https://github.com/dl-tokene/webkit/compare/0.0.0-rc.15...HEAD
+[Unreleased]: https://github.com/dl-tokene/webkit/compare/0.0.0-rc.16...HEAD
+[0.0.0-rc.16]: https://github.com/dl-tokene/webkit/compare/0.0.0-rc.15...0.0.0-rc.16
 [0.0.0-rc.15]: https://github.com/dl-tokene/webkit/compare/0.0.0-rc.14...0.0.0-rc.15
 [0.0.0-rc.14]: https://github.com/dl-tokene/webkit/compare/0.0.0-rc.13...0.0.0-rc.14
 [0.0.0-rc.13]: https://github.com/dl-tokene/webkit/compare/0.0.0-rc.12...0.0.0-rc.13
