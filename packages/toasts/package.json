@@ -1,6 +1,6 @@
 {
   "name": "@tokene/toasts",
-  "version": "0.0.0-rc.16",
+  "version": "0.0.0-rc.17",
   "description": "Vue based toasts",
   "repository": {
     "type": "git",
