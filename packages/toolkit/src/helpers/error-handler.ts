@@ -40,7 +40,9 @@ export class ErrorHandler {
           errorMessage = i18next.t('errors.provider-chain-not-found-error')
           break
         case errors.ProviderInjectedInstanceNotFoundError:
-          errorMessage = i18next.t('errors.provider-not-supported-error')
+          errorMessage = i18next.t(
+            'errors.provider-injected-instance-not-found-error',
+          )
           break
         case errors.ProviderUserRejectedRequest:
           break
