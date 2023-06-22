@@ -8,4 +8,3 @@ export function initGraphQlClients() {
 
 export { coreApolloClient } from './core.graphql'
 export { tokenFactoryApolloClient } from './token-factory.graphql'
-export { api } from '@tokene/toolkit'

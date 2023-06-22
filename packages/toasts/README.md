@@ -42,19 +42,19 @@ import { useNotifications, type NotificationPayload } from '@tokene/toasts'
 
 const { showToast } = useNotifications()
 
-ToolkitBus.on(Bus.eventList.success, payload =>
+ToolkitBus.on('success', payload =>
   showToast('success', payload as NotificationPayload),
 )
-ToolkitBus.on(Bus.eventList.warning, payload =>
+ToolkitBus.on('warning', payload =>
   showToast('error', payload as NotificationPayload),
 )
-ToolkitBus.on(Bus.eventList.error, payload =>
+ToolkitBus.on('error', payload =>
   showToast('warning', payload as NotificationPayload),
 )
-ToolkitBus.on(Bus.eventList.info, payload =>
+ToolkitBus.on('info', payload =>
   showToast('info', payload as NotificationPayload),
 )
-ToolkitBus.on(Bus.eventList.default, payload =>
+ToolkitBus.on('default', payload =>
   showToast('default', payload as NotificationPayload),
 )
 ```

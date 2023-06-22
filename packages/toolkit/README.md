@@ -88,7 +88,9 @@ const loadfile = async () => {
 | `hideConfirmation`            | Cancel or finish confirmation step (make isConfirmationShown true)                                |
 | `hideConfirmationAfterSubmit` | Enable pending, call the submit fn from parameters, hide confirmation, then disable pending state |
 
+
 #### Basic Example
+
 ```vue
 <template>
   <form class="some-form" @submit.prevent="submit">
