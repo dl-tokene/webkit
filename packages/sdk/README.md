@@ -6,6 +6,31 @@ These packages aim to provide developers with a set of commonly used functions a
 ![tree-shaking](https://badgen.net/bundlephobia/tree-shaking/@tokene/sdk)
 ![checks](https://badgen.net/github/checks/dl-tokene/webkit/main)
 
+<!-- TOC -->
+* [@tokene/sdk](#tokenesdk)
+  * [Getting Started](#getting-started)
+    * [Installing](#installing)
+    * [Setup](#setup)
+  * [Here's the list of available features you can use in your app](#heres-the-list-of-available-features-you-can-use-in-your-app)
+    * [Constants](#constants)
+    * [Roles](#roles)
+    * [Users](#users)
+    * [Kyc](#kyc)
+      * [Request statuses](#request-statuses)
+      * [Management as Admin](#management-as-admin)
+      * [Management as user](#management-as-user)
+    * [Tokens](#tokens)
+    * [Custom implementations](#custom-implementations)
+      * [Core contracts](#core-contracts)
+    * [Example](#example)
+  * [Running the tests](#running-the-tests)
+  * [Contribute](#contribute)
+    * [New contracts interaction](#new-contracts-interaction)
+    * [New graphql queries](#new-graphql-queries)
+    * [New subgraphs](#new-subgraphs)
+  * [License](#license)
+<!-- TOC -->
+
 ## Getting Started
 
 ### Installing

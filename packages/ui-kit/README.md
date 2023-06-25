@@ -11,7 +11,61 @@ These packages aim to provide developers with a set of commonly used components 
 ### Installing
 
 ```
-yarn add @tokene/ui-kit
+yarn add @tokene/styles @tokene/ui-kit
+```
+
+In your main style file:
+```scss
+@import '@tokene/styles';
+
+@import '@tokene/ui-kit/dist/index.css';
+```
+
+### Basic usage
+```vue
+<template>
+  <div class="some-component">
+    <app-button :text="`Hello World`" @click="handleButtonClick" />
+  </div>
+</template>
+
+<script lang="ts" setup>
+import { AppButton } from '@tokene/ui-kit'
+
+const handleButtonClick = () => {
+  alert('Hello World')
+}
+</script>
+```
+
+### Icon
+To use icons in your application, you need to import and register [icons](./src/assets/icons) as sprites
+
+#### Example for `vite-plugin-svg-icons`
+`vite.config.ts`
+```ts
+import { defineConfig } from 'vite'
+import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
+
+import path from 'path'
+
+export default defineConfig(({ command, mode }) => {
+
+  return {
+    ...,
+    plugins: [
+      createSvgIconsPlugin({
+        iconDirs: [
+          // icons from ui-kit
+          path.resolve(__dirname, 'node_modules/@tokene/ui-kit/src/assets/icons'),
+          // own icons
+          path.resolve(process.cwd(), 'src/assets/icons'),
+        ],
+        symbolId: '[name]',
+      }),
+    ],
+  }
+})
 ```
 
 ## Running the tests
