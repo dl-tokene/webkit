@@ -1,11 +1,8 @@
-export function abbrCenter(text: string, reduceValue = 8): string {
-  if (text.length <= 10) {
+export function abbrCenter(text = '', reduceValue = 4): string {
+  if (text.length <= reduceValue * 2) {
     return text
   }
-  return `${text.slice(0, reduceValue)}...${text.slice(
-    text.length - reduceValue,
-    text.length,
-  )}`
+  return `${text.slice(0, reduceValue)}...${text.slice(-reduceValue)}`
 }
 
 export function extractRootDomain(url: string) {
