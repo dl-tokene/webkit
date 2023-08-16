@@ -6,7 +6,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.0.0-rc.19] - 2023-08-15
 ### Changed
-- `@tokene/toolkit` - `IpfsUtil` class now is using `kubo-rpc-client`
+- `@tokene/toolkit` - replaced `ipfs-http-client` by `kubo-rpc-client`
 
 ## [0.0.0-rc.18] - 2023-08-10
 ### Fixed

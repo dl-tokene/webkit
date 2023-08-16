@@ -57,11 +57,11 @@ export class IpfsUtil<T> {
       : ''
   }
 
-  get cid() {
+  get path() {
     return `${PREFIX}${this._cid}`
   }
 
-  get cids() {
+  get paths() {
     return this._cids.map(el => `${PREFIX}${el}`)
   }
 
