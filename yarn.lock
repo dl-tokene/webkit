@@ -2924,17 +2924,17 @@ __metadata:
   linkType: hard
 
 "@multiformats/multiaddr@npm:^12.0.0, @multiformats/multiaddr@npm:^12.1.3, @multiformats/multiaddr@npm:^12.1.5":
-  version: 12.1.6
-  resolution: "@multiformats/multiaddr@npm:12.1.6"
+  version: 12.1.7
+  resolution: "@multiformats/multiaddr@npm:12.1.7"
   dependencies:
     "@chainsafe/is-ip": ^2.0.1
     "@chainsafe/netmask": ^2.0.0
     "@libp2p/interface": ^0.1.1
     dns-over-http-resolver: ^2.1.0
     multiformats: ^12.0.1
+    uint8-varint: ^2.0.1
     uint8arrays: ^4.0.2
-    varint: ^6.0.0
-  checksum: 9b7eff4dbbce6ffc35822ca954f401eb6099b795a7608357c5ccf5455c594542d66b0edac9173b93027c6dd1a86e065f630d077601eed43e34071fd5d0286a7a
+  checksum: 96b83208b7bd3e9387f2fdac20fc554d962395c02661e9c1da819646d2f3129e1a76e5abc6a0c8d386c7126a7678e58d05b08dc812260b7cad2488533cbe44b0
   languageName: node
   linkType: hard
 
@@ -3520,90 +3520,90 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@swc/core-darwin-arm64@npm:1.3.76":
-  version: 1.3.76
-  resolution: "@swc/core-darwin-arm64@npm:1.3.76"
+"@swc/core-darwin-arm64@npm:1.3.77":
+  version: 1.3.77
+  resolution: "@swc/core-darwin-arm64@npm:1.3.77"
   conditions: os=darwin & cpu=arm64
   languageName: node
   linkType: hard
 
-"@swc/core-darwin-x64@npm:1.3.76":
-  version: 1.3.76
-  resolution: "@swc/core-darwin-x64@npm:1.3.76"
+"@swc/core-darwin-x64@npm:1.3.77":
+  version: 1.3.77
+  resolution: "@swc/core-darwin-x64@npm:1.3.77"
   conditions: os=darwin & cpu=x64
   languageName: node
   linkType: hard
 
-"@swc/core-linux-arm-gnueabihf@npm:1.3.76":
-  version: 1.3.76
-  resolution: "@swc/core-linux-arm-gnueabihf@npm:1.3.76"
+"@swc/core-linux-arm-gnueabihf@npm:1.3.77":
+  version: 1.3.77
+  resolution: "@swc/core-linux-arm-gnueabihf@npm:1.3.77"
   conditions: os=linux & cpu=arm
   languageName: node
   linkType: hard
 
-"@swc/core-linux-arm64-gnu@npm:1.3.76":
-  version: 1.3.76
-  resolution: "@swc/core-linux-arm64-gnu@npm:1.3.76"
+"@swc/core-linux-arm64-gnu@npm:1.3.77":
+  version: 1.3.77
+  resolution: "@swc/core-linux-arm64-gnu@npm:1.3.77"
   conditions: os=linux & cpu=arm64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@swc/core-linux-arm64-musl@npm:1.3.76":
-  version: 1.3.76
-  resolution: "@swc/core-linux-arm64-musl@npm:1.3.76"
+"@swc/core-linux-arm64-musl@npm:1.3.77":
+  version: 1.3.77
+  resolution: "@swc/core-linux-arm64-musl@npm:1.3.77"
   conditions: os=linux & cpu=arm64 & libc=musl
   languageName: node
   linkType: hard
 
-"@swc/core-linux-x64-gnu@npm:1.3.76":
-  version: 1.3.76
-  resolution: "@swc/core-linux-x64-gnu@npm:1.3.76"
+"@swc/core-linux-x64-gnu@npm:1.3.77":
+  version: 1.3.77
+  resolution: "@swc/core-linux-x64-gnu@npm:1.3.77"
   conditions: os=linux & cpu=x64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@swc/core-linux-x64-musl@npm:1.3.76":
-  version: 1.3.76
-  resolution: "@swc/core-linux-x64-musl@npm:1.3.76"
+"@swc/core-linux-x64-musl@npm:1.3.77":
+  version: 1.3.77
+  resolution: "@swc/core-linux-x64-musl@npm:1.3.77"
   conditions: os=linux & cpu=x64 & libc=musl
   languageName: node
   linkType: hard
 
-"@swc/core-win32-arm64-msvc@npm:1.3.76":
-  version: 1.3.76
-  resolution: "@swc/core-win32-arm64-msvc@npm:1.3.76"
+"@swc/core-win32-arm64-msvc@npm:1.3.77":
+  version: 1.3.77
+  resolution: "@swc/core-win32-arm64-msvc@npm:1.3.77"
   conditions: os=win32 & cpu=arm64
   languageName: node
   linkType: hard
 
-"@swc/core-win32-ia32-msvc@npm:1.3.76":
-  version: 1.3.76
-  resolution: "@swc/core-win32-ia32-msvc@npm:1.3.76"
+"@swc/core-win32-ia32-msvc@npm:1.3.77":
+  version: 1.3.77
+  resolution: "@swc/core-win32-ia32-msvc@npm:1.3.77"
   conditions: os=win32 & cpu=ia32
   languageName: node
   linkType: hard
 
-"@swc/core-win32-x64-msvc@npm:1.3.76":
-  version: 1.3.76
-  resolution: "@swc/core-win32-x64-msvc@npm:1.3.76"
+"@swc/core-win32-x64-msvc@npm:1.3.77":
+  version: 1.3.77
+  resolution: "@swc/core-win32-x64-msvc@npm:1.3.77"
   conditions: os=win32 & cpu=x64
   languageName: node
   linkType: hard
 
 "@swc/core@npm:^1.3.53":
-  version: 1.3.76
-  resolution: "@swc/core@npm:1.3.76"
+  version: 1.3.77
+  resolution: "@swc/core@npm:1.3.77"
   dependencies:
-    "@swc/core-darwin-arm64": 1.3.76
-    "@swc/core-darwin-x64": 1.3.76
-    "@swc/core-linux-arm-gnueabihf": 1.3.76
-    "@swc/core-linux-arm64-gnu": 1.3.76
-    "@swc/core-linux-arm64-musl": 1.3.76
-    "@swc/core-linux-x64-gnu": 1.3.76
-    "@swc/core-linux-x64-musl": 1.3.76
-    "@swc/core-win32-arm64-msvc": 1.3.76
-    "@swc/core-win32-ia32-msvc": 1.3.76
-    "@swc/core-win32-x64-msvc": 1.3.76
+    "@swc/core-darwin-arm64": 1.3.77
+    "@swc/core-darwin-x64": 1.3.77
+    "@swc/core-linux-arm-gnueabihf": 1.3.77
+    "@swc/core-linux-arm64-gnu": 1.3.77
+    "@swc/core-linux-arm64-musl": 1.3.77
+    "@swc/core-linux-x64-gnu": 1.3.77
+    "@swc/core-linux-x64-musl": 1.3.77
+    "@swc/core-win32-arm64-msvc": 1.3.77
+    "@swc/core-win32-ia32-msvc": 1.3.77
+    "@swc/core-win32-x64-msvc": 1.3.77
   peerDependencies:
     "@swc/helpers": ^0.5.0
   dependenciesMeta:
@@ -3630,7 +3630,7 @@ __metadata:
   peerDependenciesMeta:
     "@swc/helpers":
       optional: true
-  checksum: f0401ccdd9073fa597c90e2503e6d71fd593593120cd92e2796bafbb43b443e072dbae3349e00fa9ded0d2dd669e463bc8587c41da4979ba31434249a30c36c7
+  checksum: 95841974c6734c154426b7d3ee33e3b8a58ea870382918b18dd546de38160ed80b1079f35d3e8a4000d11d8ec3ed1e8bf5af6c83b5cb766dd925a42827e250db
   languageName: node
   linkType: hard
 
@@ -3692,8 +3692,8 @@ __metadata:
     graphql: ^16.6.0
     graphql-tag: ^2.12.6
     i18next: ^22.4.15
-    ipfs-http-client: ^60.0.0
     jest: ^29.5.0
+    kubo-rpc-client: ^3.0.1
     lodash: ^4.17.21
     loglevel: ^1.8.1
     rollup: ^3.18.0
@@ -5508,11 +5508,11 @@ __metadata:
   linkType: hard
 
 "blob-to-it@npm:^2.0.0":
-  version: 2.0.3
-  resolution: "blob-to-it@npm:2.0.3"
+  version: 2.0.4
+  resolution: "blob-to-it@npm:2.0.4"
   dependencies:
     browser-readablestream-to-it: ^2.0.0
-  checksum: d9680ad8da59f21df49de7270f78da6b8595079186aae7b9c1412aebe222c4fa02b7c28bb05391cfb9ae0bc9a3b0b421c7dce06d0320ff53a1c5f3fa904543cc
+  checksum: b48acc3b83028b2a417a3f3add81ade8d44aec90409a7f196d2a6f7f0299e1109028627e04e786da44fbc3ceb62237f4284efe6428d534e5ad7e207048c8f791
   languageName: node
   linkType: hard
 
@@ -5616,9 +5616,9 @@ __metadata:
   linkType: hard
 
 "browser-readablestream-to-it@npm:^2.0.0":
-  version: 2.0.3
-  resolution: "browser-readablestream-to-it@npm:2.0.3"
-  checksum: 625af8f6409d9603ab2314b73d9529be6f746ed74b0b84ae354b1fc9180d03ab8295958b50ee781b953a6a9c60874dbcbdb1bc2eaea46727ff1394c114403b8a
+  version: 2.0.4
+  resolution: "browser-readablestream-to-it@npm:2.0.4"
+  checksum: 8552a0a2b32edf60cc8c599b19725f3118792385c3054fe20f87f3117faee0e891efc64c65a5c9e6f4daf9e324e3b991f62f876b2013ca5666d29ef8603eeb68
   languageName: node
   linkType: hard
 
@@ -5817,9 +5817,9 @@ __metadata:
   linkType: hard
 
 "caniuse-lite@npm:^1.0.30001517":
-  version: 1.0.30001520
-  resolution: "caniuse-lite@npm:1.0.30001520"
-  checksum: 59991ad8f36cf282f81abbcc6074c3097c21914cdd54bd2b3f73ac9462f57fc74e90371cd22bcdff4d085d09da42a07dcea384cb81e4ac260496e1bd79e1fe7c
+  version: 1.0.30001521
+  resolution: "caniuse-lite@npm:1.0.30001521"
+  checksum: be2a2b2cd3be03401887aaa31b89f3e7c6230289e6ef704e224268389cc136480fca502ac9e5001a65ff1e50459d3d95f8c4b2d39f878ab9843af3d6f372c8bb
   languageName: node
   linkType: hard
 
@@ -6949,9 +6949,9 @@ __metadata:
   linkType: hard
 
 "electron-to-chromium@npm:^1.4.477":
-  version: 1.4.491
-  resolution: "electron-to-chromium@npm:1.4.491"
-  checksum: 8d96c720c808a694b907b7a9d63da89f739374f90adb9db3d2b065a8e05de5548caf1b6ab0eade3150947cdefc962d342edc6d69c68ef489ecdd45e92a17677c
+  version: 1.4.492
+  resolution: "electron-to-chromium@npm:1.4.492"
+  checksum: 39ae22dd651a3daa210e8e8e42c9725c7019d95667413423da48253dd0a14dfd070ddb53a97eb98a60003a7790978b9093ab5c530671562f2d3e65888e1451f6
   languageName: node
   linkType: hard
 
@@ -9097,7 +9097,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ipfs-core-utils@npm:^0.18.0, ipfs-core-utils@npm:^0.18.1":
+"ipfs-core-utils@npm:^0.18.0":
   version: 0.18.1
   resolution: "ipfs-core-utils@npm:0.18.1"
   dependencies:
@@ -9122,33 +9122,6 @@ __metadata:
     timeout-abort-controller: ^3.0.0
     uint8arrays: ^4.0.2
   checksum: 70414e3c4416be46735216feb87f539b7a35727d6390555e81cbe2ea42eec23a7e9d3583ef16e31b980403e8c212c57baa0f882c862380c794005e7ceb7c22bd
-  languageName: node
-  linkType: hard
-
-"ipfs-http-client@npm:^60.0.0":
-  version: 60.0.1
-  resolution: "ipfs-http-client@npm:60.0.1"
-  dependencies:
-    "@ipld/dag-cbor": ^9.0.0
-    "@ipld/dag-json": ^10.0.0
-    "@ipld/dag-pb": ^4.0.0
-    "@libp2p/logger": ^2.0.5
-    "@libp2p/peer-id": ^2.0.0
-    "@multiformats/multiaddr": ^11.1.5
-    any-signal: ^3.0.0
-    dag-jose: ^4.0.0
-    err-code: ^3.0.1
-    ipfs-core-types: ^0.14.1
-    ipfs-core-utils: ^0.18.1
-    ipfs-utils: ^9.0.13
-    it-first: ^2.0.0
-    it-last: ^2.0.0
-    merge-options: ^3.0.4
-    multiformats: ^11.0.0
-    parse-duration: ^1.0.0
-    stream-to-it: ^0.2.2
-    uint8arrays: ^4.0.2
-  checksum: 14c2bf2b7c401a3d5b3d3b935942475549e0a792953d485afc69a746c4be1e367ea4a0bc3f65f7de39d8d280c2777866b4e6b98c8d91e68dbdb2c235b98295b7
   languageName: node
   linkType: hard
 
@@ -9873,15 +9846,15 @@ __metadata:
   linkType: hard
 
 "jackspeak@npm:^2.0.3":
-  version: 2.2.3
-  resolution: "jackspeak@npm:2.2.3"
+  version: 2.3.0
+  resolution: "jackspeak@npm:2.3.0"
   dependencies:
     "@isaacs/cliui": ^8.0.2
     "@pkgjs/parseargs": ^0.11.0
   dependenciesMeta:
     "@pkgjs/parseargs":
       optional: true
-  checksum: 8add557045eb51f619d247ac9786dbfa7ee4d52a0eb3fb488c2637aecfd15d12c284a4ff7dead2c1aba34d6228d9452e4509fb771daae87793a48786b095ee07
+  checksum: 71bf716f4b5793226d4aeb9761ebf2605ee093b59f91a61451d57d998dd64bbf2b54323fb749b8b2ae8b6d8a463de4f6e3fedab50108671f247bbc80195a6306
   languageName: node
   linkType: hard
 
@@ -12129,13 +12102,13 @@ __metadata:
   linkType: hard
 
 "postcss@npm:^8.1.10, postcss@npm:^8.4.27":
-  version: 8.4.27
-  resolution: "postcss@npm:8.4.27"
+  version: 8.4.28
+  resolution: "postcss@npm:8.4.28"
   dependencies:
     nanoid: ^3.3.6
     picocolors: ^1.0.0
     source-map-js: ^1.0.2
-  checksum: 1cdd0c298849df6cd65f7e646a3ba36870a37b65f55fd59d1a165539c263e9b4872a402bf4ed1ca1bc31f58b68b2835545e33ea1a23b161a1f8aa6d5ded81e78
+  checksum: f605c24a36f7e400bad379735fbfc893ccb8d293ad6d419bb824db77cdcb69f43d614ef35f9f7091f32ca588d130ec60dbcf53b366e6bf88a8a64bbeb3c05f6d
   languageName: node
   linkType: hard
 
@@ -14254,7 +14227,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"uint8arraylist@npm:^2.1.2, uint8arraylist@npm:^2.4.3":
+"uint8-varint@npm:^2.0.1":
+  version: 2.0.1
+  resolution: "uint8-varint@npm:2.0.1"
+  dependencies:
+    uint8arraylist: ^2.0.0
+    uint8arrays: ^4.0.2
+  checksum: b03431e7fb87224726524b6dcc4ac0ff2c61c122134be0b16394c04bac4a3b59328800f302e3d3df7715bdb676b2e1fd0a17332cf6dbdb148cbb9f81332cedef
+  languageName: node
+  linkType: hard
+
+"uint8arraylist@npm:^2.0.0, uint8arraylist@npm:^2.1.2, uint8arraylist@npm:^2.4.3":
   version: 2.4.3
   resolution: "uint8arraylist@npm:2.4.3"
   dependencies:

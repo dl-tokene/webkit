@@ -61,7 +61,7 @@
     "graphql": "^16.6.0",
     "graphql-tag": "^2.12.6",
     "i18next": "^22.4.15",
-    "ipfs-http-client": "^60.0.0",
+    "kubo-rpc-client": "^3.0.1",
     "lodash": "^4.17.21",
     "loglevel": "^1.8.1",
     "universal-cookie": "^4.0.4",
