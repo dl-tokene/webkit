@@ -7,6 +7,11 @@ const PREFIX = 'ipfs://'
 
 export class IpfsUtil<T> {
   private _rawData?: T
+  /*
+   * We get the `path` variable from the `kubo-rpc-client` library, but this is CID.
+   * CID explanation: 'https://docs.ipfs.tech/concepts/content-addressing/'
+   * PATH explanation: 'https://docs.ipfs.tech/how-to/address-ipfs-on-web/'
+   */
   private _cid?: string
   private _cids = [] as string[]
   private _ipfsApi: IPFSHTTPClient
