@@ -3356,8 +3356,8 @@ __metadata:
   linkType: hard
 
 "@rollup/plugin-node-resolve@npm:^15.0.2":
-  version: 15.1.0
-  resolution: "@rollup/plugin-node-resolve@npm:15.1.0"
+  version: 15.2.0
+  resolution: "@rollup/plugin-node-resolve@npm:15.2.0"
   dependencies:
     "@rollup/pluginutils": ^5.0.1
     "@types/resolve": 1.20.2
@@ -3370,7 +3370,7 @@ __metadata:
   peerDependenciesMeta:
     rollup:
       optional: true
-  checksum: 83617cdbb90cb780251e8b16dc1671e35bde90b8d4d30e008aefe706b5b643057f6299bdd3226b2a30bf5e4f807a880169de3faa47b9f2ba38d39f294f85f951
+  checksum: 92abfd7f1f5df08d71e4b8dd433d31cf1d62f68891ae3dd5e03a8a7f8d42d9c4433c14a25ead04204fea8235c663a3bbb66ba5528103a6dab66bd8c124f85a0d
   languageName: node
   linkType: hard
 
@@ -3520,90 +3520,90 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@swc/core-darwin-arm64@npm:1.3.77":
-  version: 1.3.77
-  resolution: "@swc/core-darwin-arm64@npm:1.3.77"
+"@swc/core-darwin-arm64@npm:1.3.53":
+  version: 1.3.53
+  resolution: "@swc/core-darwin-arm64@npm:1.3.53"
   conditions: os=darwin & cpu=arm64
   languageName: node
   linkType: hard
 
-"@swc/core-darwin-x64@npm:1.3.77":
-  version: 1.3.77
-  resolution: "@swc/core-darwin-x64@npm:1.3.77"
+"@swc/core-darwin-x64@npm:1.3.53":
+  version: 1.3.53
+  resolution: "@swc/core-darwin-x64@npm:1.3.53"
   conditions: os=darwin & cpu=x64
   languageName: node
   linkType: hard
 
-"@swc/core-linux-arm-gnueabihf@npm:1.3.77":
-  version: 1.3.77
-  resolution: "@swc/core-linux-arm-gnueabihf@npm:1.3.77"
+"@swc/core-linux-arm-gnueabihf@npm:1.3.53":
+  version: 1.3.53
+  resolution: "@swc/core-linux-arm-gnueabihf@npm:1.3.53"
   conditions: os=linux & cpu=arm
   languageName: node
   linkType: hard
 
-"@swc/core-linux-arm64-gnu@npm:1.3.77":
-  version: 1.3.77
-  resolution: "@swc/core-linux-arm64-gnu@npm:1.3.77"
+"@swc/core-linux-arm64-gnu@npm:1.3.53":
+  version: 1.3.53
+  resolution: "@swc/core-linux-arm64-gnu@npm:1.3.53"
   conditions: os=linux & cpu=arm64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@swc/core-linux-arm64-musl@npm:1.3.77":
-  version: 1.3.77
-  resolution: "@swc/core-linux-arm64-musl@npm:1.3.77"
+"@swc/core-linux-arm64-musl@npm:1.3.53":
+  version: 1.3.53
+  resolution: "@swc/core-linux-arm64-musl@npm:1.3.53"
   conditions: os=linux & cpu=arm64 & libc=musl
   languageName: node
   linkType: hard
 
-"@swc/core-linux-x64-gnu@npm:1.3.77":
-  version: 1.3.77
-  resolution: "@swc/core-linux-x64-gnu@npm:1.3.77"
+"@swc/core-linux-x64-gnu@npm:1.3.53":
+  version: 1.3.53
+  resolution: "@swc/core-linux-x64-gnu@npm:1.3.53"
   conditions: os=linux & cpu=x64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@swc/core-linux-x64-musl@npm:1.3.77":
-  version: 1.3.77
-  resolution: "@swc/core-linux-x64-musl@npm:1.3.77"
+"@swc/core-linux-x64-musl@npm:1.3.53":
+  version: 1.3.53
+  resolution: "@swc/core-linux-x64-musl@npm:1.3.53"
   conditions: os=linux & cpu=x64 & libc=musl
   languageName: node
   linkType: hard
 
-"@swc/core-win32-arm64-msvc@npm:1.3.77":
-  version: 1.3.77
-  resolution: "@swc/core-win32-arm64-msvc@npm:1.3.77"
+"@swc/core-win32-arm64-msvc@npm:1.3.53":
+  version: 1.3.53
+  resolution: "@swc/core-win32-arm64-msvc@npm:1.3.53"
   conditions: os=win32 & cpu=arm64
   languageName: node
   linkType: hard
 
-"@swc/core-win32-ia32-msvc@npm:1.3.77":
-  version: 1.3.77
-  resolution: "@swc/core-win32-ia32-msvc@npm:1.3.77"
+"@swc/core-win32-ia32-msvc@npm:1.3.53":
+  version: 1.3.53
+  resolution: "@swc/core-win32-ia32-msvc@npm:1.3.53"
   conditions: os=win32 & cpu=ia32
   languageName: node
   linkType: hard
 
-"@swc/core-win32-x64-msvc@npm:1.3.77":
-  version: 1.3.77
-  resolution: "@swc/core-win32-x64-msvc@npm:1.3.77"
+"@swc/core-win32-x64-msvc@npm:1.3.53":
+  version: 1.3.53
+  resolution: "@swc/core-win32-x64-msvc@npm:1.3.53"
   conditions: os=win32 & cpu=x64
   languageName: node
   linkType: hard
 
-"@swc/core@npm:^1.3.53":
-  version: 1.3.77
-  resolution: "@swc/core@npm:1.3.77"
+"@swc/core@npm:1.3.53":
+  version: 1.3.53
+  resolution: "@swc/core@npm:1.3.53"
   dependencies:
-    "@swc/core-darwin-arm64": 1.3.77
-    "@swc/core-darwin-x64": 1.3.77
-    "@swc/core-linux-arm-gnueabihf": 1.3.77
-    "@swc/core-linux-arm64-gnu": 1.3.77
-    "@swc/core-linux-arm64-musl": 1.3.77
-    "@swc/core-linux-x64-gnu": 1.3.77
-    "@swc/core-linux-x64-musl": 1.3.77
-    "@swc/core-win32-arm64-msvc": 1.3.77
-    "@swc/core-win32-ia32-msvc": 1.3.77
-    "@swc/core-win32-x64-msvc": 1.3.77
+    "@swc/core-darwin-arm64": 1.3.53
+    "@swc/core-darwin-x64": 1.3.53
+    "@swc/core-linux-arm-gnueabihf": 1.3.53
+    "@swc/core-linux-arm64-gnu": 1.3.53
+    "@swc/core-linux-arm64-musl": 1.3.53
+    "@swc/core-linux-x64-gnu": 1.3.53
+    "@swc/core-linux-x64-musl": 1.3.53
+    "@swc/core-win32-arm64-msvc": 1.3.53
+    "@swc/core-win32-ia32-msvc": 1.3.53
+    "@swc/core-win32-x64-msvc": 1.3.53
   peerDependencies:
     "@swc/helpers": ^0.5.0
   dependenciesMeta:
@@ -3630,7 +3630,7 @@ __metadata:
   peerDependenciesMeta:
     "@swc/helpers":
       optional: true
-  checksum: 95841974c6734c154426b7d3ee33e3b8a58ea870382918b18dd546de38160ed80b1079f35d3e8a4000d11d8ec3ed1e8bf5af6c83b5cb766dd925a42827e250db
+  checksum: b446aaee4db7e1febf18a4f8490ac9fc8af39cea9e9eed436ec0ec9910e15bd8c4efa88b0a8a1abd95c1bc01ac5cffede1cb0b027371d6879071c2b038bc0e81
   languageName: node
   linkType: hard
 
@@ -3676,7 +3676,7 @@ __metadata:
     "@rollup/plugin-terser": ^0.4.0
     "@rollup/plugin-typescript": ^11.0.0
     "@swc/cli": ^0.1.62
-    "@swc/core": ^1.3.53
+    "@swc/core": 1.3.53
     "@swc/jest": ^0.2.26
     "@tokene/toolkit": "workspace:^"
     "@tokene/vue-web3-provider": "workspace:^"
@@ -3730,7 +3730,7 @@ __metadata:
     "@rollup/plugin-typescript": ^11.0.0
     "@rushstack/eslint-patch": ^1.2.0
     "@swc/cli": ^0.1.62
-    "@swc/core": ^1.3.53
+    "@swc/core": 1.3.53
     "@swc/jest": ^0.2.26
     "@tokene/styles": "workspace:^"
     "@tokene/toolkit": "workspace:^"
@@ -3778,7 +3778,7 @@ __metadata:
     "@rollup/plugin-terser": ^0.4.0
     "@rollup/plugin-typescript": ^11.0.0
     "@swc/cli": ^0.1.62
-    "@swc/core": ^1.3.53
+    "@swc/core": 1.3.53
     "@swc/jest": ^0.2.26
     "@types/jest": ^29.5.1
     "@types/lodash": ^4.14.195
@@ -3817,7 +3817,7 @@ __metadata:
     "@rollup/plugin-typescript": ^11.0.0
     "@rushstack/eslint-patch": ^1.2.0
     "@swc/cli": ^0.1.62
-    "@swc/core": ^1.3.53
+    "@swc/core": 1.3.53
     "@swc/jest": ^0.2.26
     "@tokene/styles": "workspace:^"
     "@tokene/toolkit": "workspace:^"
@@ -3873,7 +3873,7 @@ __metadata:
     "@rollup/plugin-terser": ^0.4.0
     "@rollup/plugin-typescript": ^11.0.0
     "@swc/cli": ^0.1.62
-    "@swc/core": ^1.3.53
+    "@swc/core": 1.3.53
     "@swc/jest": ^0.2.26
     "@types/jest": ^29.5.1
     "@types/node": ^18.14.2
@@ -4352,12 +4352,12 @@ __metadata:
   linkType: hard
 
 "@vitejs/plugin-vue@npm:^4.2.1":
-  version: 4.2.3
-  resolution: "@vitejs/plugin-vue@npm:4.2.3"
+  version: 4.3.1
+  resolution: "@vitejs/plugin-vue@npm:4.3.1"
   peerDependencies:
     vite: ^4.0.0
     vue: ^3.2.25
-  checksum: 1c70c1cd18f6ba3ed6cdf1391a0d441dd8e9a89c728f7eb20d74c84e75fef1fdc651836cce9bf59a8a48e5b2caebf6ca60a908fdd8527a476a750afd2b458592
+  checksum: ab19e0be479099fd16c4ddc23b30a910c7890b8dcb7d8b3cda44515cd005bb57e20ab6fd261f3f1fadd58a6baa9ff0d120897cdc8dad378e3fa40cc791a4ec28
   languageName: node
   linkType: hard
 
@@ -6949,9 +6949,9 @@ __metadata:
   linkType: hard
 
 "electron-to-chromium@npm:^1.4.477":
-  version: 1.4.492
-  resolution: "electron-to-chromium@npm:1.4.492"
-  checksum: 39ae22dd651a3daa210e8e8e42c9725c7019d95667413423da48253dd0a14dfd070ddb53a97eb98a60003a7790978b9093ab5c530671562f2d3e65888e1451f6
+  version: 1.4.494
+  resolution: "electron-to-chromium@npm:1.4.494"
+  checksum: 95f72d22e0b7c27b79999d70a91201a4b23ad63f00c56adf89a66712a53887f0a4f153ed067d7027556354056642f44820615bf5a3bb1625795847fe58fd4e8e
   languageName: node
   linkType: hard
 
@@ -12441,11 +12441,11 @@ __metadata:
   linkType: hard
 
 "pvtsutils@npm:^1.3.2":
-  version: 1.3.3
-  resolution: "pvtsutils@npm:1.3.3"
+  version: 1.3.4
+  resolution: "pvtsutils@npm:1.3.4"
   dependencies:
     tslib: ^2.6.1
-  checksum: a8b84f7b022efe5025f1759c443eaa62ebe179a584c71aaf825923606709e0d08aeb2edd8dd2c640f524dc33aa673cd279f0255ff5091570a4cc8e006163d103
+  checksum: bfca98d891913edbbdc8aa3cf73213f220e223d5635c330d62a92556c4a699cc553a59a3e0a33f722ede8c34b063f9a8d55d8a073ecafb3f1ff9c91e41880eb0
   languageName: node
   linkType: hard
 
@@ -14848,7 +14848,7 @@ __metadata:
   resolution: "webkit-tokene-monorepo-root@workspace:."
   dependencies:
     "@swc/cli": ^0.1.62
-    "@swc/core": ^1.3.53
+    "@swc/core": 1.3.53
     "@swc/jest": ^0.2.26
     "@types/eslint": ^8
     "@types/jest": ^29.5.1
