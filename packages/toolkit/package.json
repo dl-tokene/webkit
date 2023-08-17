@@ -1,6 +1,6 @@
 {
   "name": "@tokene/toolkit",
-  "version": "0.0.0-rc.18",
+  "version": "0.0.0-rc.19",
   "description": "Collection of common utility functions and classes in tokenE frontend modules",
   "repository": {
     "type": "git",
@@ -54,7 +54,7 @@
     "@vueuse/integrations": "^10.1.2",
     "axios": "^1.3.6",
     "i18next": "^22.4.15",
-    "ipfs-http-client": "^60.0.0",
+    "kubo-rpc-client": "^3.0.1",
     "lodash": "^4.17.21",
     "loglevel": "^1.8.1",
     "universal-cookie": "^4.0.4",
@@ -71,9 +71,6 @@
     "@rollup/plugin-node-resolve": "^15.0.2",
     "@rollup/plugin-terser": "^0.4.0",
     "@rollup/plugin-typescript": "^11.0.0",
-    "@swc/cli": "^0.1.62",
-    "@swc/core": "^1.3.53",
-    "@swc/jest": "^0.2.26",
     "@types/jest": "^29.5.1",
     "@types/lodash": "^4.14.195",
     "@types/node": "^18.14.2",
