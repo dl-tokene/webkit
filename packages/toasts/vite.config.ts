@@ -1,19 +1,23 @@
 import typescript from '@rollup/plugin-typescript'
 import vue from '@vitejs/plugin-vue'
 import * as path from 'path'
-import { defineConfig } from 'vite'
 // import svgLoader from 'vite-svg-loader'
+import { PluginPure } from 'rollup-plugin-pure'
+import { defineConfig } from 'vite'
 
 export default defineConfig({
   build: {
-    cssCodeSplit: true,
+    cssCodeSplit: false,
+    cssMinify: 'esbuild',
     sourcemap: true,
     lib: {
       entry: path.resolve(__dirname, 'src/index.ts'),
       name: 'index',
-      formats: ['es', 'cjs', 'iife'],
-      fileName: format =>
-        format === 'iife' ? 'index.js' : `${format}/index.js`,
+      formats: ['es'],
+      fileName: (format, entryName) => {
+        console.log(format, entryName)
+        return format === 'iife' ? 'index.js' : `${format}/index.js`
+      },
     },
     rollupOptions: {
       input: {
@@ -21,13 +25,14 @@ export default defineConfig({
       },
       external: ['vue', '@vueuse/core'],
       output: {
-        assetFileNames: assetInfo => {
-          return assetInfo.name!
-        },
+        assetFileNames: assetInfo => assetInfo.name!,
         exports: 'named',
         globals: {
           vue: 'vue',
         },
+        // inlineDynamicImports: false,
+        // esModule: true,
+        preserveModules: true,
       },
     },
   },
@@ -66,5 +71,11 @@ export default defineConfig({
     }),
     vue(),
     // svgLoader(),
+    PluginPure({
+      functions: ['defineComponent'],
+      include: [/(?<!im)pure\.js$/],
+      // exclude: [],
+      // sourcemap: true,
+    }),
   ],
 })

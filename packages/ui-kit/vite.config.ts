@@ -1,7 +1,9 @@
 import typescript from '@rollup/plugin-typescript'
 import vue from '@vitejs/plugin-vue'
 import * as path from 'path'
+import { PluginPure } from 'rollup-plugin-pure'
 import { defineConfig, loadEnv } from 'vite'
+import ViteComponents from 'vite-plugin-components'
 // import { viteStaticCopy } from 'vite-plugin-static-copy'
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 import svgLoader from 'vite-svg-loader'
@@ -13,14 +15,14 @@ export default defineConfig(({ mode }) => {
 
   return {
     build: {
-      cssCodeSplit: true,
+      cssCodeSplit: false,
+      cssMinify: 'esbuild',
       sourcemap: true,
       lib: {
         entry: path.resolve(__dirname, 'src/index.ts'),
         name: 'index',
-        formats: ['es', 'cjs', 'iife'],
-        fileName: format =>
-          format === 'iife' ? 'index.js' : `${format}/index.js`,
+        formats: ['es'],
+        // fileName: (format, entryName) => `${format}/${entryName}.js`,
       },
       rollupOptions: {
         input: {
@@ -34,13 +36,19 @@ export default defineConfig(({ mode }) => {
           '@vueuse/core',
         ],
         output: {
-          assetFileNames: assetInfo => {
-            return assetInfo.name!
-          },
+          // assetFileNames: assetInfo => {
+          //   return assetInfo.name!
+          // },
           exports: 'named',
           globals: {
             vue: 'vue',
           },
+          inlineDynamicImports: false,
+          preserveModules: true,
+          // preserveSymlinks: false,
+          // shimMissingExports: false,
+          // strictDeprecations: true,
+          // treeshake: 'safest',
         },
       },
     },
@@ -99,6 +107,19 @@ export default defineConfig(({ mode }) => {
       //   ],
       // }),
       svgLoader(),
+      // PluginPure({
+      //   functions: ['defineComponent'],
+      //   include: [/(?<!im)pure\.js$/],
+      //   // exclude: [],
+      //   // sourcemap: true,
+      // }),
+      ViteComponents({
+        // Configure Vite Components plugin
+        // Use array of directories where your components are located
+        dirs: ['src'],
+        deep: true, // Allow subdirectories to be scanned
+        extensions: ['vue'], // Specify file extensions to search for
+      }),
     ],
   }
 })

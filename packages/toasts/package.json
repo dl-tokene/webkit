@@ -33,7 +33,7 @@
       "default": "./dist/index.js"
     },
     "./dist/index.css": {
-      "default": "./dist/index.css"
+      "default": "./dist/style.css"
     },
     "./*": "./*"
   },
@@ -84,6 +84,7 @@
     "eslint-plugin-vue": "^9.11.0",
     "eslint-plugin-vue-i18n": "^0.3.0",
     "jest": "^29.5.0",
+    "rollup-plugin-pure": "^0.1.1",
     "tsc-alias": "^1.8.2",
     "vite": "^4.3.3",
     "vite-svg-loader": "^4.0.0",

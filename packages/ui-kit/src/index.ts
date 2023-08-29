@@ -1,5 +1,5 @@
 import '@tokene/styles/src/index.scss'
 
-export * from './common'
-export * from './enums'
-export * from './fields'
+export * as Common from './common'
+export * as Enums from './enums'
+export * as Fields from './fields'

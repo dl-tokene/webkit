@@ -56,5 +56,8 @@
     "typescript": "^5.0.4",
     "yorkie": "^2.0.0"
   },
-  "packageManager": "yarn@3.6.0"
+  "packageManager": "yarn@3.6.0",
+  "resolutions": {
+    "defaino": "portal:/Users/art/Workspace/lbp-tokene"
+  }
 }
