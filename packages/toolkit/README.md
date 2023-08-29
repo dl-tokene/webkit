@@ -48,9 +48,9 @@ If you're using `helpers`, `errors`, `enums` only, you can skip this step.
 import { IpfsUtil } from '@tokene/toolkit'
 
 const ipfsEntity = new IpfsUtil<{ someData: string }>({
-  rawData: JSON.stringify({
+  rawData: {
     someData: 'lorem ipsum dolor sit amet concestetur!',
-  }),
+  },
 })
 
 await ipfsEntity.uploadSelf()

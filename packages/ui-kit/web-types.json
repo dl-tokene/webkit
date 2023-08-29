@@ -1,7 +1,7 @@
 {
   "framework": "vue",
   "name": "@tokene/ui-kit",
-  "version": "0.0.0-rc.18",
+  "version": "0.0.0-rc.19",
   "contributions": {
     "html": {
       "description-markup": "markdown",

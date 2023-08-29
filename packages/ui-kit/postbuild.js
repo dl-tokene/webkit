@@ -8,11 +8,8 @@ const writeFile = (path, data) => {
 }
 
 function postBuild(dirpath) {
-  writeFile(`${dirpath}/dist/es/package.json`, {
+  writeFile(`${dirpath}/dist/package.json`, {
     type: 'module',
-  })
-  writeFile(`${dirpath}/dist/cjs/package.json`, {
-    type: 'commonjs',
   })
 
   replaceTscAliasPaths({

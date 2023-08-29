@@ -1,12 +1,31 @@
 import typescript from '@rollup/plugin-typescript'
 import vue from '@vitejs/plugin-vue'
+import * as fs from 'fs'
 import * as path from 'path'
-import { PluginPure } from 'rollup-plugin-pure'
 import { defineConfig, loadEnv } from 'vite'
-import ViteComponents from 'vite-plugin-components'
-// import { viteStaticCopy } from 'vite-plugin-static-copy'
+import { viteStaticCopy } from 'vite-plugin-static-copy'
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 import svgLoader from 'vite-svg-loader'
+
+const getAllNestedComponentsPaths = (
+  dir = path.resolve(__dirname, 'src'),
+): string[] => {
+  const componentsPaths = []
+  const files = fs.readdirSync(dir)
+
+  for (const file of files) {
+    const fullPath = path.join(dir, file)
+    const stat = fs.statSync(fullPath)
+
+    if (stat.isDirectory()) {
+      componentsPaths.push(...getAllNestedComponentsPaths(fullPath))
+    } else if (stat.isFile() && file.endsWith('.vue')) {
+      componentsPaths.push(fullPath)
+    }
+  }
+
+  return componentsPaths
+}
 
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '')
@@ -15,41 +34,48 @@ export default defineConfig(({ mode }) => {
 
   return {
     build: {
-      cssCodeSplit: false,
+      cssCodeSplit: true,
       cssMinify: 'esbuild',
       sourcemap: true,
-      lib: {
-        entry: path.resolve(__dirname, 'src/index.ts'),
-        name: 'index',
-        formats: ['es'],
-        // fileName: (format, entryName) => `${format}/${entryName}.js`,
-      },
       rollupOptions: {
-        input: {
-          index: path.resolve(__dirname, 'src/index.ts'),
-        },
-        external: [
-          'vue',
-          'vue-router',
-          '@vuelidate/core',
-          '@vuelidate/validators',
-          '@vueuse/core',
+        input: [
+          ...getAllNestedComponentsPaths(),
+          path.resolve(__dirname, 'src/enums/index.ts'),
         ],
         output: {
-          // assetFileNames: assetInfo => {
-          //   return assetInfo.name!
-          // },
+          chunkFileNames: '[name].js',
+          entryFileNames: '[name].js',
+          assetFileNames: '[name].[ext]',
+
           exports: 'named',
           globals: {
             vue: 'vue',
           },
           inlineDynamicImports: false,
-          preserveModules: true,
-          // preserveSymlinks: false,
-          // shimMissingExports: false,
-          // strictDeprecations: true,
-          // treeshake: 'safest',
+          preserveModules: false,
         },
+        external: [
+          'vue',
+          'vue-router',
+          '@tokene/toolkit',
+          '@tokene/styles',
+          '@tokene/vue-web3-provider',
+          '@distributedlab/tools',
+          '@distributedlab/w3p',
+          '@distributedlab/jac',
+          '@vuelidate/core',
+          '@vuelidate/validators',
+          'vueuse/core',
+        ],
+      },
+      lib: {
+        entry: [
+          ...getAllNestedComponentsPaths(),
+          path.resolve(__dirname, 'src/enums/index.ts'),
+        ],
+        name: 'index',
+        formats: ['es'],
+        fileName: (format, entryName) => `${format}/${entryName}.js`,
       },
     },
     css: {
@@ -66,14 +92,15 @@ export default defineConfig(({ mode }) => {
       extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json', '.vue'],
       dedupe: [
         'vue',
-        '@tokene/toasts',
-        '@tokene/ui-kit',
         '@tokene/toolkit',
         '@tokene/styles',
         '@tokene/vue-web3-provider',
         '@distributedlab/tools',
         '@distributedlab/w3p',
         '@distributedlab/jac',
+        '@vuelidate/core',
+        '@vuelidate/validators',
+        'vueuse/core',
       ],
       alias: {
         '@': path.resolve(__dirname, 'src'),
@@ -81,7 +108,12 @@ export default defineConfig(({ mode }) => {
     },
     plugins: [
       typescript({
-        include: [`${__dirname}/src/**/*.vue`],
+        include: [
+          path.resolve(__dirname, 'src/**/*.ts'),
+          path.resolve(__dirname, 'src/**/*.vue'),
+        ],
+        exclude: [path.resolve(__dirname, '/node_modules/**')],
+
         declaration: true,
         declarationDir: path.resolve(__dirname, 'dist/types'),
         rootDir: path.resolve(__dirname, 'src'),
@@ -98,28 +130,15 @@ export default defineConfig(({ mode }) => {
             }),
           ]
         : []),
-      // viteStaticCopy({
-      //   targets: [
-      //     {
-      //       src: 'src/assets/**/*',
-      //       dest: 'assets',
-      //     },
-      //   ],
-      // }),
-      svgLoader(),
-      // PluginPure({
-      //   functions: ['defineComponent'],
-      //   include: [/(?<!im)pure\.js$/],
-      //   // exclude: [],
-      //   // sourcemap: true,
-      // }),
-      ViteComponents({
-        // Configure Vite Components plugin
-        // Use array of directories where your components are located
-        dirs: ['src'],
-        deep: true, // Allow subdirectories to be scanned
-        extensions: ['vue'], // Specify file extensions to search for
+      viteStaticCopy({
+        targets: [
+          {
+            src: 'src/assets',
+            dest: '',
+          },
+        ],
       }),
+      svgLoader(),
     ],
   }
 })
